@@ -46,6 +46,10 @@ run code di bawah ini di terminal :
 1. php artisan serve
 2. npm run dev
 
+## Akun Admin
+email : asd@asd.com
+password : password
+
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
