@@ -32,6 +32,20 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Cara Install
+run code di bawah ini di terminal :
+1. composer install
+2. npm install
+3. cp .env.example .env
+4. edit dbname di .env sesuai dengan database anda
+5. php artisan key:generate
+6. php artisan migrate
+7. php artisan db:seed
+
+## Cara Menjalankan
+1. php artisan serve
+2. npm run dev
+
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
