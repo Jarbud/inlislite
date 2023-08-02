@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Inlistek',
+    'title' => 'Inlis Lite',
     'title_prefix' => '',
     'title_postfix' => '',
 
