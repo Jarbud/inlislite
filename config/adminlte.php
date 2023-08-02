@@ -318,6 +318,67 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
+        ['header' => 'menu'],
+        [
+            'text' => 'Back Office',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-briefcase',
+        ],
+        [
+            'text' => 'Baca Ditempat',
+            'url'  => '#',
+            'icon' => 'fab fa-readme',
+        ],
+        [
+            'text' => 'Buku Tamu',
+            'url'  => '#',
+            'icon' => 'fas fa-book-reader',
+        ],
+        [
+            'text' => 'Keanggotaan Online',
+            'url'  => '#',
+            'icon' => 'fas fa-people-arrows',
+        ],
+        [
+            'text' => 'Layanan Koleksi Digital',
+            'url'  => '#',
+            'icon' => 'fas fa-digital-tachograph',
+        ],
+        [
+            'text' => 'OPAC',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-bars',
+        ],
+        [
+            'text' => 'Artikel',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-newspaper',
+        ],
+        [
+            'text' => 'Pendaftaran Anggota',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-id-card',
+        ],
+        [
+            'text' => 'Statistik',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-signal',
+        ],
+        [
+            'text' => 'Survey',
+            'url'  => '#',
+            'icon' => 'fas fa-pen-nib',
+        ],
+        [
+            'text' => 'Pengembalian Mandiri',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-book',
+        ],
+        [
+            'text' => 'Peminjaman Mandiri',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-book-open',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -328,6 +389,11 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'User Management',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-users',
         ],
         // [
         //     'text'    => 'multilevel',
@@ -456,7 +522,7 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
