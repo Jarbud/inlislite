@@ -334,13 +334,13 @@ return [
             'url'  => '#',
             'icon' => 'fas fa-book-reader',
         ],
+        // [
+        //     'text' => 'Keanggotaan Online',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-people-arrows',
+        // ],
         [
-            'text' => 'Keanggotaan Online',
-            'url'  => '#',
-            'icon' => 'fas fa-people-arrows',
-        ],
-        [
-            'text' => 'Layanan Koleksi Digital',
+            'text' => 'Layanan Koleksi',
             'url'  => '#',
             'icon' => 'fas fa-digital-tachograph',
         ],
@@ -349,36 +349,45 @@ return [
             'url'  => '#',
             'icon' => 'fas fa-solid fa-bars',
         ],
-        [
-            'text' => 'Artikel',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-newspaper',
-        ],
-        [
-            'text' => 'Pendaftaran Anggota',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-id-card',
-        ],
-        [
-            'text' => 'Statistik',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-signal',
-        ],
+        // [
+        //     'text' => 'Artikel',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-newspaper',
+        // ],
+        // [
+        //     'text' => 'Pendaftaran Anggota',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-id-card',
+        // ],
+        // [
+        //     'text' => 'Statistik',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-signal',
+        // ],
         [
             'text' => 'Survey',
             'url'  => '#',
             'icon' => 'fas fa-pen-nib',
         ],
         [
-            'text' => 'Pengembalian Mandiri',
-            'url'  => '#',
+            'text' => 'Pengembalian dan Peminjaman Mandiri',
             'icon' => 'fas fa-solid fa-book',
+            'submenu' => [
+                [
+                    'text' => 'Peminjaman',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pengembalian',
+                    'url'  => '#',
+                ]
+            ]
         ],
-        [
-            'text' => 'Peminjaman Mandiri',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-book-open',
-        ],
+        // [
+        //     'text' => 'Peminjaman Mandiri',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-book-open',
+        // ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
