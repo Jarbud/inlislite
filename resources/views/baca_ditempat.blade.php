@@ -10,14 +10,12 @@
     <div class="container">
         <div class="sub-navigation">
             <div class="container">
-                <ul class="nav-nav tabs">
+                <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" 
-                        href="#">Bacaan sat ini</a>
+                        <a class="nav-link active" aria-current="page" href="#">Bacaan saat ini</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" 
-                        href="#">Bacaan sat ini</a>
+                        <a class="nav-link active" aria-current="page" href="#">Arsip</a>
                     </li>
                 </ul>
             </div>
