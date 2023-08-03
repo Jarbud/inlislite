@@ -15,7 +15,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Bacaan saat ini</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Arsip</a>
+                        <a class="nav-link" aria-current="page" href="#">Arsip</a>
                     </li>
                 </ul>
             </div>
