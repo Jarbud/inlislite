@@ -10,18 +10,16 @@
     <div class="container">
         <div class="sub-navigation">
             <div class="container">
-                <nav class="pull-left">
-                    <ul class="nav-nav tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" 
-                            href="#">Bacaan sat ini</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" 
-                            href="#">Bacaan sat ini</a>
-                        </li>
-                    </ul>
-                </nav>
+                <ul class="nav-nav tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" 
+                        href="#">Bacaan sat ini</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" 
+                        href="#">Bacaan sat ini</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
