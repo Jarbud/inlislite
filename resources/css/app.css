@@ -1,3 +1,4 @@
-.sub-navigation {
-    padding-left: 30px;
+.sub-navigation a {
+    display: block;
+    padding: 0 30px;
 }
