@@ -11,14 +11,14 @@
         <div class="sub-navigation">
             <div class="container">
                 <nav class="pull-left">
-                    <ul>
-                        <li class= "active">
-                            <a class="tab-control" data-section="current-reads"
-                            href="#">Bacaan saat ini</a>
+                    <ul class="nav-nav tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" 
+                            href="#">Bacaan sat ini</a>
                         </li>
-                        <li class= "active">
-                            <a class="tab-control" data-section="current-reads"
-                            href="#">Arsip</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" 
+                            href="#">Bacaan sat ini</a>
                         </li>
                     </ul>
                 </nav>
@@ -28,7 +28,7 @@
         <div class="library-story-item">
             <div class="on-story-preview cover cover-lg">
                 <div class="fixed-ratio fixed-ratio-cover">
-                    <img src="https://img.wattpad.com/cover/290998826-256-k329021.jpg" alt="">
+                    <img src="###" alt="">
                     <div class="story-overlay on-story-hover" style="display: none;">
                     <div class="overlay-bg"></div>
                     <div class="quick-controls clearfix">
@@ -55,7 +55,7 @@
                 <small>mozachee</small>
             </div>
             <a href="/user/mozachee" class="avatar avatar-sm on-navigate" title="mozachee's Profile">
-            <img src="https://img.wattpad.com/useravatar/mozachee.32.22172.jpg" alt=""></a>
+            <img src="###" alt=""></a>
             <div class="meta">
                 <span> <span class="fa fa-view fa-wp-neutral-2 " aria-hidden="true" style="font-size:16px;"></span> 1.9M </span>
                 <span> <span class="fa fa-vote fa-wp-neutral-2 " aria-hidden="true" style="font-size:16px;"></span> 339K </span>
