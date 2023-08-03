@@ -1,4 +1,4 @@
-li.nav-link:hover {
+.nav.nav-item:hover.nav-item:hover {
     background-color: cornflowerblue;
     color: white;
 }
