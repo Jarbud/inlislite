@@ -364,11 +364,11 @@ return [
         //     'url'  => '#',
         //     'icon' => 'fas fa-solid fa-signal',
         // ],
-        [
-            'text' => 'Survey',
-            'url'  => '#',
-            'icon' => 'fas fa-pen-nib',
-        ],
+        // [
+        //     'text' => 'Survey',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-pen-nib',
+        // ],
         [
             'text' => 'Pengembalian dan Peminjaman Mandiri',
             'icon' => 'fas fa-solid fa-book',
