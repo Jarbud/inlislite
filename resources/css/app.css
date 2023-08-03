@@ -1,3 +1,4 @@
-ul.nav.nav-tabs {
-    padding: 0px 15px;
+a.nav-link:hover {
+    background-color: cornflowerblue;
+    color: white;
 }
