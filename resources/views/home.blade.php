@@ -7,7 +7,70 @@
 @stop
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
+    <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>10</h3>
+
+                <p>Judul</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <a href="#" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
+                <h3>50</h3>
+
+                <p>Anggota</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user-friends"></i>
+              </div>
+              <a href="#" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>10</h3>
+
+                <p>Jurnal</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-journal-whills"></i>
+              </div>
+              <a href="#" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>5</h3>
+
+                <p>Buku Yang Dipinjam</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-swatchbook"></i>
+              </div>
+              <a href="#" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
         <div class="card card-success">
               <div class="card-header">
                 <h3 class="card-title">Contoh Grafik 1</h3>

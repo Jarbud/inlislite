@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// URL
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/usermanagement', [App\Http\Controllers\UsermanagementController::class, 'index'])->name('usermanagement');
+Route::post('newpassword/{id}', [App\Http\Controllers\NewpasswordController::class, 'newpassword'])->name('newpassword');
+
+//RESOURCES
+Route::resource('usermanagement',App\Http\Controllers\UsermanagementController::class);
+Route::resource('registerusers',App\Http\Controllers\Auth\RegisterController::class);
+

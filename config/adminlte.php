@@ -319,11 +319,11 @@ return [
         //     'label_color' => 'success',
         // ],
         ['header' => 'menu'],
-        [
-            'text' => 'Back Office',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-briefcase',
-        ],
+        // [
+        //     'text' => 'Back Office',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-briefcase',
+        // ],
         [
             'text' => 'Baca Ditempat',
             'url'  => '#',
@@ -401,7 +401,7 @@ return [
         ],
         [
             'text' => 'User Management',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/usermanagement',
             'icon' => 'fas fa-users',
         ],
         // [
@@ -496,7 +496,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
