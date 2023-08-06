@@ -26,7 +26,7 @@
                     <div class="course-content">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4><a href="#">Baca</a></h4>
-                            <a href="#"><span><i class="bi bi-bookmark"></i></span></a>
+                            <a href="#"><span><i class="bi bi-arrow-counterclockwise"></i></span></a>
                         </div>
                         <h3><a href="course-details.html">Website Design</a></h3>
                         <p>
@@ -46,7 +46,7 @@
                     <div class="course-content">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4><a href="#">Baca</a></h4>
-                            <a href="#"><span><i class="bi bi-bookmark"></i></span></a>
+                            <a href="#"><span><i class="bi bi-arrow-counterclockwise"></i></span></a>
                         </div>
                         <h3>
                             <a href="course-details.html">Search Engine Optimization</a>

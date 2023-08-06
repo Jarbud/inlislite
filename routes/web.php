@@ -17,13 +17,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/awal', function () {
+    return view('dashboard');
+});
+
 Route::get('/baca', function () {
     return view('baca_ditempat');
 });
 
-Auth::routes();
+Route::get('/simpan', function () {
+    return view('arsip');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/op_ac', function () {
+    return view('opac');
+});
+
+Route::get('/con', function () {
+    return view('contoh');
+});
 
 Auth::routes();
 
