@@ -16,6 +16,11 @@
                 </div>
             
             <div class="card-body">
+            @if ($message = Session::get('success'))
+                  <div class="alert alert-success">
+                      <p>{{ $message }}</p>
+                  </div>
+              @endif
             <form action="{{ route('usermanagement.update',$user->id) }}" method="post">
         @csrf
         @method('PUT')

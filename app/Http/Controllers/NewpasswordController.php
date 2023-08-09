@@ -15,7 +15,7 @@ class NewpasswordController extends Controller
         $user = User::find($id);
         $user->password = Hash::make($request->get('password'));
         $user->save();
-        return redirect()->route('usermanagement.index')
+        return redirect()->back()
                         ->with('success','Password User Telah Berhasil Diupdate');
     }
 }
