@@ -20,7 +20,7 @@
           </li>
           <li class="dropdown"><a href="#"><span>Jelajahi</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">OPAC</a></li>
+              <li><a href="/op_ac">OPAC</a></li>
               <li><a href="#">Layanan Koleksi Digital</a></li>
               <li><a href="#">Statistik</a></li>
               <li><a href="#">Artikel</a></li>

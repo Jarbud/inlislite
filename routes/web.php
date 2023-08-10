@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MasterPendidikanController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,10 +35,15 @@ Route::get('/op_ac', function () {
     return view('opac');
 });
 
-Route::get('/con', function () {
-    return view('contoh');
+Route::get('/daftar', function () {
+    return view('pendaftaran');
+});
+
+Route::get('/daftar2', function () {
+    return view('daftar');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/daftar2', [MasterPendidikanController::class, 'daftar2'])->name('daftar2');

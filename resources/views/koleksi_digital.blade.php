@@ -117,75 +117,22 @@
                     </p>
                     </td>
                     </tr>
+                    <tr>
+                        <td>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr width="100%">
+                            <th>No</th>
+                            <th>Nama File</th>
+                            <th>Nama File Format Flash</th>
+                            <th>Format File</th>
+                            <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    </td>
+                    </tr>
                     </tr></break>
-
-                <tr>
-                    <td rowspan="5">
-                    <label>
-			              <input type="checkbox" name="cek">
-			              <i></i>
-                       <img src="/assets/img/skripsi.png" style="width: 200px; height: 300px;"/> 
-                    </td>
-                    <tr>
-                    <td width="100%" colspan="3">
-                        <strong>
-                            <p class="link">
-                                <a href="#">Pertanian</a>
-                            </p>
-                        </strong>
-                    </td>
-                    </tr>
-                    <tr>
-                    <td width="15%">
-                        <p>
-                            Isi
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Paket informasi ini terdiri dari kumpulan artikel mengenai Pertanian dengan rincian pada seri a. ERecources berjumlah 554 judul, dengan cakupan sub topik bahasan meliputi: 1. Pertanian (165 judul) 2. Petani (389 judul); b. Indonesia One Search berjumlah 45 Judul; c. Repositori Institusi berjumlah 632 artikel mengenai Pertanian, dengan cakupan sub topik bahasan meliputi: 1. Agribisnis (427 judul) 2. Bioteknologi Pertanian (40 judul) 3. Teknologi Pertanian (165 judul); d. Media Massa Online berjumlah 215 artikel, dengan cakupan sub topik bahasan meliputi: 1. Agronomi (67 judul) 2. Agribisnis (4 judul) 3. Bioteknologi Pertanian (4 judul) 4. Genetika Pertanian (8 judul) 5. Irigasi Pertanian (28 judul) 6. Konservasi tanah (7 judul) 7. Pemuliaan Tanaman (5 judul) 8. Penyakit dan pembasmian pada tanaman pertanian (22 judul) 9. Pertanian (65 judul) 10. Teknik Pemupukkan (5 judul).
-                        </p>
-                    </td>
-                    </tr>
-                    <tr>
-                    <td width="15%">
-                        <p>
-                            Jenis Bahan
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Sumber Elektronik (teks) (sumber daya sambung jaring)
-                        </p>
-                    </td>
-                    </tr>
-                    <tr>
-                    <td width="15%">
-                        <p>
-                            Kreator
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Sumber Elektronik (teks) (sumber daya sambung jaring)
-                    </p>
-                    </td>
-                    </tr>
                 </tr>
                 </tbody>
             </table>
