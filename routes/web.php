@@ -35,15 +35,18 @@ Route::get('/op_ac', function () {
     return view('opac');
 });
 
-Route::get('/daftar', function () {
+Route::get('/pendaftaran', function () {
     return view('pendaftaran');
 });
 
-Route::get('/daftar2', function () {
-    return view('daftar');
-});
+// Route::get('/daftar2', function () {
+//     return view('daftar');
+// });
+// Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'mtr_pendidikan','jns_kelamin'])->name('daftar');
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/daftar2', [MasterPendidikanController::class, 'daftar2'])->name('daftar2');
+Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'get'])->name('daftar');
+// Route::resource('daftar',App\Http\Controllers\PendaftaranController::class);

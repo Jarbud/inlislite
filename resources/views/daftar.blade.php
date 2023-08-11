@@ -97,15 +97,18 @@
                   <label for="inputAlaIn" class="form-label">Alamat Institusi</label>
                   <textarea class="form-control" id="inputAlaIn"></textarea>
                 </div>
+                
                 <div class="col-md-6">
                   <label for="inputPend" class="active">Pendidikan Terakhir
                   <span style="color: red;">*</span>
                   </label>
                         <select name="Pendidikan" id="Pendidikan" class="form-select">
-                            <option value="3">SMA</option>
-                            <option value="4">S1</option>
+                        @foreach ($mps as $item)
+                            <option>{{$item->Nama}}</option>
+                        @endforeach
                         </select>   
                 </div>
+                
                 <div class="col-md-6">
                   <label for="inputNoIns" class="form-label">Telepon Institusi</label>
                   <input type="text" class="form-control" id="inputNoIns">
@@ -116,8 +119,9 @@
                   <span style="color: red;">*</span>
                   </label>
                         <select name="Jenis" id="Jenis" class="form-select">
-                            <option value="3">Laki Laki</option>
-                            <option value="4">Perempuan</option>
+                          @foreach ($jks as $item)  
+                          <option>{{$item->Name}}</option>
+                          @endforeach
                         </select>   
                 </div>
                 <div class="col-md-6">
@@ -127,15 +131,26 @@
                   <input type="email" class="form-control" id="inputEmail">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputJen" class="active">Pekerjaan
+                  <label for="inputKer" class="active">Pekerjaan
                   <span style="color: red;">*</span>
                   </label>
-                        <select name="Jenis" id="Jenis" class="form-select">
-                            <option value="3">Pegawai Negeri</option>
-                            <option value="4">Peneliti</option>
+                        <select name="Kerja" id="Kerja" class="form-select">
+                          @foreach ($kerjas as $item)
+                          <option>{{$item->Pekerjaan}}</option>
+                          @endforeach
                         </select>   
                 </div>
-                
+                <div class="col-md-6" style="opacity: 0;"></div>
+                <div class="col-md-6">
+                  <label for="inputStatus" class="active">Status Perkawinan
+                  <span style="color: red;">*</span>
+                  </label>
+                        <select name="Status" id="Status" class="form-select">
+                          @foreach ($stat as $item)
+                          <option>{{$item->Nama}}</option>
+                          @endforeach
+                        </select>   
+                </div>
                 <div class="text-center" >
                   <button type="submit" class="btn btn-primary">Submit</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>

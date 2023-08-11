@@ -6,7 +6,7 @@ namespace App\Models;
 //use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class master_pendidikan extends Model
+class master_pekerjaan extends Model
 {
-    protected $collection = 'master_pendidikan';
+    protected $collection = 'master_pekerjaan';
 }
