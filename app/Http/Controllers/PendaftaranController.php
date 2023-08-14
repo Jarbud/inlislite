@@ -14,16 +14,23 @@ use App\Models\memberguesses;
 
 class PendaftaranController extends Controller
 {
-    public function get() {
-        $mps = master_pendidikan::all();
+    public function show() {
+        $pend = master_pendidikan::all();
         $jks = jenis_kelamin::all();
         $kerjas = master_pekerjaan::all();
         $stat = master_status_perkawinan::all();
 
-        return view('daftar',compact('mps','jks', 'kerjas', 'stat'));
+        return view('daftar',compact('pend','jks', 'kerjas', 'stat'));
     }
 
-    public function insert() {
-        $member = memberguesses::all();
+    public function create() {
+        return view('daftar');
+    }
+
+    public function store(Request $request) {
+        memberguesses::create([
+            'Nama'=> $request->input('Nama')
+        ]);
+        return redirect()->back();
     }
 }

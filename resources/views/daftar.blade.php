@@ -34,7 +34,8 @@
                 </div>
             </div>
             <div class="card-body">
-              <form class="row g-3" autocomplete="off">
+              <form class="row g-3" autocomplete="off" action="/daftar">
+                @csrf
                 <div class="col-md-3">
                   <label for="inputNo" class="active">No Identitas
                     <span style="color: red;">*</span>
@@ -56,10 +57,10 @@
                 <small>Minimal 6 karakter</small>
                 </div>
                 <div class="col-md-12">
-                  <label for="inputAddress" class="form-label">Nama Lengkap
+                  <label for="inputNama" class="form-label">Nama Lengkap
                     <span style="color: red;">*</span>
                   </label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukan nama lengkap anda">
+                  <input type="text" class="form-control" name="Nama" placeholder="Masukan nama lengkap anda" value="{{ old('Nama') }}">
                   <small>Sesuai dengan identitas</small>
                 </div>
                 <div class="col-md-6">
@@ -103,7 +104,7 @@
                   <span style="color: red;">*</span>
                   </label>
                         <select name="Pendidikan" id="Pendidikan" class="form-select">
-                        @foreach ($mps as $item)
+                        @foreach ($pend as $item)
                             <option>{{$item->Nama}}</option>
                         @endforeach
                         </select>   
@@ -151,10 +152,9 @@
                           @endforeach
                         </select>   
                 </div>
-                <div class="text-center" >
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
+                <form action="/submit">
+                  <label><input type="checkbox" id="submit" name="submit"> Saya menyatakan data yang diisi benar dan dapat dipertanggungjawabkan. </label>
+                </form>
               </form>
             </div>
           </div>

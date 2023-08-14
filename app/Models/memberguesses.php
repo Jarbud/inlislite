@@ -9,4 +9,5 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class memberguesses extends Model
 {
     protected $collection = 'memberguesses';
+    protected $guarded = [];
 }

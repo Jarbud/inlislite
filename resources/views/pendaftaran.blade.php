@@ -69,7 +69,7 @@
         </div>
         <div class="mt-2 pt-2">
         <form action="/daftar">
-            <label> <input type="checkbox" id="agree" name="agree" onchange="document.getElementById('button').disabled = !this.checked;"> Saya telah membaca & menyetujui atas persyaratan dan kondisi yang berlaku </label> <br>
+            <label> <input type="checkbox" id="agree" name="agree" onchange="document.getElementById('button').disabled = !this.checked;"> Saya telah membaca & menyetujui atas persyaratan dan kondisi yang berlaku. </label> <br>
             <input type="submit" value="SUBMIT" class="btn btn-primary" style="margin-top: 10px;" id="button" name="button" disabled>
         </form>
         </div>

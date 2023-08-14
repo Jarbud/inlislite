@@ -39,14 +39,15 @@ Route::get('/pendaftaran', function () {
     return view('pendaftaran');
 });
 
-// Route::get('/daftar2', function () {
-//     return view('daftar');
-// });
-// Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'mtr_pendidikan','jns_kelamin'])->name('daftar');
+Route::get('/submit', function () {
+    return view('submit');
+});
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'get'])->name('daftar');
-// Route::resource('daftar',App\Http\Controllers\PendaftaranController::class);
+Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'show'])->name('daftar');
+Route::post('/daftar', [App\Http\Controllers\PendaftaranController::class, 'store']);
+Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'create']);
+//Route::resource('daftar',App\Http\Controllers\PendaftaranController::class);
