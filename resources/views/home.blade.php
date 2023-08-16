@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+
     <div class="container">
         <div class="card card-success">
               <div class="card-header">

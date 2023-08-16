@@ -4,7 +4,7 @@
 <section class="content-search" style="background-color: #a2abff;">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-2" style="margin-inline-start: 20px;">
                 <span class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
@@ -19,10 +19,30 @@
         </div>
         <div class="tab-content">
             <div class="tab-pane active">
+                <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <input name="#" type="text" id="#" class="form-control" placeholder="Kata Kunci">
                     </div>
+                </div>
+                <div class="col-sm-2">
+                    <select name="judul" id="judul" class="form-select">
+                        <option value="1">Judul</option>
+                        <option value="2">Pengarang</option>
+                        <option value="3">Penerbit</option>
+                        <option value="4">Tahun Terbit</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <select name="bahan" id="bahan" class="form-select">
+                        @foreach ($bahan as $item)
+                        <option>{{$item->Name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <input type="submit" value="Cari" class="btn btn-primary">
+                </div>
                 </div>
             </div>
         </div>
@@ -49,142 +69,163 @@
                 <td width="80%">
                 <table class="table" style="border: 1px;">
                 <tbody class="table-primary" style="text-align: justify;">
+                <tr style="vertical-align: top;">
+                        <td rowspan="8" style="padding: 10px 10px;">                                  
+                            <span><input type="checkbox"></span>
+                        </td>
+                        <td rowspan="8" style="padding: 10px 10px;">
+                            <span><img src="/assets/img/skripsi.png" style="width: 150px; height: 200px;"/></span>                
+                        </td>
                     <tr>
-                    <td rowspan="5">
-                    <label>
-			              <input type="checkbox" name="cek">
-			              <i></i>
-		              </label>
-                       <img src="/assets/img/skripsi.png" style="width: 200px; height: 300px;"/>
-                    </td>
-                    <tr>
-                    <td width="100%" colspan="3">
-                        <strong>
-                            <p class="link">
-                                <a href="#">Pertanian</a>
-                            </p>
-                        </strong>
-                    </td>
+                        <td width="100%" colspan="4">
+                            <p class="link"><a href="#">Indahnya bahasaku: pelajaran bahasa indonesia untuk kelas 3 SD/MI/ Drs.Abdul Razak, M.Pd ; editor, Abu Nida Abdul Wahab</a></p>
+                        </td>
                     </tr>
                     <tr>
-                    <td width="15%">
-                        <p>
-                            Isi
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Paket informasi ini terdiri dari kumpulan artikel mengenai Pertanian dengan rincian pada seri a. ERecources berjumlah 554 judul, dengan cakupan sub topik bahasan meliputi: 1. Pertanian (165 judul) 2. Petani (389 judul); b. Indonesia One Search berjumlah 45 Judul; c. Repositori Institusi berjumlah 632 artikel mengenai Pertanian, dengan cakupan sub topik bahasan meliputi: 1. Agribisnis (427 judul) 2. Bioteknologi Pertanian (40 judul) 3. Teknologi Pertanian (165 judul); d. Media Massa Online berjumlah 215 artikel, dengan cakupan sub topik bahasan meliputi: 1. Agronomi (67 judul) 2. Agribisnis (4 judul) 3. Bioteknologi Pertanian (4 judul) 4. Genetika Pertanian (8 judul) 5. Irigasi Pertanian (28 judul) 6. Konservasi tanah (7 judul) 7. Pemuliaan Tanaman (5 judul) 8. Penyakit dan pembasmian pada tanaman pertanian (22 judul) 9. Pertanian (65 judul) 10. Teknik Pemupukkan (5 judul).
-                        </p>
-                    </td>
+                        <td width="15%">
+                        <span>Isi</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <p>Paket informasi ini terdiri dari kumpulan artikel mengenai Pertanian dengan rincian pada seri a. ERecources berjumlah 554 judul, dengan cakupan sub topik bahasan meliputi: 1. Pertanian (165 judul) 2. Petani (389 judul); b. Indonesia One Search berjumlah 45 Judul; c. Repositori Institusi berjumlah 632 artikel mengenai Pertanian, dengan cakupan sub topik bahasan meliputi: 1. Agribisnis (427 judul) 2. Bioteknologi Pertanian (40 judul) 3. Teknologi Pertanian (165 judul); d. Media Massa Online berjumlah 215 artikel, dengan cakupan sub topik bahasan meliputi: 1. Agronomi (67 judul) 2. Agribisnis (4 judul) 3. Bioteknologi Pertanian (4 judul) 4. Genetika Pertanian (8 judul) 5. Irigasi Pertanian (28 judul) 6. Konservasi tanah (7 judul) 7. Pemuliaan Tanaman (5 judul) 8. Penyakit dan pembasmian pada tanaman pertanian (22 judul) 9. Pertanian (65 judul) 10. Teknik Pemupukkan (5 judul).</p>
+                        </td>
                     </tr>
                     <tr>
-                    <td width="15%">
-                        <p>
-                            Jenis Bahan
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Sumber Elektronik (teks) (sumber daya sambung jaring)
-                    </p>
-                    </td>
+                        <td width="15%">
+                        <span>Jenis Bahan</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Monograf</span>
+                        </td>
                     </tr>
                     <tr>
-                    <td width="15%">
-                        <p>
-                            Kreator
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Sumber Elektronik (teks) (sumber daya sambung jaring)
-                    </p>
-                    </td>
-                    </tr>
-                    </tr></break>
-
-                <tr>
-                    <td rowspan="5">
-                    <label>
-			              <input type="checkbox" name="cek">
-			              <i></i>
-                       <img src="/assets/img/skripsi.png" style="width: 200px; height: 300px;"/> 
-                    </td>
-                    <tr>
-                    <td width="100%" colspan="3">
-                        <strong>
-                            <p class="link">
-                                <a href="#">Pertanian</a>
-                            </p>
-                        </strong>
-                    </td>
+                        <td width="15%">
+                        <span>Pengarang</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>	Abdul Razak (penulis) Abu Nida Abdul Wahab (editor) </span>
+                        </td>
                     </tr>
                     <tr>
-                    <td width="15%">
-                        <p>
-                            Isi
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Paket informasi ini terdiri dari kumpulan artikel mengenai Pertanian dengan rincian pada seri a. ERecources berjumlah 554 judul, dengan cakupan sub topik bahasan meliputi: 1. Pertanian (165 judul) 2. Petani (389 judul); b. Indonesia One Search berjumlah 45 Judul; c. Repositori Institusi berjumlah 632 artikel mengenai Pertanian, dengan cakupan sub topik bahasan meliputi: 1. Agribisnis (427 judul) 2. Bioteknologi Pertanian (40 judul) 3. Teknologi Pertanian (165 judul); d. Media Massa Online berjumlah 215 artikel, dengan cakupan sub topik bahasan meliputi: 1. Agronomi (67 judul) 2. Agribisnis (4 judul) 3. Bioteknologi Pertanian (4 judul) 4. Genetika Pertanian (8 judul) 5. Irigasi Pertanian (28 judul) 6. Konservasi tanah (7 judul) 7. Pemuliaan Tanaman (5 judul) 8. Penyakit dan pembasmian pada tanaman pertanian (22 judul) 9. Pertanian (65 judul) 10. Teknik Pemupukkan (5 judul).
-                        </p>
-                    </td>
+                        <td width="15%">
+                        <span>Penerbit</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Universitas Riau</span>
+                        </td>
                     </tr>
                     <tr>
-                    <td width="15%">
-                        <p>
-                            Jenis Bahan
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Sumber Elektronik (teks) (sumber daya sambung jaring)
-                        </p>
-                    </td>
+                        <td width="15%">
+                        <span>Konten Digital</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Tidak Tersedia</span>
+                        </td>
                     </tr>
                     <tr>
-                    <td width="15%">
-                        <p>
-                            Kreator
-                        </p>
-                    </td>
-                    <td width="1%">
-                        <p>
-                            :
-                        </p>
-                    </td>
-                    <td width="84%">
-                        <p>
-                        Sumber Elektronik (teks) (sumber daya sambung jaring)
-                    </p>
-                    </td>
+                        <td width="15%">
+                        <span>Ketersedian</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>1 item</span>
+                        </td>
+                    </tr>
+                </tr>
+                <tr></tr>
+                <tr style="vertical-align: top;">
+                        <td rowspan="8" style="padding: 10px 10px;">                                  
+                            <span><input type="checkbox"></span>
+                        </td>
+                        <td rowspan="8" style="padding: 10px 10px;">
+                            <span><img src="/assets/img/skripsi.png" style="width: 150px; height: 200px;"/></span>                
+                        </td>
+                    <tr>
+                        <td width="100%" colspan="4">
+                            <p class="link"><a href="#">Indahnya bahasaku: pelajaran bahasa indonesia untuk kelas 3 SD/MI/ Drs.Abdul Razak, M.Pd ; editor, Abu Nida Abdul Wahab</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Isi</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <p>Paket informasi ini terdiri dari kumpulan artikel mengenai Pertanian dengan rincian pada seri a. ERecources berjumlah 554 judul, dengan cakupan sub topik bahasan meliputi: 1. Pertanian (165 judul) 2. Petani (389 judul); b. Indonesia One Search berjumlah 45 Judul; c. Repositori Institusi berjumlah 632 artikel mengenai Pertanian, dengan cakupan sub topik bahasan meliputi: 1. Agribisnis (427 judul) 2. Bioteknologi Pertanian (40 judul) 3. Teknologi Pertanian (165 judul); d. Media Massa Online berjumlah 215 artikel, dengan cakupan sub topik bahasan meliputi: 1. Agronomi (67 judul) 2. Agribisnis (4 judul) 3. Bioteknologi Pertanian (4 judul) 4. Genetika Pertanian (8 judul) 5. Irigasi Pertanian (28 judul) 6. Konservasi tanah (7 judul) 7. Pemuliaan Tanaman (5 judul) 8. Penyakit dan pembasmian pada tanaman pertanian (22 judul) 9. Pertanian (65 judul) 10. Teknik Pemupukkan (5 judul).</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Jenis Bahan</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Monograf</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Pengarang</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>	Abdul Razak (penulis) Abu Nida Abdul Wahab (editor) </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Penerbit</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Universitas Riau</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Konten Digital</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Tidak Tersedia</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Ketersedian</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>1 item</span>
+                        </td>
                     </tr>
                 </tr>
                 </tbody>

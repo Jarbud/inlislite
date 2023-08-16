@@ -20,9 +20,9 @@
           </li>
           <li class="dropdown"><a href="#"><span>Jelajahi</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/op_ac">OPAC</a></li>
+              <li><a href="/opac">OPAC</a></li>
               <li><a href="#">Layanan Koleksi Digital</a></li>
-              <li><a href="#">Statistik</a></li>
+              <li><a href="/statistik">Statistik</a></li>
               <li><a href="#">Artikel</a></li>
               <li><a href="#">Survey</a></li>
             </ul>
@@ -38,8 +38,7 @@
       </nav>
       <!-- .navbar -->
 
-      <a href="#" class="get-started-btn">Pendaftaran Anggota</a>
-
+      <a href="/pendaftaran" class="get-started-btn">Pendaftaran Anggota</a>
     </div>
 </header>
 <!-- End Header -->

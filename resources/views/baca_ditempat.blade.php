@@ -1,65 +1,153 @@
 @extends('master')
 @section('content')
 
-<section id="courses" class="courses">
-    <div class="container" data-aos="fade-up">
-        <div class="navbar">
-            <div class="subnav">
-                <div class="subnav-content">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/baca">Bacaan saat ini</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/simpan">Arsip</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-            <div class="col-lg-3 col-md-4 d-flex align-items-stretch">
-                <div class="course-item">
-                    <img
-                        src="/assets/img/skripsi.png"
-                        class="img-fluid"/>
-                    <div class="course-content">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4><a href="#">Baca</a></h4>
-                            <a href="#"><span><i class="bi bi-bookmark"></i></span></a>
-                        </div>
-                        <h3><a href="course-details.html">Website Design</a></h3>
-                        <p>
-                            Et architecto provident deleniti facere repellat nobis iste.
-                            Id facere quia quae dolores dolorem tempore.
-                        </p>
-                    </div>
-                </div>
-            </div> <!-- End Course Item-->
-            <div class="col-lg-3 col-md-4 d-flex align-items-stretch mt-4 mt-md-0">
-                <div class="course-item">
-                    <img
-                        src="/assets/img/skripsi.png"
-                        class="img-fluid"
-                        alt="..."
-                    />
-                    <div class="course-content">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4><a href="#">Baca</a></h4>
-                            <a href="#"><span><i class="bi bi-bookmark"></i></span></a>
-                        </div>
-                        <h3>
-                            <a href="course-details.html">Search Engine Optimization</a>
-                        </h3>
-                        <p>
-                            Et architecto provident deleniti facere repellat nobis iste.
-                            Id facere quia quae dolores dolorem tempore.
-                        </p>
-                    </div>
-                </div>
-            </div> <!-- End Course Item-->
-        </div>
+<div class="container">
+<div class="content-wrapper">
+<h3 style="text-align: center; margin-top: 20px;">Keranjang Baca</h3>
+    <div class="row" style="margin-left: auto;">
+        <table>
+            <tbody class="table-primary">
+                <tr style="vertical-align: top;">
+                        <td rowspan="8" style="padding: 10px 10px;">                                  
+                            <span><input type="checkbox"></span>
+                        </td>
+                        <td rowspan="8" style="padding: 10px 10px;">
+                            <span><img src="/assets/img/skripsi.png" style="width: 150px; height: 200px;"/></span>                
+                        </td>
+                    <tr>
+                        <td width="100%" colspan="4">
+                            <p>Indahnya bahasaku: pelajaran bahasa indonesia untuk kelas 3 SD/MI/ Drs.Abdul Razak, M.Pd ; editor, Abu Nida Abdul Wahab</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Jenis Bahan</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Monograf</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Pengarang</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>	Abdul Razak (penulis) Abu Nida Abdul Wahab (editor) </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Penerbit</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Universitas Riau</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Konten Digital</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Tidak Tersedia</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Ketersedian</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>1 item</span>
+                        </td>
+                    </tr>
+                </tr>
+                <tr></tr>
+                <tr style="vertical-align: top;">
+                        <td rowspan="8" style="padding: 10px 10px;">                                  
+                            <span><input type="checkbox"></span>
+                        </td>
+                        <td rowspan="8" style="padding: 10px 10px;">
+                            <span><img src="/assets/img/skripsi.png" style="width: 150px; height: 200px;"/></span>                
+                        </td>
+                    <tr>
+                        <td width="100%" colspan="4">
+                            <p>Indahnya bahasaku: pelajaran bahasa indonesia untuk kelas 3 SD/MI/ Drs.Abdul Razak, M.Pd ; editor, Abu Nida Abdul Wahab</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Jenis Bahan</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Monograf</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Pengarang</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>	Abdul Razak (penulis) Abu Nida Abdul Wahab (editor) </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Penerbit</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Universitas Riau</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Konten Digital</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>Tidak Tersedia</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%">
+                        <span>Ketersedian</span>
+                        </td>
+                        <td width="1%">
+                            <span>:</span>
+                        </td>
+                        <td width="84%">
+                            <span>1 item</span>
+                        </td>
+                    </tr>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</section>
+</div>   
+</div>                                                  
 
 @endsection

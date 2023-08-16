@@ -27,10 +27,6 @@ Route::get('/baca', function () {
     return view('baca_ditempat');
 });
 
-Route::get('/simpan', function () {
-    return view('arsip');
-});
-
 Route::get('/op_ac', function () {
     return view('opac');
 });
@@ -43,11 +39,13 @@ Route::get('/submit', function () {
     return view('submit');
 });
 
+Route::get('/statistik', function () {
+    return view('statistik_body');
+});
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'show'])->name('daftar');
-Route::post('/daftar', [App\Http\Controllers\PendaftaranController::class, 'store']);
-Route::get('/daftar', [App\Http\Controllers\PendaftaranController::class, 'create']);
-//Route::resource('daftar',App\Http\Controllers\PendaftaranController::class);
+Route::get('/opac', [App\Http\Controllers\OpacController::class, 'show'])->name('opac');

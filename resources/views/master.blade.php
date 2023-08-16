@@ -26,6 +26,8 @@
   <!-- Template Main CSS File -->
   <link href="/assets/css/style.css" rel="stylesheet"/>
 
+  @include('statistik_head')
+
 </head>
 
 <body>
@@ -44,7 +46,8 @@
   <script src="/assets/vendor/php-email-form/validate.js"></script>
   <script src="/assets/vendor/jquery/jquery-3.7.0.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-  
+
+
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
 

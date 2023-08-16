@@ -1,34 +1,19 @@
 @extends('master')
 @section('content')
 
+@php
+    $user = auth()->user();
+@endphp
+
 <div class="container">
     <div class="content-wrapper">
         <div class="row">
             <section class="pb-4 text-lg-left">
                 <div class="col-12">
-                    <h1 class="h1 font-weight-bold text-center">Pendaftaran Anggota</h1>
-                </div>
-                <div class="row mt-2 pt-2">
-                <div class="col-md-12">
-                    <div class="card border-info">
-                        <div class="card-body">
-                            <h1 class="card-title"></h1>
-                            <h2 style="text-align: center;">Persyaratan</h2>
-                            <hr>
-                            <p class="card-description"></p>
-                            <ul>
-                                <li>Mengisi formulir pendaftaran dengan lengkap dan benar.</li>
-                                <li>Mengisi formulir pendaftaran dengan lengkap dan benar.</li>
-                                <li>Mengisi formulir pendaftaran dengan lengkap dan benar.</li>
-                                <li>Mengisi formulir pendaftaran dengan lengkap dan benar.</li>
-                                <li>Mengisi formulir pendaftaran dengan lengkap dan benar.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                    <h1 class="h1 font-weight-bold text-center" style="margin-bottom: 50px;">Pendaftaran Anggota</h1>
                 </div>
             <div class="card" style="margin-top: 10px;">
-            <div class="card-header" style="background-color: aquamarine; color:aliceblue;">
+            <div class="card-header" style="background-color: #a2abff; color:aliceblue;">
                 <div class="d-flex align-items-center">
                     <h2 class="card-title ml-3">Formulir Pendaftaran Anggota</h2>
                 </div>
@@ -40,82 +25,49 @@
                   <label for="inputNo" class="active">No Identitas
                     <span style="color: red;">*</span>
                   </label>
-                        <select name="identitas" id="identitas" class="form-select">
-                            <option value="1">NIK</option>
-                            <option value="2">NIM</option>
-                        </select>   
+                  <select name="identitas" id="identitas" class="form-select">
+                    @foreach ($identitas as $item)  
+                    <option>{{$item->Nama}}</option>
+                    @endforeach
+                  </select>   
                 </div>
                 <div class="col-md-9">
-                    <label for="inputNo" style="opacity: 0;"></label><br>
-                    <input type="text" maxlength="16" size="40" class="form-control" id="nomor" placeholder="Masukan nomor identitas">
+                  <label for="inputNo" style="opacity: 0;"></label><br>
+                  <input type="text" maxlength="20" size="40" class="form-control" id="nomor" placeholder="Masukan nomor identitas">
                 </div>
                 <div class="col-md-12">
                   <label for="inputPass" class="form-label">Password
                     <span style="color: red;">*</span>
                   </label>
-                <input type="password" class="form-control" id="inputPass" minlength="6" placeholder="Password">
+                <input type="password" class="form-control" id="inputPass" minlength="6" placeholder="Masukan password" value="{{ $user->password }}">
                 <small>Minimal 6 karakter</small>
                 </div>
                 <div class="col-md-12">
-                  <label for="inputNama" class="form-label">Nama Lengkap
-                    <span style="color: red;">*</span>
+                  <label for="inputEmail" class="form-label">Email
+                      <span style="color: red;">*</span>
                   </label>
-                  <input type="text" class="form-control" name="Nama" placeholder="Masukan nama lengkap anda" value="{{ old('Nama') }}">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" onchange="toggleCheckbox()">
+                </div>
+                <div class="col-md-12">
+                  <label for="inputNama" class="form-label">Nama Lengkap
+                      <span style="color: red;">*</span>
+                  </label>
+                  <input type="text" class="form-control" id="Nama" placeholder="Masukan nama lengkap anda sesuai kartu identitas" onchange="toggleCheckbox()" value="{{ $user->name }}">
                   <small>Sesuai dengan identitas</small>
                 </div>
                 <div class="col-md-6">
                 <label for="inputTtl" class="form-label">Tempat Tanggal Lahir
                     <span style="color: red;">*</span>
                 </label>
+                  <input type="text" class="form-control" name="Tempat" placeholder="Masukan Tempat Lahir">
+                </div>
+                <div class="col-md-3">
+                <label for="inputTtl" class="form-label" style="opacity: 0;">Tempat Tanggal Lahir
+                    <span style="color: red;">*</span>
+                </label><br>
                 <input type="date" class="form-control" id="inputTtl">
-                <small>Format: tgl/bln/thn</small>
                 </div>
-                <div class="col-md-6" style="opacity: 0;"></div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <label for="txtAlamatRumah" class="active">Alamat<span style="color: Red;">*</span></label>
-                            <textarea name="txtAlamatRumah" rows="4" cols="40" id="txtAlamatRumah" class="form-control" placeholder="Masukan alamat Anda"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12" style="opacity: 0;"></div>
-                <div class="col-md-6">
-                  <label for="inputNoHP" class="form-label">Nomor HP</label>
-                  <input type="text" class="form-control" id="inputNoHP">
-                  <small>Masukan tanpa pemisah(ex:089942149256)</small>
-                </div>
-                <div class="col-md-6">
-                  <label for="inputInstitusi" class="form-label">Nama Institusi</label>
-                  <input type="text" class="form-control" id="inputInstitusi">
-                </div>
-                <div class="col-md-6">
-                  <label for="inputNoRum" class="form-label">Nomor Telepon Rumah</label>
-                  <input type="text" class="form-control" id="inputNoRum">
-                  <small>Masukan tanpa pemisah(ex:0241123456)</small>
-                </div>
-                <div class="col-md-6">
-                  <label for="inputAlaIn" class="form-label">Alamat Institusi</label>
-                  <textarea class="form-control" id="inputAlaIn"></textarea>
-                </div>
-                
-                <div class="col-md-6">
-                  <label for="inputPend" class="active">Pendidikan Terakhir
-                  <span style="color: red;">*</span>
-                  </label>
-                        <select name="Pendidikan" id="Pendidikan" class="form-select">
-                        @foreach ($pend as $item)
-                            <option>{{$item->Nama}}</option>
-                        @endforeach
-                        </select>   
-                </div>
-                
-                <div class="col-md-6">
-                  <label for="inputNoIns" class="form-label">Telepon Institusi</label>
-                  <input type="text" class="form-control" id="inputNoIns">
-                  <small>Masukan tanpa pemisah(ex:0241123456)</small>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <label for="inputJen" class="active">Jenis Kelamin
                   <span style="color: red;">*</span>
                   </label>
@@ -125,13 +77,33 @@
                           @endforeach
                         </select>   
                 </div>
-                <div class="col-md-6">
-                  <label for="inputEmail" class="form-label">Alamat Email Pribadi
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <label for="txtAlamatRumah" class="active">Alamat Tinggal Sesuai Identitas<span style="color: Red;">*</span></label>
+                            <textarea name="txtAlamatRumah" rows="4" cols="40" id="txtAlamatRumah" class="form-control" placeholder="Masukan alamat tinggal sesuai identitas"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <label for="txtAlamatSaatini" class="active">Alamat Tinggal Saat Ini<span style="color: Red;">*</span></label>
+                            <textarea name="txtAlamatSaatini" rows="4" cols="40" id="txtAlamatSaatini" class="form-control" placeholder="Masukan alamat tinggal saat ini"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                  <label for="inputPend" class="active">Pendidikan
                   <span style="color: red;">*</span>
                   </label>
-                  <input type="email" class="form-control" id="inputEmail">
+                        <select name="Pendidikan" id="Pendidikan" class="form-select">
+                        @foreach ($pend as $item)
+                            <option>{{$item->Nama}}</option>
+                        @endforeach
+                        </select>   
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <label for="inputKer" class="active">Pekerjaan
                   <span style="color: red;">*</span>
                   </label>
@@ -141,8 +113,16 @@
                           @endforeach
                         </select>   
                 </div>
-                <div class="col-md-6" style="opacity: 0;"></div>
-                <div class="col-md-6">
+                <div class="col-md-12">
+                  <label for="inputStatus" class="active">Agama
+                  </label>
+                        <select name="agama" id="agama" class="form-select">
+                          @foreach ($pil as $item)
+                          <option>{{$item->Name}}</option>
+                          @endforeach
+                        </select>   
+                </div>
+                <div class="col-md-12">
                   <label for="inputStatus" class="active">Status Perkawinan
                   <span style="color: red;">*</span>
                   </label>
@@ -152,9 +132,38 @@
                           @endforeach
                         </select>   
                 </div>
-                <form action="/submit">
-                  <label><input type="checkbox" id="submit" name="submit"> Saya menyatakan data yang diisi benar dan dapat dipertanggungjawabkan. </label>
-                </form>
+                <div class="col-md-6">
+                  <label for="inputNoHP" class="form-label">Nomor HP</label>
+                  <input type="text" class="form-control" id="inputNoHP">
+                  <small>Masukan tanpa pemisah(ex:089942149256)</small>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputNoRum" class="form-label">Nomor Telepon Rumah</label>
+                  <input type="text" class="form-control" id="inputNoRum">
+                  <small>Masukan tanpa pemisah(ex:0241123456)</small>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputInstitusi" class="form-label">Nama Institusi</label>
+                  <input type="text" class="form-control" id="inputInstitusi">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputAlaIn" class="form-label">Alamat Institusi</label>
+                  <textarea class="form-control" id="inputAlaIn"></textarea>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputNoIns" class="form-label">Telepon Institusi</label>
+                  <input type="text" class="form-control" id="inputNoIns">
+                  <small>Masukan tanpa pemisah(ex:0241123456)</small>
+                </div>
+                <div class="mt-2 pt-2">
+                  <label class="custom-control-label"> 
+                    <input onChange="showButton();" type="checkbox" class="custom-control-input" disabled>
+                    Saya menyatakan data yang diisi benar dan dapat dipertanggungjawabkan.
+                  </label>
+                  <div>
+                    <a href="/submit" class="btn btn-primary" id="idBtnSub" style="visibility: hidden;">Daftar</a>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
@@ -163,5 +172,36 @@
         </div>
     </div>
 </div>
+
+<script>
+function toggleCheckbox() {
+  var inputNo = document.getElementById("nomor").value;
+  var inputNama = document.getElementById("Nama").value;
+  var inputEmail = document.getElementById("inputEmail").value;
+
+  var checkbox = document.querySelector(".custom-control-input");
+  var submitButton = document.getElementById("idBtnSub");
+
+  if (inputNo !== "" && inputNama !== "" && inputEmail !== "") {
+      checkbox.disabled = false;
+  } else {
+      checkbox.disabled = true;
+      submitButton.style.visibility = "hidden";
+  }
+}
+
+function showButton() {
+  var checkbox = document.querySelector(".custom-control-input");
+  var submitButton = document.getElementById("idBtnSub");
+
+  if (checkbox.checked) {
+      submitButton.style.visibility = "visible";
+  } else {
+      submitButton.style.visibility = "hidden";
+  }
+}
+</script>
+
+
 
 @endsection 
