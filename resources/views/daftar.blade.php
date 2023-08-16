@@ -46,7 +46,7 @@
                   <label for="inputEmail" class="form-label">Email
                       <span style="color: red;">*</span>
                   </label>
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" onchange="toggleCheckbox()">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" onchange="toggleCheckbox()" value="{{ $user->email }}">
                 </div>
                 <div class="col-md-12">
                   <label for="inputNama" class="form-label">Nama Lengkap
@@ -59,13 +59,13 @@
                 <label for="inputTtl" class="form-label">Tempat Tanggal Lahir
                     <span style="color: red;">*</span>
                 </label>
-                  <input type="text" class="form-control" name="Tempat" placeholder="Masukan Tempat Lahir">
+                  <input type="text" class="form-control" id="Tempat" placeholder="Masukan Tempat Lahir" onchange="toggleCheckbox()">
                 </div>
                 <div class="col-md-3">
                 <label for="inputTtl" class="form-label" style="opacity: 0;">Tempat Tanggal Lahir
                     <span style="color: red;">*</span>
                 </label><br>
-                <input type="date" class="form-control" id="inputTtl">
+                <input type="date" class="form-control" id="Tempat" onchange="toggleCheckbox()">
                 </div>
                 <div class="col-md-12">
                   <label for="inputJen" class="active">Jenis Kelamin
@@ -80,22 +80,21 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <label for="txtAlamatRumah" class="active">Alamat Tinggal Sesuai Identitas<span style="color: Red;">*</span></label>
-                            <textarea name="txtAlamatRumah" rows="4" cols="40" id="txtAlamatRumah" class="form-control" placeholder="Masukan alamat tinggal sesuai identitas"></textarea>
+                            <label for="txtAlamatSaatIni" class="active">Alamat Tinggal Sesuai Identitas<span style="color: Red;">*</span></label>
+                            <textarea name="txtAlamatRumah" rows="4" cols="40" id="Alamat" class="form-control" placeholder="Masukan alamat tinggal sesuai identitas" onchange="toggleCheckbox()"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <label for="txtAlamatSaatini" class="active">Alamat Tinggal Saat Ini<span style="color: Red;">*</span></label>
-                            <textarea name="txtAlamatSaatini" rows="4" cols="40" id="txtAlamatSaatini" class="form-control" placeholder="Masukan alamat tinggal saat ini"></textarea>
+                            <label for="txtAlamatRumah" class="active">Alamat Tinggal Saat Ini<span style="color: Red;">*</span></label>
+                            <textarea name="txtAlamatSaatini" rows="4" cols="40" id="txtAlamat" class="form-control" placeholder="Masukan alamat tinggal saat ini" onchange="toggleCheckbox()"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12">
                   <label for="inputPend" class="active">Pendidikan
-                  <span style="color: red;">*</span>
                   </label>
                         <select name="Pendidikan" id="Pendidikan" class="form-select">
                         @foreach ($pend as $item)
@@ -105,7 +104,6 @@
                 </div>
                 <div class="col-md-12">
                   <label for="inputKer" class="active">Pekerjaan
-                  <span style="color: red;">*</span>
                   </label>
                         <select name="Kerja" id="Kerja" class="form-select">
                           @foreach ($kerjas as $item)
@@ -124,7 +122,6 @@
                 </div>
                 <div class="col-md-12">
                   <label for="inputStatus" class="active">Status Perkawinan
-                  <span style="color: red;">*</span>
                   </label>
                         <select name="Status" id="Status" class="form-select">
                           @foreach ($stat as $item)
@@ -156,7 +153,7 @@
                   <small>Masukan tanpa pemisah(ex:0241123456)</small>
                 </div>
                 <div class="mt-2 pt-2">
-                  <label class="custom-control-label"> 
+                  <label class="custom-control-label">
                     <input onChange="showButton();" type="checkbox" class="custom-control-input" disabled>
                     Saya menyatakan data yang diisi benar dan dapat dipertanggungjawabkan.
                   </label>
@@ -167,8 +164,8 @@
               </form>
             </div>
           </div>
-            </div>
-            </section>
+          </div>
+          </section>
         </div>
     </div>
 </div>
@@ -178,11 +175,14 @@ function toggleCheckbox() {
   var inputNo = document.getElementById("nomor").value;
   var inputNama = document.getElementById("Nama").value;
   var inputEmail = document.getElementById("inputEmail").value;
+  var inputTtl = document.getElementById("Tempat").value;
+  var txtAlamatRumah = document.getElementById("txtAlamat").value;
+  var txtAlamatSaatIni = document.getElementById("Alamat").value;
 
   var checkbox = document.querySelector(".custom-control-input");
   var submitButton = document.getElementById("idBtnSub");
 
-  if (inputNo !== "" && inputNama !== "" && inputEmail !== "") {
+  if (inputNo !== "" && inputNama !== "" && inputEmail !== "" && inputTtl !== "" && txtAlamatRumah !== "" && txtAlamatSaatIni !== "") {
       checkbox.disabled = false;
   } else {
       checkbox.disabled = true;
@@ -201,7 +201,5 @@ function showButton() {
   }
 }
 </script>
-
-
 
 @endsection 
