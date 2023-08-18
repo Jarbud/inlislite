@@ -53,16 +53,8 @@
 <section class="content">
     <div class="container">
       <div class="container">
-      <script language="JavaScript">
-    function toggle(source) {
-      checkboxes = document.getElementsByName('cek');
-      for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-      }
-    }
-    </script>
-    <input type="checkbox" onClick="toggle(this)"/> Pilih Semua
-    <a href="/baca" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Tambah ke tampung</a>
+            <input type="checkbox" onClick="checkAll(this)" name="chk"/> Pilih Semua
+            <a href="/baca" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Tambah ke tampung</a>
       </div>
         <table class="table">
             <tr>
@@ -71,7 +63,7 @@
                 <tbody class="table-primary" style="text-align: justify;">
                 <tr style="vertical-align: top;">
                         <td rowspan="8" style="padding: 10px 10px;">                                  
-                            <span><input type="checkbox"></span>
+                            <span><input type="checkbox" name="chkbox" value="1"></span>
                         </td>
                         <td rowspan="8" style="padding: 10px 10px;">
                             <span><img src="/assets/img/skripsi.png" style="width: 150px; height: 200px;"/></span>                
@@ -151,7 +143,7 @@
                 <tr></tr>
                 <tr style="vertical-align: top;">
                         <td rowspan="8" style="padding: 10px 10px;">                                  
-                            <span><input type="checkbox"></span>
+                            <span><input type="checkbox" name="chkbox" value="2"></span>
                         </td>
                         <td rowspan="8" style="padding: 10px 10px;">
                             <span><img src="/assets/img/skripsi.png" style="width: 150px; height: 200px;"/></span>                
