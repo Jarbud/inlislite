@@ -29,7 +29,9 @@
             </ul>
           </li>
           <li><a href="#">Buku Tamu</a></li>
-          <li><a href="#">Keanggotaan Online</a></li>
+          <li><a href="{{ url('/pendaftaran') }}">Pendaftaran Anggota</a></li>
+
+          <!-- <li><a href="#">Keanggotaan Online</a></li> -->
           <!--<li><a href="about.html">Buku Tamu</a></li>-->
           <!--<li><a href="courses.html">Baca di Tempat</a></li>-->
           <!--<li><a href="trainers.html">Keanggotaan Online</a></li>-->
@@ -38,21 +40,15 @@
         </ul>
       </nav>
       <!-- .navbar -->
-
       @if (Route::has('login'))
         <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
             @auth
-                <a href="{{ url('/pendaftaran') }}" class="get-started-btn">Pendaftaran Anggota</a>
+                <a href="{{ url('/home') }}" class="get-started-btn">{{ Auth::user()->name }}</a>
             @else
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <a href="{{ route('login') }}" class="get-started-btn">Log in</a>
               </div>
-              @if (Route::has('register'))
-              <div class="col-md-6">
-                <a href="{{ route('register') }}" class="get-started-btn">Register</a>
-              </div>
-              @endif
             </div>
             @endauth
         </div>

@@ -333,6 +333,11 @@ return [
         // ],
         ['header' => 'menu'],
         [
+            'text' => 'Home',
+            'url'  => '/',
+            'icon' => 'fas fa-home',
+        ],
+        [
             'text' => 'Dashboard',
             'url'  => '/home',
             'icon' => 'fas fa-solid fa-briefcase',
