@@ -339,6 +339,12 @@ return [
             'can' => 'admin',
         ],
         [
+            'text' => 'Verifikasi Akun',
+            'url'  => 'admin/verifikasi-account',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
+        ],
+        [
             'text' => 'Dashboard',
             'url'  => '/home2',
             'icon' => 'fas fa-solid fa-briefcase',
@@ -428,6 +434,7 @@ return [
             'text' => 'User Management',
             'url'  => 'admin/usermanagement',
             'icon' => 'fas fa-users',
+            'can' => 'admin',
         ],
         // [
         //     'text'    => 'multilevel',

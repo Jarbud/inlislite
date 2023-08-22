@@ -16,9 +16,15 @@
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"
-                       src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG.png"
+                    @if(isset(Auth::user()->photo))
+                        <img class="profile-user-img img-fluid img-circle"
+                       src="{{ asset('storage/images/'.Auth::user()->photo) }}"
                        alt="User profile picture">
+                    @else
+                    <img class="profile-user-img img-fluid img-circle"
+                       src="https://www.seekpng.com/png/detail/428-4287240_no-avatar-user-circle-icon-png.png"
+                       alt="User profile picture">
+                    @endif
                 </div>
 
                 <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
@@ -52,9 +58,27 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
+                    
                         <div class="active tab-pane" id="activity">
                             <form action="{{ route('usermanagement.update',Auth::user()->id) }}" method="post" class="form-horizontal">
-                                <div class="form-group row">
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success">
+                                    <p>{{ $message }}</p>
+                                </div>
+                            @endif    
+                            
+                            @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                 <!-- <ul>
+                                                    <li>Photo yang anda upload harus jpeg,png,jpg,svg</li>
+                                                    <li>Photo yang anda upload tidak boleh melebihi 2 mb</li>
+                                                </ul>  -->
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                            <div class="form-group row">
                                     <label for="inputName" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
                                     <input type="text" name="name" class="form-control" id="inputName" value="{{ Auth::user()->name }}">
@@ -99,15 +123,25 @@
                             </form>
                         </div>
                         <div class="tab-pane" id="foto">
-                            <form action="" method="post">
+                            
+                            <form action="{{ route('uploadPhoto',Auth::user()->id) }}" method="post" enctype="multipart/form-data">
+                                <div class="alert alert-info">
+                                    <ul>
+                                        <li>Photo yang anda upload harus jpeg,png,jpg,svg</li>
+                                        <li>Photo yang anda upload tidak boleh melebihi 2 mb</li>
+                                    </ul>
+                                </div>
+                                @csrf
                                 <div class="form-group row">
-                                    <label for="exampleInputFile" class="col-sm-2 col-form-label">Upload Foto</label>
+                                    <label for="photoinput" class="col-sm-2 col-form-label">Upload Foto</label>
                                     <div class="input-group col-sm-10">
                                         <div class="custom-file">
-                                            <input type="file" name="photo" class="custom-file-input" id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                            <input type="file" name="image" class="custom-file-input" id="photoinput">
+                                            <label class="custom-file-label" for="photoinput">Pilih Foto</label>
                                         </div>
+                                        <img id="preview" src="#" alt="your image" class="mt-3" style="width:100%;display:none;"/>
                                     </div>
+                                    
                                 </div>
                                 <div class="form-group row">
                                     <div class="offset-sm-2 col-sm-10">
@@ -134,5 +168,14 @@
 
 
 @section('js')
-
+<script>
+        photoinput.onchange = evt => {
+            preview = document.getElementById('preview');
+            preview.style.display = 'block';
+            const [file] = photoinput.files
+            if (file) {
+                preview.src = URL.createObjectURL(file)
+            }
+        }
+    </script>
 @stop

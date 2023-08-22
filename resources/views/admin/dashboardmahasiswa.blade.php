@@ -14,8 +14,21 @@
             <div class="col-lg-8">
               <div class="card bg-light d-flex flex-fill" >
                 <div class="card-header text-muted border-bottom-0">
-                  
-                    @if( Auth::user()->jenis_anggota_id == 1 )
+                  @if(Auth::user()->verifikasi == "false")
+                    <a href="/verifikasi" class="btn btn-warning">Belum Terverifikasi</a>
+                  @elseif(Auth::user()->verifikasi == "true")
+                    <a href="/verifikasi" class="btn btn-success">Terverifikasi</a>
+                  @elseif(Auth::user()->verifikasi == "pending")
+                    <a href="/verifikasi" class="btn btn-info">Verifikasi Pending</a>
+                  @elseif(Auth::user()->verifikasi == "decline")
+                    <a href="/verifikasi" class="btn btn-danger">Verifikasi Ditolak</a>
+                  @endif
+                </div>
+                <div class="card-body pt-0">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="text-muted card-header border-bottom-0 margin-left-0" style="padding-left: 0;">
+                      @if( Auth::user()->jenis_anggota_id == 1 )
                         Mahasiswa
                     @elseif( Auth::user()->jenis_anggota_id == 2 )
                         Umum
@@ -25,11 +38,9 @@
                         Tamu
                     @endif
                   <br>
-                  Keanggotaan sampai : 08/09/2023
-                </div>
-                <div class="card-body pt-0">
-                  <div class="row">
-                    <div class="col-8">
+                  Keanggotaan sampai : {{ Auth::user()->tgl_habis_anggota }}
+                      </div>
+                    
                       <h2 class="lead"><b>{{ Auth::user()->name }}</b></h2>
                       <table class="text-muted">
                         <tr>
@@ -65,7 +76,11 @@
                       </table>
                     </div>
                     <div class="col-4 text-center">
-                      <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG.png" alt="user-avatar" class="img-circle img-fluid">
+                      @if(isset(Auth::user()->photo))
+                        <img src="{{ asset('storage/images/'.Auth::user()->photo) }}" alt="user-avatar" class="img-fluid">
+                      @else
+                        <img src="https://www.seekpng.com/png/detail/428-4287240_no-avatar-user-circle-icon-png.png" alt="user-avatar" class="img-fluid">
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -79,6 +94,7 @@
                 <div class="card-body pt-0">
                   <div class="row">
                     <div class="col-lg-12">
+                      <!-- {{ $qrcodes }} -->
                       <img src="https://niagaspace.sgp1.digitaloceanspaces.com/blog/wp-content/uploads/2021/02/02081213/tampilan-qr-code-1024x1024.jpg" alt="user-avatar" class="img-fluid">
                     </div>
                   </div>
