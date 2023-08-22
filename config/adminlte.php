@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Digilib',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>DIGILIB</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -290,99 +290,206 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'type'         => 'navbar-notification',
+            'id'           => 'my-notification',
+            'icon'         => 'fas fa-bell',
+            'url'          => 'notifications/show',
             'topnav_right' => true,
+            'dropdown_mode'   => true,
+            'dropdown_flabel' => 'All notifications',
+            'update_cfg'   => [
+                'url' => 'notifications/get',
+                'period' => 30,
+            ],
         ],
+        // Navbar items:
+        // [
+        //     'type'         => 'navbar-search',
+        //     'text'         => 'search',
+        //     'topnav_right' => true,
+        // ],
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
         // Sidebar items:
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
+        // [
+        //     'text' => 'blog',
+        //     'url'  => 'admin/blog',
+        //     'can'  => 'manage-blog',
+        // ],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+        ['header' => 'menu'],
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Dashboard',
+            'url'  => '/home',
+            'icon' => 'fas fa-solid fa-briefcase',
+            'can' => 'admin',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Verifikasi Akun',
+            'url'  => 'admin/verifikasi-account',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Dashboard',
+            'url'  => '/home2',
+            'icon' => 'fas fa-solid fa-briefcase',
+            'can' => 'user-biasa',
         ],
+        [
+            'text' => 'Karya Ilmiah',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-newspaper',
+        ],
+        [
+            'text' => 'Baca Ditempat',
+            'url'  => '#',
+            'icon' => 'fab fa-readme',
+        ],
+        [
+            'text' => 'Buku Tamu',
+            'url'  => '#',
+            'icon' => 'fas fa-book-reader',
+        ],
+        // [
+        //     'text' => 'Keanggotaan Online',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-people-arrows',
+        // ],
+        [
+            'text' => 'Layanan Koleksi',
+            'url'  => '#',
+            'icon' => 'fas fa-digital-tachograph',
+        ],
+        [
+            'text' => 'OPAC',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-bars',
+        ],
+        // [
+        //     'text' => 'Artikel',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-newspaper',
+        // ],
+        // [
+        //     'text' => 'Pendaftaran Anggota',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-id-card',
+        // ],
+        // [
+        //     'text' => 'Statistik',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-signal',
+        // ],
+        // [
+        //     'text' => 'Survey',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-pen-nib',
+        // ],
+        [
+            'text' => 'Pengembalian dan Peminjaman Mandiri',
+            'icon' => 'fas fa-solid fa-book',
+            'submenu' => [
+                [
+                    'text' => 'Peminjaman',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pengembalian',
+                    'url'  => '#',
+                ]
+            ]
+        ],
+        // [
+        //     'text' => 'Peminjaman Mandiri',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-book-open',
+        // ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/changepassworduser',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'User Management',
+            'url'  => 'admin/usermanagement',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // [
+        //     'text'    => 'multilevel',
+        //     'icon'    => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text'    => 'level_one',
+        //             'url'     => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url'  => '#',
+        //                 ],
+        //                 [
+        //                     'text'    => 'level_two',
+        //                     'url'     => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //     ],
+        // ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*
@@ -421,7 +528,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -456,7 +563,7 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
