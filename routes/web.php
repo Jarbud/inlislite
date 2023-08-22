@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MasterPendidikanController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,37 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('dashboard');
+});
+
+/* Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/awal', function () {
+    return view('dashboard');
+}); */
+
+Route::get('/baca', function () {
+    return view('baca_ditempat');
+});
+
+Route::get('/op_ac', function () {
+    return view('opac');
+});
+
+Route::get('/pendaftaran', function () {
+    return view('pendaftaran');
+});
+
+Route::get('/submit', function () {
+    return view('submit');
+});
+
+Route::get('/statistik', function () {
+    return view('statistik_body');
+});
+
 
 Route::get('/admin/changepassworduser', function () {
     return view('admin/changepassworduser');
@@ -25,7 +56,11 @@ Auth::routes();
 
 // URL
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/verifikasi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('verifikasi');
+Route::get('/opac', [App\Http\Controllers\OpacController::class, 'show'])->name('opac');
+Route::get('/daftar-show', [App\Http\Controllers\PendaftaranController::class, 'show'])->name('daftar-show');
+Route::post('/daftar', [App\Http\Controllers\PendaftaranController::class, 'store'])->name('daftar');
+Route::get('/survey-show', [App\Http\Controllers\SurveyController::class, 'show'])->name('survey-show');
+Route::post('/survey', [App\Http\Controllers\SurveyController::class, 'store'])->name('survey');Route::get('/verifikasi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('verifikasi');
 Route::get('/admin/verifikasi-account', [App\Http\Controllers\VeraccountController::class, 'index'])->name('verifikasi-account');
 Route::get('/home2', [App\Http\Controllers\DashboardmhsController::class, 'index'])->name('home2');
 Route::get('/admin/usermanagement', [App\Http\Controllers\UsermanagementController::class, 'index'])->name('usermanagement');
