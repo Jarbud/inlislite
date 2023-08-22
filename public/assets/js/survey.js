@@ -12,3 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document
+    .getElementById("copyCodeButton")
+    .addEventListener("click", function () {
+        var randomCode = document.querySelector(".modal-body p");
+        var codeText = randomCode.textContent;
+
+        var tempInput = document.createElement("input");
+        tempInput.value = codeText;
+        document.body.appendChild(tempInput);
+
+        tempInput.select();
+
+        document.execCommand("copy");
+
+        document.body.removeChild(tempInput);
+
+        alert("Kode berhasil disalin: " + codeText);
+    });
