@@ -35,6 +35,15 @@ function showButton() {
     }
 }
 
+document.getElementById("myForm").addEventListener("keydown", function (event) {
+    if (
+        event.key === "Enter" &&
+        !event.target.tagName.toLowerCase() === "textarea"
+    ) {
+        event.preventDefault();
+    }
+});
+
 function checkAll(ele) {
     var checkboxes = document.getElementsByTagName("input");
     if (ele.checked) {
@@ -51,3 +60,22 @@ function checkAll(ele) {
         }
     }
 }
+
+document
+    .getElementById("copyCodeButton")
+    .addEventListener("click", function () {
+        var randomCode = document.querySelector(".modal-body p");
+        var codeText = randomCode.textContent;
+
+        var tempInput = document.createElement("input");
+        tempInput.value = codeText;
+        document.body.appendChild(tempInput);
+
+        tempInput.select();
+
+        document.execCommand("copy");
+
+        document.body.removeChild(tempInput);
+
+        alert("Kode berhasil disalin: " + codeText);
+    });

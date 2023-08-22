@@ -5,12 +5,13 @@
       <a class="navbar-logo" href="/awal">
         <img src="/assets/img/logo-perpus-100.png" alt="...">
       </a>
-      <h1 class="logo me-auto"><a href="/awal">Digital Library</a></h1>
+      <h1 class="logo me-auto"><a href="/">Digital Library</a></h1>
       
       
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="active" href="/awal">Beranda</a></li>
+          <li><a class="active" href="/
+          ">Beranda</a></li>
           <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/baca">Baca di Tempat</a></li>
@@ -38,7 +39,24 @@
       </nav>
       <!-- .navbar -->
 
-      <a href="/pendaftaran" class="get-started-btn">Pendaftaran Anggota</a>
+      @if (Route::has('login'))
+        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+            @auth
+                <a href="{{ url('/pendaftaran') }}" class="get-started-btn">Pendaftaran Anggota</a>
+            @else
+            <div class="row">
+              <div class="col-md-6">
+                <a href="{{ route('login') }}" class="get-started-btn">Log in</a>
+              </div>
+              @if (Route::has('register'))
+              <div class="col-md-6">
+                <a href="{{ route('register') }}" class="get-started-btn">Register</a>
+              </div>
+              @endif
+            </div>
+            @endauth
+        </div>
+      @endif
     </div>
 </header>
 <!-- End Header -->

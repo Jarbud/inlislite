@@ -1,3 +1,40 @@
+.question-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.question-icon {
+    margin-right: 50px;
+}
+.question-icon:hover {
+    color: #18d26e;
+}
+
+.question-icon:last-child {
+    margin-right: 0;
+}
+
+.question {
+    text-align: center;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.survey-header {
+    background-color: #a2abff;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .courses .course-item {
     border-radius: 10px;
     border: 1px solid #eef0ef;

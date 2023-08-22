@@ -12,7 +12,7 @@ use App\Models\master_status_perkawinan;
 use App\Models\memberguesses;
 use App\Models\agama;
 use App\Models\master_jenis_identitas;
-
+use App\Models\MemberGuesses as ModelsMemberGuesses;
 
 class PendaftaranController extends Controller
 {
@@ -27,14 +27,13 @@ class PendaftaranController extends Controller
         return view('daftar',compact('pend','jks', 'kerjas', 'stat', 'pil', 'identitas'));
     }
 
-    public function create() {
-        return view('daftar');
-    }
-
     public function store(Request $request) {
-        memberguesses::create([
-            'Nama'=> $request->input('Nama')
-        ]);
-        return redirect()->back();
+        $data = $request->all();
+        
+
+        MemberGuesses::create($data);
+
+
+        return redirect('/submit');
     }
 }

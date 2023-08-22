@@ -51,6 +51,7 @@
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
   <script src="{{ asset('/assets/js/kode.js') }}"></script>
+  <script src="{{ asset('/assets/js/survey.js') }}"></script>
   
 </body>
 

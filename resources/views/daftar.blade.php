@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="card-body">
-              <form class="row g-3" autocomplete="off" action="/daftar">
+              <form class="row g-3" autocomplete="off" method="POST" action="{{route('daftar')}}">
                 @csrf
                 <div class="col-md-3">
                   <label for="inputNo" class="active">No Identitas
@@ -33,39 +33,39 @@
                 </div>
                 <div class="col-md-9">
                   <label for="inputNo" style="opacity: 0;"></label><br>
-                  <input type="text" maxlength="20" size="40" class="form-control" id="nomor" placeholder="Masukan nomor identitas">
+                  <input type="text" maxlength="20" size="40" class="form-control" id="nomor" name="nomor" placeholder="Masukan nomor identitas" required>
                 </div>
                 <div class="col-md-12">
                   <label for="inputPass" class="form-label">Password
                     <span style="color: red;">*</span>
                   </label>
-                <input type="password" class="form-control" id="inputPass" minlength="6" placeholder="Masukan password" value="{{ $user->password }}">
+                <input type="password" class="form-control" id="inputPass" name="password" minlength="6" placeholder="Masukan password" value="{{ $user->password }}">
                 <small>Minimal 6 karakter</small>
                 </div>
                 <div class="col-md-12">
                   <label for="inputEmail" class="form-label">Email
                       <span style="color: red;">*</span>
                   </label>
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" onchange="toggleCheckbox()" value="{{ $user->email }}">
+                  <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" onchange="toggleCheckbox()" value="{{ $user->email }}">
                 </div>
                 <div class="col-md-12">
                   <label for="inputNama" class="form-label">Nama Lengkap
                       <span style="color: red;">*</span>
                   </label>
-                  <input type="text" class="form-control" id="Nama" placeholder="Masukan nama lengkap anda sesuai kartu identitas" onchange="toggleCheckbox()" value="{{ $user->name }}">
+                  <input type="text" class="form-control" id="Nama" name="name" placeholder="Masukan nama lengkap anda sesuai kartu identitas" onchange="toggleCheckbox()" value="{{ $user->name }}">
                   <small>Sesuai dengan identitas</small>
                 </div>
                 <div class="col-md-6">
                 <label for="inputTtl" class="form-label">Tempat Tanggal Lahir
                     <span style="color: red;">*</span>
                 </label>
-                  <input type="text" class="form-control" id="Tempat" placeholder="Masukan Tempat Lahir" onchange="toggleCheckbox()">
+                  <input type="text" class="form-control" id="Tempat" name="tempat" placeholder="Masukan Tempat Lahir" onchange="toggleCheckbox()">
                 </div>
                 <div class="col-md-3">
                 <label for="inputTtl" class="form-label" style="opacity: 0;">Tempat Tanggal Lahir
                     <span style="color: red;">*</span>
                 </label><br>
-                <input type="date" class="form-control" id="Tempat" onchange="toggleCheckbox()">
+                <input type="date" class="form-control" id="Tempat" name="tanggal" onchange="toggleCheckbox()">
                 </div>
                 <div class="col-md-12">
                   <label for="inputJen" class="active">Jenis Kelamin
@@ -81,7 +81,7 @@
                     <div class="card">
                         <div class="card-body">
                             <label for="txtAlamatSaatIni" class="active">Alamat Tinggal Sesuai Identitas<span style="color: Red;">*</span></label>
-                            <textarea name="txtAlamatRumah" rows="4" cols="40" id="Alamat" class="form-control" placeholder="Masukan alamat tinggal sesuai identitas" onchange="toggleCheckbox()"></textarea>
+                            <textarea name="AlamatRumah" rows="4" cols="40" id="Alamat" class="form-control" placeholder="Masukan alamat tinggal sesuai identitas" onchange="toggleCheckbox()"></textarea>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="card">
                         <div class="card-body">
                             <label for="txtAlamatRumah" class="active">Alamat Tinggal Saat Ini<span style="color: Red;">*</span></label>
-                            <textarea name="txtAlamatSaatini" rows="4" cols="40" id="txtAlamat" class="form-control" placeholder="Masukan alamat tinggal saat ini" onchange="toggleCheckbox()"></textarea>
+                            <textarea name="AlamatSaatini" rows="4" cols="40" id="txtAlamat" class="form-control" placeholder="Masukan alamat tinggal saat ini" onchange="toggleCheckbox()"></textarea>
                         </div>
                     </div>
                 </div>
@@ -131,25 +131,25 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputNoHP" class="form-label">Nomor HP</label>
-                  <input type="text" class="form-control" id="inputNoHP">
+                  <input type="text" class="form-control" name="NoHP" id="inputNoHP">
                   <small>Masukan tanpa pemisah(ex:089942149256)</small>
                 </div>
                 <div class="col-md-6">
                   <label for="inputNoRum" class="form-label">Nomor Telepon Rumah</label>
-                  <input type="text" class="form-control" id="inputNoRum">
+                  <input type="text" class="form-control" id="inputNoRum" name="NoRumah">
                   <small>Masukan tanpa pemisah(ex:0241123456)</small>
                 </div>
                 <div class="col-md-6">
                   <label for="inputInstitusi" class="form-label">Nama Institusi</label>
-                  <input type="text" class="form-control" id="inputInstitusi">
+                  <input type="text" class="form-control" id="inputInstitusi" name="Institusi">
                 </div>
                 <div class="col-md-6">
                   <label for="inputAlaIn" class="form-label">Alamat Institusi</label>
-                  <textarea class="form-control" id="inputAlaIn"></textarea>
+                  <textarea class="form-control" id="inputAlaIn" name="AlamatIns"></textarea>
                 </div>
                 <div class="col-md-6">
                   <label for="inputNoIns" class="form-label">Telepon Institusi</label>
-                  <input type="text" class="form-control" id="inputNoIns">
+                  <input type="text" class="form-control" id="inputNoIns" name="NoIns">
                   <small>Masukan tanpa pemisah(ex:0241123456)</small>
                 </div>
                 <div class="mt-2 pt-2">
@@ -158,7 +158,7 @@
                     Saya menyatakan data yang diisi benar dan dapat dipertanggungjawabkan.
                   </label>
                   <div>
-                    <a href="/submit" class="btn btn-primary" id="idBtnSub" style="visibility: hidden;">Daftar</a>
+                    <button type="submit" class="btn btn-primary" id="idBtnSub" style="visibility: hidden;">Daftar</button>
                   </div>
                 </div>
               </form>

@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="mt-2 pt-2">
-        <form action="/daftar">
+        <form action="{{ route('daftar-show') }}">
             <small style="color: red;"><i class="bi bi-pencil-square"></i>  Harap login terlebih dahulu</small> <br>
             <label style="padding-top: 20px;">
                 <input type="checkbox" id="agree" name="agree" {{ Auth::check() ? '' : 'disabled' }} onchange="document.getElementById('button').disabled = !this.checked;"> 
