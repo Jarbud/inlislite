@@ -62,14 +62,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="koderegister" class="col-sm-2 col-form-label">Kode Register Keanggotaan</label>
-                                    <div class="input-group col-sm-5">
-                                        <input type="text" name="kode" class="form-control" id="koderegister" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                    <button type="submit" class="btn btn-success">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -114,14 +108,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="koderegister" class="col-sm-2 col-form-label">Kode Register Keanggotaan</label>
-                                    <div class="input-group col-sm-5">
-                                        <input type="text" name="kode" class="form-control" id="koderegister" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                    <button type="submit" class="btn btn-success">Submit</button>
                                     </div>
                                 </div>
                             </form>

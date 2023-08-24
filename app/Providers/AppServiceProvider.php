@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\master_jenis_identitas;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,5 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        view()->composer('*',function($view) {
+            $view->with('jenis_identitas', master_jenis_identitas::all());
+        });
     }
 }

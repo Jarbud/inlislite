@@ -52,16 +52,26 @@ Route::get('/admin/changepassworduser', function () {
     return view('admin/changepassworduser');
 });
 
+Route::get('/berhasil-mendaftar', function () {
+    return view('success_daftar');
+});
+
+// Route::get('/dashboard', function () {
+//     return view('admin/dashboardmahasiswa');
+// });
+
 Auth::routes();
 
 // URL
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\DashboardmhsController::class, 'index'])->name('dashboard');
 Route::get('/opac', [App\Http\Controllers\OpacController::class, 'show'])->name('opac');
 Route::get('/daftar-show', [App\Http\Controllers\PendaftaranController::class, 'show'])->name('daftar-show');
 Route::post('/daftar', [App\Http\Controllers\PendaftaranController::class, 'store'])->name('daftar');
 Route::get('/survey-show', [App\Http\Controllers\SurveyController::class, 'show'])->name('survey-show');
 Route::post('/survey', [App\Http\Controllers\SurveyController::class, 'store'])->name('survey');Route::get('/verifikasi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('verifikasi');
 Route::get('/admin/verifikasi-account', [App\Http\Controllers\VeraccountController::class, 'index'])->name('verifikasi-account');
+Route::get('/admin/verifikasi-anggota', [App\Http\Controllers\VeranggotaController::class, 'index'])->name('verifikasi-anggota');
 Route::get('/home2', [App\Http\Controllers\DashboardmhsController::class, 'index'])->name('home2');
 Route::get('/admin/usermanagement', [App\Http\Controllers\UsermanagementController::class, 'index'])->name('usermanagement');
 Route::post('newpassword/{id}', [App\Http\Controllers\NewpasswordController::class, 'newpassword'])->name('newpassword');
@@ -71,6 +81,7 @@ Route::post('uploadPhotoVerify/{id}', [App\Http\Controllers\VerifikasiController
 Route::post('updatePhotoVerify/{id}', [App\Http\Controllers\VerifikasiController::class, 'UpdatePhoto'])->name('updatePhotoVerify');
 Route::get('notifications/get',[App\Http\Controllers\NotificationsController::class, 'getNotificationsData'])->name('notifications.get');
 Route::get('updateStatusVerify/{id}/{status}', [App\Http\Controllers\VeraccountController::class, 'updateStatusVerify'])->name('updateStatusVerify');
+Route::get('updateStatusVerifyAnggota/{id}/{email}/{status}', [App\Http\Controllers\VeranggotaController::class, 'updateStatusVerify'])->name('updateStatusVerifyAnggota');
 
 //RESOURCES
 Route::resource('usermanagement',App\Http\Controllers\UsermanagementController::class);

@@ -344,11 +344,26 @@ return [
             'can' => 'admin',
         ],
         [
-            'text' => 'Verifikasi Akun',
-            'url'  => 'admin/verifikasi-account',
+            'text' => 'Verifikasi',
             'icon' => 'fas fa-users',
             'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Verifikasi Akun',
+                    'url'  => 'admin/verifikasi-account',
+                ],
+                [
+                    'text' => 'Verifikasi Anggota',
+                    'url'  => 'admin/verifikasi-anggota',
+                ]
+            ]
         ],
+        // [
+        //     'text' => 'Verifikasi Akun',
+        //     'url'  => 'admin/verifikasi-account',
+        //     'icon' => 'fas fa-users',
+        //     'can' => 'admin',
+        // ],
         [
             'text' => 'Dashboard',
             'url'  => '/home2',

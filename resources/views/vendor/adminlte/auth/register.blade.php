@@ -52,8 +52,21 @@
 
         {{-- NIM field --}}
         <div class="input-group mb-3">
+            <select class="custom-select" name="identitas" id="identitas" class="form-select">
+                <option selected>Silahkan Pilih Jenis Kartu Pengenal</option>
+                @foreach ($jenis_identitas as $item)  
+                    <option value="{{ $item->id }}">{{$item->Nama}}</option>
+                @endforeach
+            </select>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-id-card"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
             <input type="number" name="no_pengenal" class="form-control @error('no_pengenal') is-invalid @enderror"
-                   value="{{ old('nim') }}" placeholder="Masukkan NIM/NIK">
+                   value="{{ old('nim') }}" placeholder="Masukkan Nomor Identitas">
 
             <div class="input-group-append">
                 <div class="input-group-text">

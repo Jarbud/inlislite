@@ -27,7 +27,8 @@ class User extends Authenticatable
         'telp',
         'photo',
         'tgl_habis_anggota',
-        'verifikasi'
+        'verifikasi',
+        'identitas_id',
     ];
 
     /**
