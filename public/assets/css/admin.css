@@ -1,0 +1,2250 @@
+/* DAFTAR KATALOG */
+
+#koleksi {
+    background-color: rgba(255, 228, 196, 0.5);
+    border-radius: 10px;
+    border: 1px solid #f09e88;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#koleksi #add-filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#koleksi #add-filter .tambah-button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #18d26e;
+    border-radius: 5px;
+    color: #ffffff;
+    white-space: nowrap;
+    padding: 3px 10px;
+    min-width: 100px;
+}
+
+#koleksi #add-filter .dan-button {
+    border: none;
+    background-color: #28168d;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#koleksi #add-filter .atau-button {
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #ffffff;
+    padding: 3px 10px;
+    background-color: #2d12c5;
+    margin-right: 770px;
+}
+
+#koleksi .box {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#koleksi .box #dropdown select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#koleksi .box #deleteBtn .delete-button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin-left: 400px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-box .searchButton {
+    border: none;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #2d12c5;
+}
+
+.search-box .refreshButton {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #0aeec8;
+}
+
+#aksi-katalog {
+    margin-bottom: 20px;
+}
+
+#aksi-katalog .left-align {
+    padding-left: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    width: 6cm;
+}
+
+#aksi-katalog .aksiButton {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #28168d;
+    color: #ffffff;
+}
+
+#daftar-katalog {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top: 1px solid rgba(43, 213, 219, 0.4);
+    border-left: 1px solid rgba(43, 213, 219, 0.4);
+    border-right: 1px solid rgba(43, 213, 219, 0.4);
+}
+
+.card-daftar-katalog {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#card-daftar-katalog #button-redo button {
+    border: 1px solid #1e99ca;
+    border-radius: 4px;
+    background-color: #25b9f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#filter-halaman {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filter-halaman span {
+    margin-right: 10px;
+}
+
+#filter-halaman .box-hal,
+#filter-halaman .dropdown {
+    margin-right: 10px;
+}
+
+#filter-halaman .box-hal select {
+    padding: 5px;
+}
+
+#filter-halaman .dropdown button {
+    border: 1px solid #585858;
+    padding: 4px;
+    width: 1.5cm;
+    border-radius: 3px;
+}
+
+#container-table-katalog {
+    overflow-x: auto;
+    width: 100%;
+}
+
+#container-table-katalog th {
+    white-space: nowrap;
+}
+
+#container-table-katalog tr,
+#container-table-katalog td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+/* ENTRI KATALOG */
+
+#button-kat .simpan-button {
+    border: 1px solid #008d4c;
+    background-color: #00a65a;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#button-kat .salin-katalog {
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#button-kat .salin-judul {
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#button-kat .selesai-button {
+    border: 1px solid #e08e0b;
+    background-color: #f39c12;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#entriDrop #dropbahan {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+#entriDrop #dropbahan label {
+    margin-left: 100px;
+    margin-right: 10px;
+}
+
+#entriDrop #dropbahan select {
+    padding: 5px;
+    width: 15cm;
+    border-radius: 3px;
+}
+
+#form-entri {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+#form-entri .box-header h4 {
+    color: #3c8dbc;
+    margin-bottom: 30px;
+}
+
+#ek1 {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+#ek1 .card-header {
+    background-color: #f5f5f5;
+}
+
+#ek1 #left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#ek1 #left label {
+    margin-bottom: 15px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ek1 #left label input {
+    width: 10cm;
+    border: 1px solid #767676;
+    border-radius: 0;
+    flex: 1;
+    margin-left: 10px;
+}
+
+#ek1 #left label select {
+    padding: 6px;
+    margin-right: 6px;
+    width: 4cm;
+    border: 1px solid #767676;
+    border-radius: 0;
+    flex: 1;
+    margin-left: 10px;
+}
+
+#ek1 #right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+}
+
+#ek1 #right label {
+    margin-bottom: 15px;
+    margin-left: 20px;
+    display: flex;
+}
+
+#ek1 #right label input {
+    width: 10cm;
+    border: 1px solid #767676;
+    border-radius: 0;
+    flex: 1;
+    margin-left: 10px;
+}
+
+#ek2 {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+#ek2 .card-header {
+    background-color: #f5f5f5;
+}
+
+#ek2 .card-body .right-align .box {
+    display: flex;
+    border: 1px solid #767676;
+    border-top: none;
+    width: 18cm;
+    margin-left: 230px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    background-color: #f5f5f5;
+}
+
+#ek2 .card-body .right-align .box input {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#ek2 .right-align #top-column label {
+    display: flex;
+    margin-bottom: 0px;
+    margin-left: 85px;
+}
+
+#ek2 .right-align #top-column label select {
+    width: 5cm;
+    margin-right: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek2 .right-align #top-column label input {
+    width: 12cm;
+    margin-left: 0px;
+    border: 1px solid #767676;
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+}
+
+#ek2 .right-align #top-column label button {
+    background-color: #e08e0b;
+    border: 1px solid #d58512;
+    color: #ffffff;
+    padding: 4px 10.5px;
+}
+
+#ek2 .right-align #pengarang label {
+    display: flex;
+    margin-bottom: 0px;
+    margin-left: 57px;
+}
+
+#ek2 .right-align #pengarang label select {
+    width: 5cm;
+    margin-right: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek2 .right-align #pengarang label input {
+    width: 11cm;
+    margin-left: 0px;
+    border: 1px solid #767676;
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+}
+
+#ek2 .right-align #pengarang label #plus-pengarang {
+    background-color: #449d44;
+    border: 1px solid #398439;
+    color: #ffffff;
+    padding: 4px 10.5px;
+}
+
+#ek2 .right-align #pengarang label #list-pengarang {
+    background-color: #e08e0b;
+    border: 1px solid #d58512;
+    color: #ffffff;
+    padding: 4px 10.5px;
+}
+
+#ek2 .right-align #pengarang label #hapus-pengarang {
+    background-color: #be1111;
+    border: 1px solid #c51212;
+    color: #ffffff;
+    padding: 4px 10.5px;
+}
+
+#ek3 {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+#ek3 .card-header {
+    background-color: #f5f5f5;
+}
+
+#ek3 .card-body .right-align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#ek3 .card-body .right-align label {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#ek3 .right-align label input {
+    width: 18cm;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 40px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek4 {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+#ek4 .card-header {
+    background-color: #f5f5f5;
+}
+
+#ek4 .card-body .right-align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#ek4 .card-body .right-align label {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#ek4 .right-align label input {
+    width: 18cm;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 40px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek5 {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+#ek5 .card-body .right-align .box {
+    display: flex;
+    border: 1px solid #767676;
+    border-top: none;
+    width: 18cm;
+    margin-left: 225px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    background-color: #f5f5f5;
+}
+
+#ek5 .card-body .right-align .box input {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#ek5 .right-align .subjek-column label {
+    display: flex;
+    margin-bottom: 0px;
+    margin-left: 164px;
+}
+
+#ek5 .right-align .subjek-column label input {
+    width: 13cm;
+    margin-left: 0px;
+    border: 1px solid #767676;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+
+#ek5 .right-align .subjek-column label select {
+    width: 5cm;
+    margin-right: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek5 .right-align .subjek-column label #plus-subjek {
+    background-color: #449d44;
+    border: 1px solid #398439;
+    color: #ffffff;
+    padding: 4px 10.5px;
+    margin-right: 40px;
+}
+
+#ek5 .right-align .subjek-column label #list-subjek {
+    background-color: #e08e0b;
+    border: 1px solid #d58512;
+    color: #ffffff;
+    padding: 4px 10.5px;
+}
+
+#ek5 .card-body .ForEdisi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#ek5 .card-body .ForEdisi label {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#ek5 .card-body .ForEdisi label input {
+    width: 18cm;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 40px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek5 .card-body #ForEdisi1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#ek5 .card-body #ForEdisi1 label {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#ek5 .card-body #ForEdisi1 label input {
+    width: 17cm;
+    flex: 1;
+    margin-left: 10px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek5 .card-body #ForEdisi1 label #plus-noPanggil {
+    background-color: #449d44;
+    border: 1px solid #398439;
+    color: #ffffff;
+    padding: 4px 10.5px;
+    margin-right: 40px;
+}
+
+#ek5 .card-body #ForEdisi1 label #plus-ISBN {
+    background-color: #449d44;
+    border: 1px solid #398439;
+    color: #ffffff;
+    padding: 4px 10.5px;
+    margin-right: 40px;
+}
+
+#ek6 {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+#ek6 .card-header {
+    background-color: #f5f5f5;
+}
+
+#ek6 .card-body .right-align .box {
+    display: flex;
+    border: 1px solid #767676;
+    border-top: none;
+    width: 18cm;
+    margin-left: 225px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    background-color: #f5f5f5;
+}
+
+#ek6 .card-body .right-align .box input {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#ek6 .card-body .right-align {
+    display: flex;
+    flex-direction: column;
+}
+
+#ek6 .card-body .right-align #label-catatan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#ek6 .card-body .right-align #label-catatan label {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+#ek6 .card-body .right-align #label-catatan label textarea {
+    width: 17cm;
+    flex: 1;
+    height: 20px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek6 .card-body .right-align #label-catatan label #plus-catatan {
+    background-color: #449d44;
+    border: 1px solid #398439;
+    color: #ffffff;
+    padding: 4px 10.5px;
+    margin-right: 40px;
+}
+
+#ek7 {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+#ek7 .card-body .right-align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#ek7 .card-body .right-align label {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#ek7 .right-align label select {
+    width: 18cm;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 40px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek8 {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+#ek8 .card-header {
+    background-color: #f5f5f5;
+}
+
+#ek8 .card-body .right-align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#ek8 .card-body .right-align label {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#ek8 .right-align label input {
+    width: 17cm;
+    flex: 1;
+    margin-left: 10px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#ek8 .card-body .right-align label #plus-lokasikol_daring {
+    background-color: #449d44;
+    border: 1px solid #398439;
+    color: #ffffff;
+    padding: 4px 10.5px;
+    margin-right: 40px;
+}
+
+#button-simpan-katalog {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+#button-simpan-katalog .simpan-entri-katalog {
+    border: 1px solid #008d4c;
+    background-color: #00a65a;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#button-simpan-katalog .salinjudul-entri-katalog {
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#button-simpan-katalog .salinkatalogdari-entri-katalog {
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#button-simpan-katalog .selesai-entri-katalog {
+    border: 1px solid #e08e0b;
+    background-color: #f39c12;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#box-simpan-katalog {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#Simpankoleksi #nav1 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#Simpankoleksi #nav1 li {
+    padding: 15px;
+}
+
+#Simpankoleksi #nav1 a {
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    transition: color 0.3s;
+}
+
+#Simpankoleksi #nav1 a::before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #076804;
+    transition: width 0.3s;
+}
+
+#Simpankoleksi #nav1 a:hover {
+    color: #076804;
+}
+
+#Simpankoleksi #nav1 a:hover::before {
+    width: 100%;
+}
+
+/* KOLEKSI */
+
+#kat2 #tambah-Eksemplar #popupOpen {
+    border: 1px solid #008d4c;
+    background-color: #00a65a;
+    color: #ffffff;
+    padding: 3px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#kat2 #koleksi1 {
+    background-color: rgba(255, 228, 196, 0.5);
+    border-radius: 10px;
+    border: 1px solid #f09e88;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#kat2 #koleksi1 #add-filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#kat2 #koleksi1 #add-filter .tambah-button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #18d26e;
+    border-radius: 5px;
+    color: #ffffff;
+    white-space: nowrap;
+    padding: 3px 10px;
+    min-width: 100px;
+}
+
+#kat2 #koleksi1 #add-filter .dan-button {
+    border: none;
+    background-color: #28168d;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#kat2 #koleksi1 #add-filter .atau-button {
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #ffffff;
+    padding: 3px 10px;
+    background-color: #2d12c5;
+    margin-right: 742px;
+}
+
+#kat2 #koleksi1 .box {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#kat2 #koleksi1 .box #dropdown select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#kat2 #koleksi1 .box #deleteBtn .delete-button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin-left: 400px;
+    width: 2cm;
+}
+
+#kat2 .search-box1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#kat2 .search-box1 .searchButton {
+    border: none;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #2d12c5;
+}
+
+#kat2 .search-box1 .refreshButton {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #0aeec8;
+}
+
+#kat2 #aksi-koleksi1 {
+    margin-bottom: 20px;
+}
+
+#kat2 #aksi-koleksi1 .left-align {
+    padding-left: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    width: 6cm;
+}
+
+#kat2 #aksi-koleksi1 .aksiButton {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #28168d;
+    color: #ffffff;
+}
+
+#kat2 #daftar-koleksi1 {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top: 1px solid rgba(43, 213, 219, 0.4);
+    border-left: 1px solid rgba(43, 213, 219, 0.4);
+    border-right: 1px solid rgba(43, 213, 219, 0.4);
+}
+
+#kat2 .card-koleksi1 {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#kat2 #card-koleksi1 #button-redo button {
+    border: 1px solid #1e99ca;
+    border-radius: 4px;
+    background-color: #25b9f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#kat2 #filter-koleksi1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#kat2 #filter-koleksi1 span {
+    margin-right: 10px;
+}
+
+#kat2 #filter-koleksi1 .box-koleksi1,
+#kat2 #filter-koleksi1 .dropdown {
+    margin-right: 10px;
+}
+
+#kat2 #filter-koleksi1 .box-koleksi1 select {
+    padding: 5px;
+}
+
+#kat2 #filter-koleksi1 .dropdown button {
+    border: 1px solid #585858;
+    padding: 4px;
+    width: 1.5cm;
+    border-radius: 3px;
+}
+
+#kat2 #container-table-koleksi1 {
+    overflow-x: auto;
+    width: 100%;
+}
+
+#kat2 #container-table-koleksi1 th {
+    white-space: nowrap;
+}
+
+#kat2 #container-table-koleksi1 tr,
+#kat2 #container-table-koleksi1 td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+/* TAMBAH EKSEMPLAR */
+
+#kat2 #popupContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#kat2 #popupContent {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+    overflow-y: scroll;
+    max-height: 80%;
+    width: 60%;
+}
+
+body.popup-open {
+    overflow: hidden;
+}
+
+#kat2 #popupContent .col {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#kat2 #popupContent #si1 #pilihan-si1 input {
+    width: 2cm;
+    margin-left: 10px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si1 #isi-si1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 150px;
+    column-gap: 20px;
+}
+
+#kat2 #popupContent #si1 #isi-si1 label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#kat2 #popupContent #si1 #isi-si1 label input {
+    width: 4cm;
+    margin-right: 10px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si1 #isi-si1 label input:last-child {
+    margin-right: 0;
+}
+
+#kat2 #popupContent #si2 input {
+    margin-left: 10px;
+    padding: 3px;
+    width: 5cm;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si3 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si4 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si4 #tambah-sumber {
+    margin-left: 10px;
+    border: 1px solid #be1111;
+    color: #ffffff;
+    background-color: #c51212;
+    padding: 3px;
+}
+
+#kat2 #popupContent #si4 #koreksi-sumber {
+    color: #ffffff;
+    padding: 3px;
+    border: 1px solid #be1111;
+    background-color: #c51212;
+}
+
+#kat2 #popupContent #si5 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si6 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si7 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si8 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si9 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si10 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si11 select {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+/* COVER */
+
+#kat3 .box {
+    width: 250px;
+    height: 357px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #000000;
+    margin-right: 100px;
+}
+
+#kat3 #uploadForm .input-group #selectedFileName {
+    width: 10cm;
+    border-radius: 0px;
+}
+
+#kat3 #uploadForm .input-group .input-group-btn button {
+    padding: 6px 10px;
+    border-radius: 0px;
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+}
+
+#kat3 #uploadForm button {
+    padding: 6px 10px;
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+}
+
+#kat3 .box #imagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/* KONTEN DIGITAL */
+#kat4 #box-kat4 {
+    border: 1px solid #ddd;
+    padding: 10px 25px;
+    border-radius: 3px;
+}
+
+#kat4 h4 {
+    color: #3c8dbc;
+    margin-bottom: 30px;
+}
+
+#kat4 #pilih-berkas {
+    border: 1px solid #008d4c;
+    background-color: #00a65a;
+    color: #ffffff;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#kat4 #unggah-berkas {
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#kat4 #batalkan-berkas {
+    border: 1px solid #e08e0b;
+    background-color: #f39c12;
+    color: #ffffff;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#kat4 #box-berkas {
+    margin-top: 20px;
+}
+
+#kat4 #namaflash {
+    margin-left: 20px;
+    height: 1cm;
+    width: 7cm;
+}
+
+#kat4 #box-aksi {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#kat4 #box-aksi #kontenD-aksi {
+    padding: 3px;
+    margin-left: 30px;
+}
+
+#kat4 #box-aksi #tidakdiPub {
+    padding: 3px;
+    margin-left: 20px;
+}
+
+#kat4 #box-aksi button {
+    padding: 4px 7px;
+    margin-left: 20px;
+    border: 1px solid #367fa9;
+    background-color: #3c8dbc;
+    color: #ffffff;
+}
+
+#kat4 #KontenDig {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top: 1px solid rgba(43, 213, 219, 0.4);
+    border-left: 1px solid rgba(43, 213, 219, 0.4);
+    border-right: 1px solid rgba(43, 213, 219, 0.4);
+}
+
+#kat4 #card-KontenDigit {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#kat4 #filter-konten {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#kat4 #filter-konten span {
+    margin-right: 10px;
+}
+
+#kat4 #filter-konten .box-dig,
+#filter-konten .dropdown {
+    margin-right: 10px;
+}
+
+#kat4 #filter-konten .box-dig select {
+    padding: 5px;
+}
+
+#kat4 #filter-konten .dropdown button {
+    border: 1px solid #585858;
+    padding: 4px;
+    width: 1.5cm;
+    border-radius: 3px;
+}
+
+#container-kontenDig {
+    width: 100%;
+}
+
+#container-kontenDig th {
+    white-space: nowrap;
+}
+
+#container-kontenDig tr,
+#container-kontenDig td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+/* ENTRI KOLEKSI */
+
+#nav1 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#nav1 li {
+    padding: 15px;
+}
+
+#nav1 a {
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    transition: color 0.3s;
+}
+
+#nav1 a::before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #076804;
+    transition: width 0.3s;
+}
+
+#nav1 a:hover {
+    color: #076804;
+}
+
+#nav1 a:hover::before {
+    width: 100%;
+}
+
+#hal2,
+#hal3,
+#hal4 {
+    display: none;
+}
+
+#hal1 .box {
+    margin: 10px;
+}
+
+#hal1 .simpan-button {
+    border: none;
+    background-color: #18d26e;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#hal1 .salin-katalog {
+    border: none;
+    background-color: #6651e0;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#hal1 .salin-judul {
+    border: none;
+    background-color: #6651e0;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#hal1 .selesai-button {
+    border: none;
+    background-color: #ffc505;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+#hal1 .dropdown {
+    margin-bottom: 20px;
+}
+
+#hal1 .dropdown label {
+    margin-left: 100px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#hal1 .dropdown select {
+    padding: 5px;
+    width: 15cm;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+/* SALIN KATALOG */
+
+#body-salin-katalog {
+    border-top: 3px solid #2a11b3;
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    border-radius: 5px;
+}
+
+#salin_kat select {
+    width: 10cm;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+#sumber_kat select {
+    width: 10cm;
+    margin-left: 80px;
+    margin-bottom: 10px;
+}
+
+#format_kat select {
+    width: 10cm;
+    margin-left: 85px;
+    margin-bottom: 10px;
+}
+
+#body-salin-katalog button {
+    padding: 3px;
+    margin-left: 143px;
+}
+
+#body-salin-katalog #salin-kat-button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#body-salin-katalog #salin-kat-button input {
+    padding: 2px;
+    margin-left: 75px;
+}
+
+/* EXPORT DATA KATALOG */
+
+#export-data {
+    background-color: rgba(255, 228, 196, 0.5);
+    border-radius: 10px;
+    border: 1px solid #f09e88;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#export-data #filter-export-katalog {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#export-data #filter-export-katalog .tambah-button-export {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #18d26e;
+    border-radius: 5px;
+    color: #ffffff;
+    white-space: nowrap;
+    padding: 3px 10px;
+    min-width: 100px;
+}
+
+#export-data #filter-export-katalog .dan-button-export {
+    border: none;
+    background-color: #28168d;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#export-data #filter-export-katalog .atau-button-export {
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #ffffff;
+    padding: 3px 10px;
+    background-color: #2d12c5;
+    margin-right: 770px;
+}
+
+#export-data .box {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#export-data .box #dropdown-export-katalog select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#export-data .box #deleteBtn-export .delete-button-export {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin-left: 400px;
+}
+
+.search-box-export {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-box-export .searchButton-export {
+    border: none;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #2d12c5;
+}
+
+.search-box-export .refreshButton-export {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #0aeec8;
+}
+
+#aksi-katalog-export {
+    margin-bottom: 20px;
+}
+
+#aksi-katalog-export .left-align-export {
+    padding-left: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    width: 6cm;
+}
+
+#aksi-katalog-export .aksiButton-export {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #28168d;
+    color: #ffffff;
+}
+
+#export-daftar-katalog {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top: 1px solid rgba(43, 213, 219, 0.4);
+    border-left: 1px solid rgba(43, 213, 219, 0.4);
+    border-right: 1px solid rgba(43, 213, 219, 0.4);
+}
+
+#card-export-katalog {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#card-export-katalog #button-redo button {
+    border: 1px solid #1e99ca;
+    border-radius: 4px;
+    background-color: #25b9f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#filter-halaman-export {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filter-halaman-export span {
+    margin-right: 10px;
+}
+
+#filter-halaman-export .box-hal-export,
+#filter-halaman-export .dropdown-export {
+    margin-right: 10px;
+}
+
+#filter-halaman .box-hal select {
+    padding: 5px;
+}
+
+#filter-halaman .dropdown-export button {
+    border: 1px solid #585858;
+    padding: 4px;
+    width: 1.5cm;
+    border-radius: 3px;
+}
+
+#container-table-export-katalog {
+    width: 100%;
+}
+
+#container-table-export-katalog th {
+    white-space: nowrap;
+}
+
+#container-table-export-katalog tr,
+#container-table-export-katalog td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+/* DAFTAR KONTEN DIGITAL */
+
+#konten-data {
+    background-color: rgba(255, 228, 196, 0.5);
+    border-radius: 10px;
+    border: 1px solid #f09e88;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#konten-data #filter-konten-katalog {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#konten-data #filter-konten-katalog .tambah-button-konten {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #18d26e;
+    border-radius: 5px;
+    color: #ffffff;
+    white-space: nowrap;
+    padding: 3px 10px;
+    min-width: 100px;
+}
+
+#konten-data #filter-konten-katalog .dan-button-konten {
+    border: none;
+    background-color: #28168d;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#konten-data #filter-konten-katalog .atau-button-konten {
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #ffffff;
+    padding: 3px 10px;
+    background-color: #2d12c5;
+    margin-right: 770px;
+}
+
+#konten-data .box {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#konten-data .box #dropdown-konten-katalog select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#konten-data .box #deleteBtn-konten .delete-button-konten {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin-left: 400px;
+}
+
+.search-box-konten {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-box-konten .searchButton-konten {
+    border: none;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #2d12c5;
+}
+
+.search-box-konten .refreshButton-konten {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #0aeec8;
+}
+
+#aksi-katalog-konten {
+    margin-bottom: 20px;
+}
+
+#aksi-katalog-konten .left-align-konten {
+    padding-left: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    width: 6cm;
+}
+
+#aksi-katalog-konten .aksiButton-konten {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #28168d;
+    color: #ffffff;
+}
+
+#konten-daftar-katalog {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top: 1px solid rgba(43, 213, 219, 0.4);
+    border-left: 1px solid rgba(43, 213, 219, 0.4);
+    border-right: 1px solid rgba(43, 213, 219, 0.4);
+}
+
+#card-konten-katalog {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#card-konten-katalog #button-redo button {
+    border: 1px solid #1e99ca;
+    border-radius: 4px;
+    background-color: #25b9f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#filter-halaman-konten {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filter-halaman-konten span {
+    margin-right: 10px;
+}
+
+#filter-halaman-konten .box-hal-konten,
+#filter-halaman-konten .dropdown {
+    margin-right: 10px;
+}
+
+#filter-halaman .box-hal select {
+    padding: 5px;
+}
+
+#filter-halaman .dropdown-konten button {
+    border: 1px solid #585858;
+    padding: 4px;
+    width: 1.5cm;
+    border-radius: 3px;
+}
+
+#container-table-konten-katalog {
+    width: 100%;
+}
+
+#container-table-konten-katalog th {
+    white-space: nowrap;
+}
+
+#container-table-konten-katalog tr,
+#container-table-konten-katalog td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+/* KERANJANG KATALOG */
+
+#keranjang-data {
+    background-color: rgba(255, 228, 196, 0.5);
+    border-radius: 10px;
+    border: 1px solid #f09e88;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#keranjang-data #filter-keranjang-katalog {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#keranjang-data #filter-keranjang-katalog .tambah-button-keranjang {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #18d26e;
+    border-radius: 5px;
+    color: #ffffff;
+    white-space: nowrap;
+    padding: 3px 10px;
+    min-width: 100px;
+}
+
+#keranjang-data #filter-keranjang-katalog .dan-button-keranjang {
+    border: none;
+    background-color: #28168d;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#keranjang-data #filter-keranjang-katalog .atau-button-keranjang {
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #ffffff;
+    padding: 3px 10px;
+    background-color: #2d12c5;
+    margin-right: 770px;
+}
+
+#keranjang-data .box {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#keranjang-data .box #dropdown-keranjang-katalog select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#keranjang-data .box #deleteBtn-keranjang .delete-button-keranjang {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin-left: 400px;
+}
+
+.search-box-keranjang {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-box-keranjang .searchButton-keranjang {
+    border: none;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #2d12c5;
+}
+
+.search-box-keranjang .refreshButton-keranjang {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #0aeec8;
+}
+
+#aksi-katalog-keranjang {
+    margin-bottom: 20px;
+}
+
+#aksi-katalog-keranjang .left-align-keranjang {
+    padding-left: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    width: 6cm;
+}
+
+#aksi-katalog-keranjang .aksiButton-keranjang {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #28168d;
+    color: #ffffff;
+}
+
+#aksi-katalog-keranjang .kosongButton-keranjang {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #e20c0c;
+    color: #ffffff;
+}
+
+#keranjang-daftar-katalog {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top: 1px solid rgba(43, 213, 219, 0.4);
+    border-left: 1px solid rgba(43, 213, 219, 0.4);
+    border-right: 1px solid rgba(43, 213, 219, 0.4);
+}
+
+#card-keranjang-katalog {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#card-keranjang-katalog #button-redo button {
+    border: 1px solid #1e99ca;
+    border-radius: 4px;
+    background-color: #25b9f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#filter-halaman-keranjang {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filter-halaman-keranjang span {
+    margin-right: 10px;
+}
+
+#filter-halaman-keranjang .box-hal-keranjang,
+#filter-halaman-keranjang .dropdown {
+    margin-right: 10px;
+}
+
+#filter-halaman .box-hal select {
+    padding: 5px;
+}
+
+#filter-halaman .dropdown-keranjang button {
+    border: 1px solid #585858;
+    padding: 4px;
+    width: 1.5cm;
+    border-radius: 3px;
+}
+
+#container-table-keranjang-katalog {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#container-table-keranjang-katalog th {
+    white-space: nowrap;
+}
+
+#container-table-keranjang-katalog tr,
+#container-table-keranjang-katalog td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+/* KARANTINA KATALOG */
+
+#karantina-data {
+    background-color: rgba(255, 228, 196, 0.5);
+    border-radius: 10px;
+    border: 1px solid #f09e88;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#karantina-data #filter-karantina-katalog {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#karantina-data #filter-karantina-katalog .tambah-button-karantina {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #18d26e;
+    border-radius: 5px;
+    color: #ffffff;
+    white-space: nowrap;
+    padding: 3px 10px;
+    min-width: 100px;
+}
+
+#karantina-data #filter-karantina-katalog .dan-button-karantina {
+    border: none;
+    background-color: #28168d;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#karantina-data #filter-karantina-katalog .atau-button-karantina {
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #ffffff;
+    padding: 3px 10px;
+    background-color: #2d12c5;
+    margin-right: 770px;
+}
+
+#karantina-data .box {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#karantina-data .box #dropdown-karantina-katalog select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#karantina-data .box #deleteBtn-karantina .delete-button-karantina {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin-left: 400px;
+}
+
+.search-box-karantina {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-box-karantina .searchButton-karantina {
+    border: none;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #2d12c5;
+}
+
+.search-box-karantina .refreshButton-karantina {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: #ffffff;
+    background-color: #0aeec8;
+}
+
+#aksi-katalog-karantina {
+    margin-bottom: 20px;
+}
+
+#aksi-katalog-karantina .left-align-karantina {
+    padding-left: 0px;
+    margin-left: 10px;
+    padding: 3px;
+    width: 6cm;
+}
+
+#aksi-katalog-karantina .aksiButton-karantina {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #28168d;
+    color: #ffffff;
+}
+
+#aksi-katalog-karantina .kosongButton-karantina {
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #e20c0c;
+    color: #ffffff;
+}
+
+#karantina-daftar-katalog {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top: 1px solid rgba(43, 213, 219, 0.4);
+    border-left: 1px solid rgba(43, 213, 219, 0.4);
+    border-right: 1px solid rgba(43, 213, 219, 0.4);
+}
+
+#card-karantina-katalog {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#card-karantina-katalog #button-redo button {
+    border: 1px solid #1e99ca;
+    border-radius: 4px;
+    background-color: #25b9f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#filter-halaman-karantina {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filter-halaman-karantina span {
+    margin-right: 10px;
+}
+
+#filter-halaman-karantina .box-hal-karantina,
+#filter-halaman-karantina .dropdown {
+    margin-right: 10px;
+}
+
+#filter-halaman .box-hal select {
+    padding: 5px;
+}
+
+#filter-halaman .dropdown-karantina button {
+    border: 1px solid #585858;
+    padding: 4px;
+    width: 1.5cm;
+    border-radius: 3px;
+}
+
+#container-table-karantina-katalog {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#container-table-karantina-katalog th {
+    white-space: nowrap;
+}
+
+#container-table-karantina-katalog tr,
+#container-table-karantina-katalog td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}

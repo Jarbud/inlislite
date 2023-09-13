@@ -344,21 +344,74 @@ return [
             'can' => 'admin',
         ],
         [
-            'text' => 'Verifikasi Akun',
-            'url'  => 'admin/verifikasi-account',
-            'icon' => 'fas fa-users',
-            'can' => 'admin',
-        ],
-        [
             'text' => 'Dashboard',
             'url'  => '/home2',
             'icon' => 'fas fa-solid fa-briefcase',
             'can' => 'user-biasa',
         ],
         [
+            'text' => 'Akuisisi',
+            'icon' => 'fas fa-file-alt',
+            'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Entri Koleksi',
+                    'url' => '/entri_kol',
+                ],
+                [
+                    'text' => 'Daftar Koleksi',
+                    'url' => '#',
+                ],
+                [
+                    'text' => 'Keranjang Koleksi',
+                    'url' => '#',
+                ],
+                [
+                    'text' => 'Karantina Koleksi',
+                    'url' => '#',
+                ]
+            ],
+        ],
+        [
+            'text' => 'Katalog',
+            'icon' => 'fas fa-file-alt',
+            'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Entri Katalog',
+                    'url' => '/katalog',
+                ],
+                [
+                    'text' => 'Salin Katalog',
+                    'url' => '/salin_kat',
+                ],
+                [
+                    'text' => 'Daftar Katalog',
+                    'url' => '/daf_katalog',
+                ],
+                [
+                    'text' => 'Export Data Tag Katalog',
+                    'url' => '/export_kat',
+                ],
+                [
+                    'text' => 'Daftar Konten Digital',
+                    'url' => '/KontenDigital_kat'
+                ],
+                [
+                    'text' => 'Keranjang Katalog',
+                    'url' => '/keranjang_kat'
+                ],
+                [
+                    'text' => 'Karantina Katalog',
+                    'url' => '/karantina_kat'
+                ]
+            ],
+        ],
+        [
             'text' => 'Karya Ilmiah',
             'url'  => '#',
             'icon' => 'fas fa-solid fa-newspaper',
+            'can' => 'user-biasa'
         ],
         [
             'text' => 'Baca Ditempat',
@@ -384,6 +437,7 @@ return [
             'text' => 'OPAC',
             'url'  => '#',
             'icon' => 'fas fa-solid fa-bars',
+            'can' => 'user-biasa'
         ],
         // [
         //     'text' => 'Artikel',
@@ -434,6 +488,12 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/changepassworduser',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Verifikasi Akun',
+            'url'  => 'admin/verifikasi-account',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
         ],
         [
             'text' => 'User Management',
