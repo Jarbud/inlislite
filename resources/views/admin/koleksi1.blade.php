@@ -152,7 +152,9 @@
                 <div class="col" id="si6">
                     <label for="kategori">Kategori</label>
                     <select name="kategori" id="kategori">
-                        <option value=""></option>
+                        @foreach ($kategori as $item)
+                        <option>{{$item->Name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col" id="si7">
@@ -190,7 +192,9 @@
                 <div class="col" id="si11">
                     <label for="mataUang">Mata Uang</label>
                     <select name="mataUang" id="mataUang">
-                        <option value=""></option>
+                        @foreach ($matauang as $item)
+                        <option>{{$item->Currency}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col" id="si12">
@@ -202,7 +206,7 @@
                     <input type="text" name="noPanggil" id="noPanggil">
                 </div>
                 <div class="col" id="si14">
-                    <button>Simpan</button>
+                    <button id="save-eksemplar">Simpan</button>
                     <button id="popupClose">Batal</button>
                 </div>
             </form>

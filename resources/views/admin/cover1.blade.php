@@ -12,7 +12,7 @@
                 $cover = \App\Models\Cover::find(session('imageId'));
                 @endphp
                 @if ($cover)
-                <img id="previewImage" src="data:image/jpeg;base64,{{ base64_encode($cover->image_data) }}"
+                <img id="previewImage" src="data:image/jpeg;base64,{{ base64_encode($cover->CoverURL) }}"
                     alt="Cover Image">
                 @else
                 <img id="previewImage" src="" alt="No Image Found">

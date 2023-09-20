@@ -35,31 +35,32 @@
                     </div>
                     <div class="card-body">
                         <div class="container" id="left">
-                            <label for="utamaj" style="margin-left: 71px">
-                                Judul Utama
-                                <input type="text" placeholder="Masukan Judul Utama" id="utamaj" name="Title"
-                                    class="form-control">
-                            </label>
-                            <label for="sandang">Diawali Kata Sandang
+                            <div id="left1">
+                                <label for="utamaj">Judul Utama</label>
+                                <input type="text" placeholder="Masukan Judul Utama" id="judul_utama" name="judul_utama"
+                                    class="form-control" required>
+                            </div>
+                            <div id="left2">
+                                <label for="sandang">Diawali Kata Sandang</label>
                                 <select name="sandang" id="sandang" class="form-select">
                                     <option>-Tidak Diawali-</option>
                                     @foreach ( $kataSandang as $item )
                                     <option>{{$item->Name}}</option>
                                     @endforeach
                                 </select>
-                            </label>
+                            </div>
                         </div>
                         <div class="container" id="right">
-                            <label for="anakj" style="margin-left: 82px">
-                                Anak Judul
-                                <input type="text" placeholder="Masukan Anak Judul" id="anakj" name="Title"
+                            <div id="right1">
+                                <label for="anakj">Anak Judul</label>
+                                <input type="text" placeholder="Masukan Anak Judul" id="anak_judul" name="anak_judul"
                                     class="form-control">
-                            </label>
-                            <label for="pjawab">
-                                Penanggung Jawab
-                                <input type="text" placeholder="Masukan Penanggung Jawab" id="pjawab"
-                                    name="PenanggungJawab" class="form-control">
-                            </label>
+                            </div>
+                            <div id="right2">
+                                <label for="pjawab">Penanggung Jawab</label>
+                                <input type="text" placeholder="Masukan Penanggung Jawab" id="pjawab" name="pjawab"
+                                    class="form-control">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,47 +70,22 @@
                         Pengarang
                     </div>
                     <div class="card-body">
-                        <div class="right-align">
+                        <div id="top1">
                             <div id="top-column">
-                                <label for="pUtama">
-                                    Pengarang Utama
-                                    <select name="pUtama" id="pUtama" class="form-select">
-                                        <option value="">Nama Orang</option>
-                                    </select>
-                                    <input type="text" placeholder="Masukan Pengarang Utama" id="pUtama" name="Author"
-                                        class="form-control">
-                                    <button><i class="fas fa-th-list"></i></button>
-                                </label>
+                                <label for="pUtama">Pengarang Utama</label>
+                                <input type="text" placeholder="Masukan Pengarang Utama" id="pUtama" name="pUtama"
+                                    class="form-control" required>
                             </div>
-                            <div class="box">
-                                <small><label for="depan"><input type="radio" name="depan" id="depan"> Nama
-                                        Depan</label></small>
-                                <small><label for="belakang"><input type="radio" name="belakang" id="belakang"> Nama
-                                        Belakang</label></small>
-                                <small><label for="keluarga"><input type="radio" name="keluarga" id="keluarga"> Nama
-                                        Keluarga</label></small>
-                            </div>
+                        </div>
+                        <div id="top2">
                             <div id="pengarang">
-                                <label for="pTambahan">
-                                    Pengarang Tambahan
-                                    <select name="pTambahan" id="pTambahan" class="form-select">
-                                        <option value="">Nama Orang</option>
-                                    </select>
-                                    <input type="text" placeholder="Masukan Pengarang Tambahan" id="pTambahan"
-                                        name="Author" class="form-control">
-                                    <button id="list-pengarang" type="button"><i class="fas fa-th-list"></i></button>
-                                    <button id="plus-pengarang" type="button"><i class="fas fa-plus"></i></button>
-                                    <button id="hapus-pengarang" style="display: none;" type="button"><i
-                                            class="fas fa-trash"></i></button>
-                                </label>
-                            </div>
-                            <div class="box" id="box-ptambahan">
-                                <small><label for="depan"><input type="radio" name="depan" id="depan"> Nama
-                                        Depan</label></small>
-                                <small><label for="belakang"><input type="radio" name="belakang" id="belakang"> Nama
-                                        Belakang</label></small>
-                                <small><label for="keluarga"><input type="radio" name="keluarga" id="keluarga"> Nama
-                                        Keluarga</label></small>
+                                <label for="pTambahan">Pengarang Tambahan</label>
+                                <input type="text" placeholder="Masukan Pengarang Tambahan" id="pTambahan"
+                                    name="pTambahan" class="form-control">
+                                <button id="plus-pengarang" type="button" onclick="duplicateInput(this)"><i
+                                        class="fas fa-plus"></i></button>
+                                <button id="hapus-pengarang" style="display: none;" type="button"
+                                    onclick="removeInput(this)"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>
                     </div>
@@ -119,23 +95,21 @@
                     <div class="card-header">
                         Penerbit
                     </div>
-                    <div class="card-body">
-                        <div class="right-align">
-                            <label for="tempatT">
-                                Tempat Terbit
-                                <input type="text" placeholder="Masukan Tempat Terbit" id="tempatT"
-                                    name="PublishLocation" class="form-control">
-                            </label>
-                            <label for="penerbit">
-                                Penerbit
-                                <input type="text" placeholder="Masukan Penerbit" id="penerbit" name="Publisher"
-                                    class="form-control">
-                            </label>
-                            <label for="tahunT">
-                                Tahun Terbit
-                                <input type="text" placeholder="Masukan Tahun Terbit" id="tahunT" name="PublishYear"
-                                    class="form-control">
-                            </label>
+                    <div class="card-body" id="penerbit-body">
+                        <div id="penerbit1">
+                            <label for="tempatT">Tempat Terbit</label>
+                            <input type="text" placeholder="Masukan Tempat Terbit" id="tempatT" name="tempatT"
+                                class="form-control" required>
+                        </div>
+                        <div id="penerbit2">
+                            <label for="penerbit">Penerbit</label>
+                            <input type="text" placeholder="Masukan Penerbit" id="penerbit" name="penerbit"
+                                class="form-control" required>
+                        </div>
+                        <div id="penerbit3">
+                            <label for="tahunT">Tahun Terbit</label>
+                            <input type="text" placeholder="Masukan Tahun Terbit" id="tahunT" name="tahunT"
+                                class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -144,83 +118,66 @@
                     <div class="card-header">
                         Deskripsi Fisik
                     </div>
-                    <div class="card-body">
-                        <div class="right-align">
-                            <label for="tempatT">
-                                Jumlah Halaman
-                                <input type="text" placeholder="Masukan Jumlah Halaman" id="tempatT" name="tempatT"
-                                    class="form-control">
-                            </label>
-                            <label for="ilustrasi">
-                                Ket. Ilustrasi
-                                <input type="text" placeholder="Masukan Ket. Ilustrasi" id="ilustrasi" name="ilustrasi"
-                                    class="form-control">
-                            </label>
-                            <label for="dimensi">
-                                Dimensi
-                                <input type="text" placeholder="Masukan Dimensi" id="dimensi" name="dimensi"
-                                    class="form-control">
-                            </label>
-                            <label for="bahansertaan">
-                                bib_Bahan Sertaan
-                                <input type="text" placeholder="Masukan bib_Bahan Sertaan" id="bahansertaan"
-                                    name="bahansertaan" class="form-control">
-                            </label>
+                    <div class="card-body" id="DesFisik-body">
+                        <div id="DesFisik1">
+                            <label for="jHalaman">Jumlah Halaman</label>
+                            <input type="text" placeholder="Masukan Jumlah Halaman" id="jHalaman" name="jHalaman"
+                                class="form-control">
+                        </div>
+                        <div id="DesFisik2">
+                            <label for="ilustrasi">Ket. Ilustrasi</label>
+                            <input type="text" placeholder="Masukan Ket. Ilustrasi" id="ilustrasi" name="ilustrasi"
+                                class="form-control">
+                        </div>
+                        <div id="DesFisik3">
+                            <label for="dimensi">Dimensi</label>
+                            <input type="text" placeholder="Masukan Dimensi" id="dimensi" name="dimensi"
+                                class="form-control">
+                        </div>
+                        <div id="DesFisik4">
+                            <label for="bahansertaan">bib_Bahan Sertaan</label>
+                            <input type="text" placeholder="Masukan bib_Bahan Sertaan" id="bahansertaan"
+                                name="bahansertaan" class="form-control">
                         </div>
                     </div>
                 </div>
 
                 <div class="card" id="ek5">
-                    <div class="card-body">
-                        <div class="ForEdisi">
-                            <label for="edisi">
-                                Edisi
-                                <input type="text" placeholder="Masukan Edisi" id="edisi" name="Edition"
-                                    class="form-control">
-                            </label>
-                        </div>
-                        <div class="right-align">
-                            <div class="subjek-column">
-                                <label for="subjek">
-                                    Subjek
-                                    <select name="Subject" id="subjek" class="form-select">
-                                        <option value="">Nama Orang</option>
-                                    </select>
-                                    <input type="text" placeholder="Masukan Pengarang Utama" id="pUtama" name="pUtama"
-                                        class="form-control">
-                                    <button id="list-subjek"><i class="fas fa-th-list"></i></button>
-                                    <button id="plus-subjek"><i class="fas fa-plus"></i></button>
-                                </label>
-                            </div>
-                            <div class="box">
-                                <small><label for="depan"><input type="radio" name="depan" id="depan"> Nama
-                                        Depan</label></small>
-                                <small><label for="belakang"><input type="radio" name="belakang" id="belakang"> Nama
-                                        Belakang</label></small>
-                                <small><label for="keluarga"><input type="radio" name="keluarga" id="keluarga"> Nama
-                                        Keluarga</label></small>
-                            </div>
-                        </div>
-                        <div class="ForEdisi">
-                            <label for="klasddc">
-                                No. Klas DDC
-                                <input type="text" placeholder="Masukan No. Klas DDC" id="klasddc" name="klasddc"
-                                    class="form-control">
-                            </label>
-                        </div>
+                    <div class="card-body" id="ForEdisi-body">
                         <div id="ForEdisi1">
-                            <label for="No. Panggil">
-                                No. Panggil
-                                <input type="text" placeholder="Masukan No. Panggil" id="nopanggil" name="CallNumber"
+                            <label for="edisi">Edisi</label>
+                            <input type="text" placeholder="Masukan Edisi" id="edisi" name="Edition"
+                                class="form-control">
+                        </div>
+                        <div id="ForEdisi2">
+                            <div id="subjek-column">
+                                <label for="subjek">Subjek</label>
+                                <input type="text" placeholder="Masukan Subjek" id="subjek" name="Subject"
                                     class="form-control">
-                                <button id="plus-noPanggil"><i class="fas fa-plus"></i></button>
-                            </label>
-                            <label for="isbn">
-                                ISBN
-                                <input type="text" placeholder="Masukan ISBN" id="isbn" name="ISBN"
-                                    class="form-control">
-                                <button id="plus-ISBN"><i class="fas fa-plus"></i></button>
-                            </label>
+                                <button id="plus-subjek" type="button"><i class="fas fa-plus"></i></button>
+                                <button id="hapus-subjek" style="display: none;" type="button"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div id="ForEdisi3">
+                            <label for="klasddc">No. Klas DDC</label>
+                            <input type="text" placeholder="Masukan No. Klas DDC" id="klasddc" name="DeweyNo"
+                                class="form-control">
+                        </div>
+                        <div id="ForEdisi4">
+                            <label for="No. Panggil">No. Panggil</label>
+                            <input type="text" placeholder="Masukan No. Panggil" id="nopanggil" name="CallNumber"
+                                class="form-control">
+                            <button id="plus-noPanggil" type="button"><i class="fas fa-plus"></i></button>
+                            <button id="hapus-noPanggil" style="display: none;" type="button"><i
+                                    class="fas fa-trash"></i></button>
+                        </div>
+                        <div id="ForEdisi5">
+                            <label for="isbn">ISBN</label>
+                            <input type="text" placeholder="Masukan ISBN" id="isbn" name="ISBN" class="form-control">
+                            <button id="plus-ISBN" type="button"><i class="fas fa-plus"></i></button>
+                            <button id="hapus-ISBN" style="display: none;" type="button"><i
+                                    class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
@@ -229,59 +186,41 @@
                     <div class="card-header">
                         Catatan
                     </div>
-                    <div class="card-body">
-                        <div class="right-align">
-                            <div id="label-catatan">
-                                <label for="catatan">
-                                    Catatan
-                                    <textarea placeholder="Masukan Jumlah Halaman" id="catatan" name="Note"
-                                        class="form-control"></textarea>
-                                    <button id="plus-catatan"><i class="fas fa-plus"></i></button>
-                                </label>
-                            </div>
-                            <div class="box">
-                                <small><label for="abstrak"><input type="radio" name="abstrak" id="abstrak">
-                                        Abstrak /
-                                        Anotasi</label></small>
-                                <small><label for="disertasi"><input type="radio" name="disertasi" id="disertasi">
-                                        Catatan Disertasi</label></small>
-                                <small><label for="blibliografi"><input type="radio" name="blibliografi"
-                                            id="blibliografi">
-                                        Catatan Bibliografi</label></small>
-                                <small><label for="isi"><input type="radio" name="isi" id="isi"> Rincian
-                                        Isi</label></small>
-                                <small><label for="umum"><input type="radio" name="umum" id="umum"> Catatan
-                                        Umum</label></small>
-                            </div>
+                    <div class="card-body" id="catatan-body">
+                        <div id="catatan1">
+                            <label for="catatan">Catatan</label>
+                            <textarea placeholder="Masukan Jumlah Halaman" id="catatan" name="Note"
+                                class="form-control"></textarea>
+                            <button id="plus-catatan" type="button"><i class="fas fa-plus"></i></button>
+                            <button id="hapus-catatan" style="display: none;" type="button"><i
+                                    class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" id="ek7">
-                    <div class="card-body">
-                        <div class="right-align">
-                            <label for="bahasa">
-                                Bahasa
-                                <select name="Languages" id="bahasa" class="form-select">
-                                    @foreach ($refitems as $item)
-                                    <option>{{$item->Code}} - {{$item->Name}}</option>
-                                    @endforeach
-                                </select>
-                            </label>
-                            <label for="karya">
-                                Bentuk Karya Tulis
-                                <select name="karya" id="karya" class="form-select">
-                                    @foreach ($refkarya as $item)
-                                    <option>{{$item->Code}} - {{$item->Name}}</option>
-                                    @endforeach
-                                </select>
-                            </label>
-                            <label for="sasaran">
-                                Kelompok Sasaran
-                                <select name="sasaran" id="sasaran" class="form-select">
-                                    <option>PDM - Peneliti, Dosen Mahasiswa</option>
-                                </select>
-                            </label>
+                    <div class="card-body" id="bahasa-body">
+                        <div id="bahasa1">
+                            <label for="bahasa">Bahasa</label>
+                            <select name="Languages" id="bahasa" class="form-select">
+                                @foreach ($refitems as $item)
+                                <option>{{$item->Code}} - {{$item->Name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div id="bahasa2">
+                            <label for="karya">Bentuk Karya Tulis</label>
+                            <select name="karya" id="karya" class="form-select">
+                                @foreach ($refkarya as $item)
+                                <option>{{$item->Code}} - {{$item->Name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div id="bahasa3">
+                            <label for="sasaran">Kelompok Sasaran</label>
+                            <select name="sasaran" id="sasaran" class="form-select">
+                                <option>PDM - Peneliti, Dosen Mahasiswa</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -290,14 +229,14 @@
                     <div class="card-header">
                         Lokasi Koleksi Daring
                     </div>
-                    <div class="card-body">
-                        <div class="right-align">
-                            <label for="lokasikol-daring">
-                                Lokasi Koleksi Daring
-                                <input type="text" placeholder="Masukan Lokasi Koleksi Daring" id="lokasikol-daring"
-                                    name="lokasikol-daring" class="form-control">
-                                <button id="plus-lokasikol_daring"><i class="fas fa-plus"></i></button>
-                            </label>
+                    <div class="card-body" id="lokasikol-body">
+                        <div id="lokasikol1">
+                            <label for="lokasikol-daring">Lokasi Koleksi Daring</label>
+                            <input type="text" placeholder="Masukan Lokasi Koleksi Daring" id="lokasikol-daring"
+                                name="lokasikol-daring" class="form-control">
+                            <button id="plus-lokasikol_daring" type="button"><i class="fas fa-plus"></i></button>
+                            <button id="hapus-lokasikol_daring" style="display: none;" type="button"><i
+                                    class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>

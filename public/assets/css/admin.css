@@ -273,52 +273,62 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-items: flex-start;
+    margin-top: 10px;
 }
 
-#ek1 #left label {
-    margin-bottom: 15px;
-    margin-left: 20px;
+#ek1 #left1 {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
 }
 
-#ek1 #left label input {
-    width: 10cm;
-    border: 1px solid #767676;
-    border-radius: 0;
-    flex: 1;
-    margin-left: 10px;
+#ek1 #left2 {
+    display: flex;
+    flex-direction: row;
 }
 
-#ek1 #left label select {
-    padding: 6px;
-    margin-right: 6px;
-    width: 4cm;
+#ek1 #left1 input {
     border: 1px solid #767676;
     border-radius: 0;
-    flex: 1;
     margin-left: 10px;
+    width: 10.4cm;
+}
+
+#ek1 #left2 select {
+    height: auto;
+    border: 1px solid #767676;
+    border-radius: 0;
+    margin-left: 10px;
+    width: 6cm;
 }
 
 #ek1 #right {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: right;
+    margin-top: 10px;
 }
 
-#ek1 #right label {
-    margin-bottom: 15px;
-    margin-left: 20px;
+#ek1 #right1 {
     display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
 }
 
-#ek1 #right label input {
-    width: 10cm;
+#ek1 #right2 {
+    display: flex;
+    flex-direction: row;
+}
+
+#ek1 #right1 input {
+    width: 10.7cm;
     border: 1px solid #767676;
     border-radius: 0;
-    flex: 1;
+    margin-left: 10px;
+}
+
+#ek1 #right2 input {
+    width: 9cm;
+    border: 1px solid #767676;
+    border-radius: 0;
     margin-left: 10px;
 }
 
@@ -331,97 +341,61 @@
     background-color: #f5f5f5;
 }
 
-#ek2 .card-body .right-align .box {
+#ek2 #top1 {
     display: flex;
-    border: 1px solid #767676;
-    border-top: none;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+#ek2 #top1 #top-column {
+    display: flex;
+    flex-direction: row;
+}
+
+#ek2 #top1 #top-column input {
     width: 18cm;
-    margin-left: 230px;
-    margin-bottom: 15px;
-    margin-top: 0px;
-    background-color: #f5f5f5;
-}
-
-#ek2 .card-body .right-align .box input {
     margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#ek2 .right-align #top-column label {
-    display: flex;
-    margin-bottom: 0px;
-    margin-left: 85px;
-}
-
-#ek2 .right-align #top-column label select {
-    width: 5cm;
-    margin-right: 0px;
-    margin-left: 10px;
-    padding: 3px;
     border: 1px solid #767676;
     border-radius: 0;
 }
 
-#ek2 .right-align #top-column label input {
-    width: 12cm;
-    margin-left: 0px;
+#ek2 #top2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+#ek2 #top2 #pengarang {
+    display: flex;
+    flex-direction: row;
+}
+
+#ek2 #top2 #pengarang input {
+    width: 17cm;
+    margin-left: 10px;
     border: 1px solid #767676;
     border-radius: 0;
     border-right: none;
-    border-left: none;
 }
 
-#ek2 .right-align #top-column label button {
-    background-color: #e08e0b;
-    border: 1px solid #d58512;
-    color: #ffffff;
-    padding: 4px 10.5px;
-}
-
-#ek2 .right-align #pengarang label {
-    display: flex;
-    margin-bottom: 0px;
-    margin-left: 57px;
-}
-
-#ek2 .right-align #pengarang label select {
-    width: 5cm;
-    margin-right: 0px;
-    margin-left: 10px;
-    padding: 3px;
-    border: 1px solid #767676;
-    border-radius: 0;
-}
-
-#ek2 .right-align #pengarang label input {
-    width: 11cm;
-    margin-left: 0px;
-    border: 1px solid #767676;
-    border-radius: 0;
-    border-right: none;
-    border-left: none;
-}
-
-#ek2 .right-align #pengarang label #plus-pengarang {
+#ek2 #top2 #pengarang #plus-pengarang {
     background-color: #449d44;
     border: 1px solid #398439;
     color: #ffffff;
-    padding: 4px 10.5px;
+    height: 1cm;
+    padding: 4px 10px;
 }
 
-#ek2 .right-align #pengarang label #list-pengarang {
-    background-color: #e08e0b;
-    border: 1px solid #d58512;
-    color: #ffffff;
-    padding: 4px 10.5px;
-}
-
-#ek2 .right-align #pengarang label #hapus-pengarang {
+#ek2 #top2 #pengarang #hapus-pengarang {
     background-color: #be1111;
     border: 1px solid #c51212;
     color: #ffffff;
-    padding: 4px 10.5px;
+    height: 1cm;
+    padding: 4px 10px;
 }
 
 #ek3 {
@@ -433,22 +407,34 @@
     background-color: #f5f5f5;
 }
 
-#ek3 .card-body .right-align {
+#ek3 #penerbit-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-right: 15px;
 }
 
-#ek3 .card-body .right-align label {
+#ek3 #penerbit-body #penerbit1 {
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
-#ek3 .right-align label input {
+#ek3 #penerbit-body #penerbit2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek3 #penerbit-body #penerbit3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek3 #penerbit-body input {
     width: 18cm;
-    flex: 1;
     margin-left: 10px;
-    margin-right: 40px;
     border: 1px solid #767676;
     border-radius: 0;
 }
@@ -462,22 +448,39 @@
     background-color: #f5f5f5;
 }
 
-#ek4 .card-body .right-align {
+#ek4 #DesFisik-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-right: 15px;
 }
 
-#ek4 .card-body .right-align label {
+#ek4 #DesFisik-body #DesFisik1 {
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
-#ek4 .right-align label input {
+#ek4 #DesFisik-body #DesFisik2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek4 #DesFisik-body #DesFisik3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+#ek4 #DesFisik-body #DesFisik4 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek4 #DesFisik-body input {
     width: 18cm;
-    flex: 1;
     margin-left: 10px;
-    margin-right: 40px;
     border: 1px solid #767676;
     border-radius: 0;
 }
@@ -487,115 +490,132 @@
     border: 1px solid #ddd;
 }
 
-#ek5 .card-body .right-align .box {
+#ek5 #ForEdisi-body {
     display: flex;
-    border: 1px solid #767676;
-    border-top: none;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 15px;
+}
+
+#ek5 #ForEdisi-body #ForEdisi1 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek5 #ForEdisi-body #ForEdisi2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+#ek5 #ForEdisi-body #ForEdisi3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek5 #ForEdisi-body #ForEdisi4 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek5 #ForEdisi-body #ForEdisi5 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek5 #ForEdisi-body #ForEdisi1 input {
     width: 18cm;
-    margin-left: 225px;
-    margin-bottom: 15px;
-    margin-top: 0px;
-    background-color: #f5f5f5;
-}
-
-#ek5 .card-body .right-align .box input {
     margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#ek5 .right-align .subjek-column label {
-    display: flex;
-    margin-bottom: 0px;
-    margin-left: 164px;
-}
-
-#ek5 .right-align .subjek-column label input {
-    width: 13cm;
-    margin-left: 0px;
     border: 1px solid #767676;
     border-radius: 0;
-    border-left: none;
+}
+
+#ek5 #ForEdisi-body #ForEdisi2 #subjek-column {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#ek5 #ForEdisi-body #ForEdisi2 #subjek-column input {
+    width: 17cm;
+    margin-left: 10px;
+    border: 1px solid #767676;
+    border-radius: 0;
     border-right: none;
 }
 
-#ek5 .right-align .subjek-column label select {
-    width: 5cm;
-    margin-right: 0px;
-    margin-left: 10px;
-    padding: 3px;
-    border: 1px solid #767676;
-    border-radius: 0;
-}
-
-#ek5 .right-align .subjek-column label #plus-subjek {
+#ek5 #ForEdisi-body #ForEdisi2 #subjek-column #plus-subjek {
     background-color: #449d44;
     border: 1px solid #398439;
     color: #ffffff;
-    padding: 4px 10.5px;
-    margin-right: 40px;
+    height: 1cm;
+    padding: 4px 10px;
 }
 
-#ek5 .right-align .subjek-column label #list-subjek {
-    background-color: #e08e0b;
-    border: 1px solid #d58512;
+#ek5 #ForEdisi-body #ForEdisi2 #subjek-column #hapus-subjek {
+    background-color: #be1111;
+    border: 1px solid #c51212;
     color: #ffffff;
-    padding: 4px 10.5px;
+    height: 1cm;
+    padding: 4px 10px;
 }
 
-#ek5 .card-body .ForEdisi {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-#ek5 .card-body .ForEdisi label {
-    display: flex;
-    margin-bottom: 15px;
-}
-
-#ek5 .card-body .ForEdisi label input {
+#ek5 #ForEdisi-body #ForEdisi3 input {
     width: 18cm;
-    flex: 1;
     margin-left: 10px;
-    margin-right: 40px;
     border: 1px solid #767676;
     border-radius: 0;
 }
 
-#ek5 .card-body #ForEdisi1 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-#ek5 .card-body #ForEdisi1 label {
-    display: flex;
-    margin-bottom: 15px;
-}
-
-#ek5 .card-body #ForEdisi1 label input {
+#ek5 #ForEdisi-body #ForEdisi4 input {
     width: 17cm;
-    flex: 1;
     margin-left: 10px;
     border: 1px solid #767676;
     border-radius: 0;
+    border-right: none;
 }
 
-#ek5 .card-body #ForEdisi1 label #plus-noPanggil {
+#ek5 #ForEdisi-body #ForEdisi4 #plus-noPanggil {
     background-color: #449d44;
     border: 1px solid #398439;
     color: #ffffff;
-    padding: 4px 10.5px;
-    margin-right: 40px;
+    padding: 4px 10px;
+    height: 1cm;
 }
 
-#ek5 .card-body #ForEdisi1 label #plus-ISBN {
+#ek5 #ForEdisi-body #ForEdisi4 #hapus-noPanggil {
+    background-color: #be1111;
+    border: 1px solid #c51212;
+    color: #ffffff;
+    height: 1cm;
+    padding: 4px 10px;
+}
+
+#ek5 #ForEdisi-body #ForEdisi5 input {
+    width: 17cm;
+    margin-left: 10px;
+    border: 1px solid #767676;
+    border-radius: 0;
+    border-right: none;
+}
+
+#ek5 #ForEdisi-body #ForEdisi5 #plus-ISBN {
     background-color: #449d44;
     border: 1px solid #398439;
     color: #ffffff;
-    padding: 4px 10.5px;
-    margin-right: 40px;
+    padding: 4px 10px;
+    height: 1cm;
+}
+
+#ek5 #ForEdisi-body #ForEdisi4 #hapus-ISBN {
+    background-color: #be1111;
+    border: 1px solid #c51212;
+    color: #ffffff;
+    height: 1cm;
+    padding: 4px 10px;
 }
 
 #ek6 {
@@ -607,55 +627,42 @@
     background-color: #f5f5f5;
 }
 
-#ek6 .card-body .right-align .box {
-    display: flex;
-    border: 1px solid #767676;
-    border-top: none;
-    width: 18cm;
-    margin-left: 225px;
-    margin-bottom: 15px;
-    margin-top: 0px;
-    background-color: #f5f5f5;
-}
-
-#ek6 .card-body .right-align .box input {
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#ek6 .card-body .right-align {
-    display: flex;
-    flex-direction: column;
-}
-
-#ek6 .card-body .right-align #label-catatan {
+#ek6 #catatan-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-right: 15px;
 }
 
-#ek6 .card-body .right-align #label-catatan label {
+#ek6 #catatan-body #catatan1 {
     display: flex;
-    margin-bottom: 0px;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
-#ek6 .card-body .right-align #label-catatan label textarea {
+#ek6 #catatan-body #catatan1 textarea {
     width: 17cm;
-    flex: 1;
-    height: 20px;
     margin-left: 10px;
-    margin-bottom: 0;
     border: 1px solid #767676;
     border-radius: 0;
+    border-right: none;
+    height: 1cm;
 }
 
-#ek6 .card-body .right-align #label-catatan label #plus-catatan {
+#ek6 #catatan-body #catatan1 #plus-catatan {
     background-color: #449d44;
     border: 1px solid #398439;
     color: #ffffff;
-    padding: 4px 10.5px;
-    margin-right: 40px;
+    padding: 4px 11px;
+    height: 1cm;
+}
+
+#ek6 #catatan-body #catatan1 #hapus-catatan {
+    background-color: #be1111;
+    border: 1px solid #c51212;
+    color: #ffffff;
+    height: 1cm;
+    padding: 4px 10px;
 }
 
 #ek7 {
@@ -663,24 +670,37 @@
     border: 1px solid #ddd;
 }
 
-#ek7 .card-body .right-align {
+#ek7 #bahasa-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-right: 15px;
 }
 
-#ek7 .card-body .right-align label {
+#ek7 #bahasa-body #bahasa1 {
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
-#ek7 .right-align label select {
+#ek7 #bahasa-body #bahasa2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek7 #bahasa-body #bahasa3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#ek7 #bahasa-body select {
     width: 18cm;
-    flex: 1;
     margin-left: 10px;
-    margin-right: 40px;
     border: 1px solid #767676;
     border-radius: 0;
+    height: 1cm;
 }
 
 #ek8 {
@@ -692,31 +712,42 @@
     background-color: #f5f5f5;
 }
 
-#ek8 .card-body .right-align {
+#ek8 #lokasikol-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-right: 15px;
 }
 
-#ek8 .card-body .right-align label {
+#ek8 #lokasikol-body #lokasikol1 {
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
-#ek8 .right-align label input {
+#ek8 #lokasikol-body #lokasikol1 input {
     width: 17cm;
-    flex: 1;
     margin-left: 10px;
     border: 1px solid #767676;
     border-radius: 0;
+    border-right: none;
+    height: 1cm;
 }
 
-#ek8 .card-body .right-align label #plus-lokasikol_daring {
+#ek8 #lokasikol-body #lokasikol1 #plus-lokasikol_daring {
     background-color: #449d44;
     border: 1px solid #398439;
     color: #ffffff;
-    padding: 4px 10.5px;
-    margin-right: 40px;
+    padding: 4px 11px;
+    height: 1cm;
+}
+
+#ek6 #catatan-body #catatan1 #hapus-lokasikol_daring {
+    background-color: #be1111;
+    border: 1px solid #c51212;
+    color: #ffffff;
+    height: 1cm;
+    padding: 4px 10px;
 }
 
 #button-simpan-katalog {
@@ -1038,6 +1069,10 @@ body.popup-open {
     margin-bottom: 20px;
 }
 
+#kat2 #popupContent #si1 #pilihan-si1 label {
+    margin-left: 20px;
+}
+
 #kat2 #popupContent #si1 #pilihan-si1 input {
     width: 2cm;
     margin-left: 10px;
@@ -1049,7 +1084,7 @@ body.popup-open {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-left: 150px;
+    margin-left: 170px;
     column-gap: 20px;
 }
 
@@ -1070,6 +1105,10 @@ body.popup-open {
     margin-right: 0;
 }
 
+#kat2 #popupContent #si2 label {
+    margin-left: 9px;
+}
+
 #kat2 #popupContent #si2 input {
     margin-left: 10px;
     padding: 3px;
@@ -1078,12 +1117,20 @@ body.popup-open {
     border-radius: 0;
 }
 
+#kat2 #popupContent #si3 label {
+    margin-left: 55px;
+}
+
 #kat2 #popupContent #si3 select {
     margin-left: 10px;
     width: 10cm;
     padding: 3px;
     border: 1px solid #767676;
     border-radius: 0;
+}
+
+#kat2 #popupContent #si4 label {
+    margin-left: 47px;
 }
 
 #kat2 #popupContent #si4 select {
@@ -1109,6 +1156,10 @@ body.popup-open {
     background-color: #c51212;
 }
 
+#kat2 #popupContent #si5 label {
+    margin-left: 65px;
+}
+
 #kat2 #popupContent #si5 select {
     margin-left: 10px;
     width: 10cm;
@@ -1117,12 +1168,20 @@ body.popup-open {
     border-radius: 0;
 }
 
+#kat2 #popupContent #si6 label {
+    margin-left: 90px;
+}
+
 #kat2 #popupContent #si6 select {
     margin-left: 10px;
     width: 10cm;
     padding: 3px;
     border: 1px solid #767676;
     border-radius: 0;
+}
+
+#kat2 #popupContent #si7 label {
+    margin-left: 110px;
 }
 
 #kat2 #popupContent #si7 select {
@@ -1141,12 +1200,20 @@ body.popup-open {
     border-radius: 0;
 }
 
+#kat2 #popupContent #si9 label {
+    margin-left: 53px;
+}
+
 #kat2 #popupContent #si9 select {
     margin-left: 10px;
     width: 10cm;
     padding: 3px;
     border: 1px solid #767676;
     border-radius: 0;
+}
+
+#kat2 #popupContent #si10 label {
+    margin-left: 55px;
 }
 
 #kat2 #popupContent #si10 select {
@@ -1157,12 +1224,54 @@ body.popup-open {
     border-radius: 0;
 }
 
+#kat2 #popupContent #si11 label {
+    margin-left: 70px;
+}
+
 #kat2 #popupContent #si11 select {
     margin-left: 10px;
     width: 10cm;
     padding: 3px;
     border: 1px solid #767676;
     border-radius: 0;
+}
+
+#kat2 #popupContent #si12 label {
+    margin-left: 108px;
+}
+
+#kat2 #popupContent #si12 input {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si13 label {
+    margin-left: 66px;
+}
+
+#kat2 #popupContent #si13 input {
+    margin-left: 10px;
+    width: 10cm;
+    padding: 3px;
+    border: 1px solid #767676;
+    border-radius: 0;
+}
+
+#kat2 #popupContent #si14 #save-eksemplar {
+    padding: 3px;
+    color: #ffffff;
+    border: 1px solid #008d4c;
+    background-color: #00a65a;
+}
+
+#kat2 #popupContent #si14 #popupClose {
+    padding: 3px;
+    color: #ffffff;
+    border: 1px solid #be1111;
+    background-color: #c51212;
 }
 
 /* COVER */

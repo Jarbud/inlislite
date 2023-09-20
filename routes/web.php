@@ -91,7 +91,7 @@ Route::post('uploadPhotoVerify/{id}', [App\Http\Controllers\VerifikasiController
 Route::post('updatePhotoVerify/{id}', [App\Http\Controllers\VerifikasiController::class, 'UpdatePhoto'])->name('updatePhotoVerify');
 Route::get('notifications/get', [App\Http\Controllers\NotificationsController::class, 'getNotificationsData'])->name('notifications.get');
 Route::get('updateStatusVerify/{id}/{status}', [App\Http\Controllers\VeraccountController::class, 'updateStatusVerify'])->name('updateStatusVerify');
-Route::get('/upload', [App\Http\Controllers\coverUploadController::class, 'showUploadForm'])->name('upload.form');
+Route::get('/upload', [App\Http\Controllers\coverUploadController::class, 'show'])->name('upload.form');
 Route::post('/upload-cover', [App\Http\Controllers\coverUploadController::class, 'upload'])->name('upload.file');
 Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
 Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
