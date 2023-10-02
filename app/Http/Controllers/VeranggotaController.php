@@ -71,7 +71,7 @@ class VeranggotaController extends Controller
     public function updateStatusVerify(string $id,string $email, string $status){
 
         $member = Members::find($id);
-        $user = User::where('email', '=', $email)->first();;
+        $user = User::where('email', '=', $email)->first();
         if($status == "accept"){
             $startDate = Carbon::now();
             $newDate = $startDate->addYear();

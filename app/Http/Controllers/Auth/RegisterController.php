@@ -97,6 +97,7 @@ class RegisterController extends Controller
             'no_pengenal' => $data['no_pengenal'],
             'telp' => $data['telp'],
             'verifikasi' => "false",
+            'alamat' => $data['alamat'],
             // 'kode_verifikasi' => $kode,
         ]);
         // return redirect()->route('dashboard');

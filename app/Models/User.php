@@ -29,6 +29,7 @@ class User extends Authenticatable
         'tgl_habis_anggota',
         'verifikasi',
         'identitas_id',
+        'alamat'
     ];
 
     /**

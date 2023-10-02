@@ -372,8 +372,15 @@ return [
         ],
         [
             'text' => 'Karya Ilmiah',
-            'url'  => '#',
+            'url'  => '/karya-ilmiah-mahasiswa',
             'icon' => 'fas fa-solid fa-newspaper',
+            'can' => 'user-biasa',
+        ],
+        [
+            'text' => 'Karya Ilmiah',
+            'url'  => '/karya-ilmiah-admin',
+            'icon' => 'fas fa-solid fa-newspaper',
+            'can' => 'admin',
         ],
         [
             'text' => 'Baca Ditempat',

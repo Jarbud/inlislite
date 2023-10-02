@@ -56,6 +56,8 @@ Route::get('/berhasil-mendaftar', function () {
     return view('success_daftar');
 });
 
+
+
 // Route::get('/dashboard', function () {
 //     return view('admin/dashboardmahasiswa');
 // });
@@ -65,6 +67,9 @@ Auth::routes();
 // URL
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [App\Http\Controllers\DashboardmhsController::class, 'index'])->name('dashboard');
+Route::get('/karya-ilmiah-mahasiswa', [App\Http\Controllers\KaryailmiahmhsController::class, 'index'])->name('karya-ilmiah-mahasiswa');
+Route::get('/karya-ilmiah-admin', [App\Http\Controllers\KaryailmiahadminController::class, 'index'])->name('karya-ilmiah-admin');
+Route::get('/upload-karya-ilmiah-mahasiswa', [App\Http\Controllers\KaryailmiahmhsController::class, 'create'])->name('upload-karya-ilmiah-mahasiswa');
 Route::get('/opac', [App\Http\Controllers\OpacController::class, 'show'])->name('opac');
 Route::get('/daftar-show', [App\Http\Controllers\PendaftaranController::class, 'show'])->name('daftar-show');
 Route::post('/daftar', [App\Http\Controllers\PendaftaranController::class, 'store'])->name('daftar');
@@ -82,8 +87,17 @@ Route::post('updatePhotoVerify/{id}', [App\Http\Controllers\VerifikasiController
 Route::get('notifications/get',[App\Http\Controllers\NotificationsController::class, 'getNotificationsData'])->name('notifications.get');
 Route::get('updateStatusVerify/{id}/{status}', [App\Http\Controllers\VeraccountController::class, 'updateStatusVerify'])->name('updateStatusVerify');
 Route::get('updateStatusVerifyAnggota/{id}/{email}/{status}', [App\Http\Controllers\VeranggotaController::class, 'updateStatusVerify'])->name('updateStatusVerifyAnggota');
+Route::get('updateStatusVerifyKiAcc/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiAcc'])->name('updateStatusVerifyKiAcc');
+Route::get('updateStatusVerifyKiDitolak', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiDitolak'])->name('updateStatusVerifyKiDitolak');
+Route::get('karyailmiahadminshow/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'show'])->name('karyailmiahadminshow');
+
+
 
 //RESOURCES
 Route::resource('usermanagement',App\Http\Controllers\UsermanagementController::class);
 Route::resource('registerusers',App\Http\Controllers\Auth\RegisterController::class);
+Route::resource('Karyailmiahmhs',App\Http\Controllers\KaryailmiahmhsController::class);
+
+
+
 
