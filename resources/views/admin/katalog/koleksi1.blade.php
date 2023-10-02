@@ -1,4 +1,4 @@
-@extends('admin/entrikatalog')
+@extends('admin/katalog/entrikatalog')
 
 @section('title', 'Koleksi')
 
@@ -109,16 +109,18 @@
     <div class="container" id="popupContainer">
         <div id="popupContent">
             <h4>Tambah Eksemplar | ...</h4>
-            <form action="#" autocomplete="off" method="POST">
+            <form action="{{ route('koleksi-store') }}" autocomplete="off" method="POST">
                 <div class="col" id="si1">
                     <div id="pilihan-si1">
                         <label for="jEksemplar">Jumlah Eksemplar</label>
                         <input type="text" name="jEksemplar" id="jEksemplar">
+                        <button type="button" id="plus-eksemplar" onclick="duplicateEksemplar()"><i
+                                class="fas fa-plus"></i></button>
                     </div>
                     <div id="isi-si1">
-                        <label>No Induk <input type="text" name="noInduk" id="noInduk"></label>
-                        <label>No Barcode <input type="text" name="noBarcode" id="noBarcode"></label>
-                        <label>No RFID <input type="text" name="noRFID" id="noRFID"></label>
+                        <label>No Induk <input type="text" name="noInduk" id="noInduk" required></label>
+                        <label>No Barcode <input type="text" name="noBarcode" id="noBarcode" required></label>
+                        <label>No RFID <input type="text" name="noRFID" id="noRFID" required></label>
                     </div>
                 </div>
                 <div class="col" id="si2">

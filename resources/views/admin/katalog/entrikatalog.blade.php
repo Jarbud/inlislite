@@ -17,10 +17,10 @@ $halaman = Request::segment(2);
             <div class="container" id="nav1">
                 <nav>
                     <ul>
-                        <li><a href="{{ route('katalog') }}">Katalog</a></li>
-                        <li><a href="{{ route('koleksi')}}">Koleksi</a></li>
-                        <li><a href="{{ route('upload.form') }}">Cover</a></li>
-                        <li><a href="{{ route('kontendigital') }}">Konten Digital</a></li>
+                        <li id="menu-katalog"><a href="{{ route('katalog') }}">Katalog</a></li>
+                        <li id="menu-koleksi"><a href="{{ route('koleksi')}}">Koleksi</a></li>
+                        <li id="menu-cover"><a href="{{ route('upload.form') }}">Cover</a></li>
+                        <li id="menu-kontendigital"><a href="{{ route('kontendigital') }}">Konten Digital</a></li>
                     </ul>
                 </nav>
             </div>
@@ -32,13 +32,13 @@ $halaman = Request::segment(2);
 </div>
 @section('bagian')
 @if($halaman === 'katalog')
-@include('admin.katalog1')
+@include('admin.katalog.katalog1')
 @elseif($halaman === 'koleksi')
-@include('admin.koleksi1')
+@include('admin.katalog.koleksi1')
 @elseif($halaman === 'upload')
-@include('admin.cover1')
+@include('admin.katalog.cover1')
 @elseif($halaman === 'kontendigital')
-@include('admin.kontenDigital1')
+@include('admin.katalog.kontenDigital1')
 @endif
 @endsection
 @stop
@@ -50,5 +50,5 @@ $halaman = Request::segment(2);
 @stop
 
 @section('js')
-<link rel="stylesheet" href="{{ asset('/assets/js/admin.js') }}">
+<script src="{{ asset('/assets/js/admin.js') }}"></script>
 @stop

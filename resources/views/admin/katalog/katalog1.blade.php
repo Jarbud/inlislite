@@ -1,4 +1,4 @@
-@extends('admin/entrikatalog')
+@extends('admin/katalog/entrikatalog')
 
 @section('title', 'Katalog')
 
@@ -7,10 +7,10 @@
     <form action="{{ route('katalog-store') }}" autocomplete="off" method="POST">
         @csrf
         <div class="container" id="button-kat">
-            <button class="simpan-button">Simpan</button>
+            <button class="simpan-button" type="submit" name="action" value="save">Lanjutkan</button>
             <button class="salin-judul">Salin Judul</button>
             <button class="salin-katalog">Salin Katalog dari</button>
-            <button class="selesai-button">Selesai</button>
+            <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button>
         </div>
         <hr>
         <div class="dropdown" id="dropbahan">
@@ -18,7 +18,7 @@
             <select name="jenis-bahan" id="jenis-bahan">
                 <option disabled selected>-Jenis Bahan-</option>
                 @foreach ( $jenisBahan as $item )
-                <option>{{$item->Name}} ({{ $item->Keterangan }})</option>
+                <option value="{{ $item->ID }}">{{$item->Name}} ({{ $item->Keterangan }})</option>
                 @endforeach
             </select>
         </div>
@@ -81,11 +81,11 @@
                             <div id="pengarang">
                                 <label for="pTambahan">Pengarang Tambahan</label>
                                 <input type="text" placeholder="Masukan Pengarang Tambahan" id="pTambahan"
-                                    name="pTambahan" class="form-control">
-                                <button id="plus-pengarang" type="button" onclick="duplicateInput(this)"><i
+                                    name="pTambahan[]" class="form-control">
+                                <button id="plus-pengarang" type="button" onclick="duplicatePengarang(this)"><i
                                         class="fas fa-plus"></i></button>
                                 <button id="hapus-pengarang" style="display: none;" type="button"
-                                    onclick="removeInput(this)"><i class="fas fa-trash"></i></button>
+                                    onclick="removePengarang(this)"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>
                     </div>
@@ -152,11 +152,12 @@
                         <div id="ForEdisi2">
                             <div id="subjek-column">
                                 <label for="subjek">Subjek</label>
-                                <input type="text" placeholder="Masukan Subjek" id="subjek" name="Subject"
+                                <input type="text" placeholder="Masukan Subjek" id="subjek" name="Subject[]"
                                     class="form-control">
-                                <button id="plus-subjek" type="button"><i class="fas fa-plus"></i></button>
-                                <button id="hapus-subjek" style="display: none;" type="button"><i
-                                        class="fas fa-trash"></i></button>
+                                <button id="plus-subjek" type="button" onclick="duplicateSubjek(this)"><i
+                                        class="fas fa-plus"></i></button>
+                                <button id="hapus-subjek" style="display: none;" type="button"
+                                    onclick="removeSubjek(this)"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>
                         <div id="ForEdisi3">
@@ -165,19 +166,26 @@
                                 class="form-control">
                         </div>
                         <div id="ForEdisi4">
-                            <label for="No. Panggil">No. Panggil</label>
-                            <input type="text" placeholder="Masukan No. Panggil" id="nopanggil" name="CallNumber"
-                                class="form-control">
-                            <button id="plus-noPanggil" type="button"><i class="fas fa-plus"></i></button>
-                            <button id="hapus-noPanggil" style="display: none;" type="button"><i
-                                    class="fas fa-trash"></i></button>
+                            <div id="Edisi4-container">
+                                <label for="No. Panggil">No. Panggil</label>
+                                <input type="text" placeholder="Masukan No. Panggil" id="nopanggil" name="CallNumber[]"
+                                    class="form-control">
+                                <button id="plus-noPanggil" type="button" onclick="duplicateNoPanggil(this)"><i
+                                        class="fas fa-plus"></i></button>
+                                <button id="hapus-noPanggil" style="display: none;" type="button"
+                                    onclick="removeNoPanggil(this)"><i class="fas fa-trash"></i></button>
+                            </div>
                         </div>
                         <div id="ForEdisi5">
-                            <label for="isbn">ISBN</label>
-                            <input type="text" placeholder="Masukan ISBN" id="isbn" name="ISBN" class="form-control">
-                            <button id="plus-ISBN" type="button"><i class="fas fa-plus"></i></button>
-                            <button id="hapus-ISBN" style="display: none;" type="button"><i
-                                    class="fas fa-trash"></i></button>
+                            <div id="Edisi5-container">
+                                <label for="isbn">ISBN</label>
+                                <input type="text" placeholder="Masukan ISBN" id="isbn" name="ISBN[]"
+                                    class="form-control">
+                                <button id="plus-ISBN" type="button" onclick="duplicateISBN(this)"><i
+                                        class="fas fa-plus"></i></button>
+                                <button id="hapus-ISBN" style="display: none;" type="button"
+                                    onclick="removeISBN(this)"><i class="fas fa-trash"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,11 +197,12 @@
                     <div class="card-body" id="catatan-body">
                         <div id="catatan1">
                             <label for="catatan">Catatan</label>
-                            <textarea placeholder="Masukan Jumlah Halaman" id="catatan" name="Note"
+                            <textarea placeholder="Masukan Jumlah Halaman" id="catatan" name="Note[]"
                                 class="form-control"></textarea>
-                            <button id="plus-catatan" type="button"><i class="fas fa-plus"></i></button>
-                            <button id="hapus-catatan" style="display: none;" type="button"><i
-                                    class="fas fa-trash"></i></button>
+                            <button id="plus-catatan" type="button" onclick="duplicateCatatan(this)"><i
+                                    class="fas fa-plus"></i></button>
+                            <button id="hapus-catatan" style="display: none;" type="button"
+                                onclick="removeCatatan(this)"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
@@ -232,11 +241,16 @@
                     <div class="card-body" id="lokasikol-body">
                         <div id="lokasikol1">
                             <label for="lokasikol-daring">Lokasi Koleksi Daring</label>
-                            <input type="text" placeholder="Masukan Lokasi Koleksi Daring" id="lokasikol-daring"
-                                name="lokasikol-daring" class="form-control">
-                            <button id="plus-lokasikol_daring" type="button"><i class="fas fa-plus"></i></button>
-                            <button id="hapus-lokasikol_daring" style="display: none;" type="button"><i
-                                    class="fas fa-trash"></i></button>
+                            <select name="Branch_id" id="lokasikol-daring" class="form-select">
+                                <option selected disabled>Masukan Lokasi Koleksi Daring</option>
+                                @foreach ($branch as $item)
+                                <option {{$item->ID}}>{{$item->Name}}</option>
+                                @endforeach
+                            </select>
+                            <button id="plus-lokasikol_daring" type="button" onclick="duplicateLokDaring(this)"><i
+                                    class="fas fa-plus"></i></button>
+                            <button id="hapus-lokasikol_daring" style="display: none;" type="button"
+                                onclick="removeLokDaring(this)"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
@@ -247,10 +261,10 @@
             <label for="tampilOpac"><input type="checkbox" id="tampilOpac" name="tampilOpac"> Tampil di
                 OPAC</label>
             <div class="box" id="button-simpan-katalog">
-                <button class="simpan-entri-katalog" type="submit">Simpan</button>
+                <button class="simpan-entri-katalog" type="submit" name="action" value="save">Simpan</button>
                 <button class="salinjudul-entri-katalog">Salin Judul</button>
                 <button class="salinkatalogdari-entri-katalog">Salin Katalog Dari</button>
-                <button class="selesai-entri-katalog">Selesai</button>
+                <button class="selesai-entri-katalog" type="submit" name="action" value="finish">Selesai</button>
             </div>
         </div>
     </form>

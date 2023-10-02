@@ -91,12 +91,16 @@ Route::post('uploadPhotoVerify/{id}', [App\Http\Controllers\VerifikasiController
 Route::post('updatePhotoVerify/{id}', [App\Http\Controllers\VerifikasiController::class, 'UpdatePhoto'])->name('updatePhotoVerify');
 Route::get('notifications/get', [App\Http\Controllers\NotificationsController::class, 'getNotificationsData'])->name('notifications.get');
 Route::get('updateStatusVerify/{id}/{status}', [App\Http\Controllers\VeraccountController::class, 'updateStatusVerify'])->name('updateStatusVerify');
-Route::get('/upload', [App\Http\Controllers\coverUploadController::class, 'show'])->name('upload.form');
-Route::post('/upload-cover', [App\Http\Controllers\coverUploadController::class, 'upload'])->name('upload.file');
-Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
-Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
-Route::get('/koleksi', [App\Http\Controllers\KoleksiController::class, 'show'])->name('koleksi');
-Route::get('/konten-Digital', [\App\Http\Controllers\kontenDigitalController::class, 'show'])->name('kontendigital');
+Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show1'])->name('katalog');
+Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store1'])->name('katalog-store');
+Route::get('/koleksi', [App\Http\Controllers\KatalogController::class, 'show2'])->name('koleksi');
+Route::post('/koleksi-store', [App\Http\Controllers\KatalogController::class, 'store2'])->name('koleksi-store');
+Route::get('/upload', [App\Http\Controllers\KatalogController::class, 'show3'])->name('upload.form');
+Route::post('/upload-cover', [App\Http\Controllers\KatalogController::class, 'upload3'])->name('upload.file');
+Route::get('/konten-Digital', [\App\Http\Controllers\KatalogController::class, 'show4'])->name('kontendigital');
+Route::post('/konten-Digital-store', [\App\Http\Controllers\KatalogController::class, 'upload4'])->name('kontendigital-store');
+Route::get('/daftar-katalog', [\App\Http\Controllers\DaftarKatalogKatalogController::class, 'index']);
+
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);

@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 
 class KoleksiController extends Controller
 {
-    public function show()
+    public function show2()
     {
         $colsources = CollectionSources::all();
         $colmedias = CollectionMedias::all();

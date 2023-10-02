@@ -1,4 +1,4 @@
-@extends('admin/entrikatalog')
+@extends('admin/katalog/entrikatalog')
 
 @section('title', 'Cover')
 
@@ -9,7 +9,7 @@
             <div id="imagePreview">
                 @if (session('imageId'))
                 @php
-                $cover = \App\Models\Cover::find(session('imageId'));
+                $cover = \App\Models\Catalog::find(session('imageId'));
                 @endphp
                 @if ($cover)
                 <img id="previewImage" src="data:image/jpeg;base64,{{ base64_encode($cover->CoverURL) }}"
@@ -23,9 +23,9 @@
             </div>
         </div>
 
-        <form action="{{ route('upload.file') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
+        <form action="{{ route('upload.file') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="form-group">
+            <div class="form-group" id="uploadForm">
                 <label for="image">Unggah Cover:</label>
                 <div class="input-group">
                     <input type="text" id="selectedFileName" class="form-control" placeholder="Pilih file..." readonly>
@@ -38,7 +38,7 @@
             </div>
             <input type="file" name="image" accept="image/*" id="imageInput" style="display: none;"
                 onchange="updateFileName()">
-            <button type="submit">Unggah</button>
+            <button type="submit" id="coverUp">Unggah</button>
         </form>
 
         @if($errors->any())

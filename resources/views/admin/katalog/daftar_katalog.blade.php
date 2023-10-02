@@ -73,7 +73,6 @@
                     <thead>
                         <th><input type="checkbox" name="daftar-katalog-checkbox" id="daftar-katalog-checkbox"></th>
                         <th>#</th>
-                        <th></th>
                         <th>Member ID</th>
                         <th>BIBID</th>
                         <th>Judul</th>
@@ -87,22 +86,23 @@
                         <th></th>
                     </thead>
                     <tbody>
+                        @foreach ($data as $item)
                         <tr>
                             <td><input type="checkbox" name="1" id="1"></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$item->BIBID}}</td>
+                            <td>{{$item->Title}}</td>
+                            <td>{{$item->Edition}}</td>
+                            <td>{{$item->Publikasi}}</td>
+                            <td>{{$item->PhysicalDescription}}</td>
+                            <td>{{$item->Subject}}</td>
+                            <td>{{$item->CallNumber}}</td>
+                            <td>{{$item->}}</td>
+                            <td>{{$item->Subject}}</td>
                             <td></td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
