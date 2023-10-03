@@ -27,20 +27,18 @@
                   </label>
                   <select name="identitas" id="identitas" class="form-select">
                     @foreach ($identitas as $item)  
-                    <option>{{$item->Nama}}</option>
+                      @if($item->id == $user->identitas_id)
+                        <option value="{{ $item->id }}" selected>{{$item->Nama}}</option>
+                      @else
+                        <option value="{{ $item->id }}">{{$item->Nama}}</option>
+                      @endif
                     @endforeach
+                    <!-- <option value="{{ $user->identitas_id }}">{{ $identitas_teks->Nama }}</option> -->
                   </select>   
                 </div>
                 <div class="col-md-9">
                   <label for="inputNo" style="opacity: 0;"></label><br>
-                  <input type="text" maxlength="20" size="40" class="form-control" id="nomor" name="nomor" placeholder="Masukan nomor identitas" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputPass" class="form-label">Password
-                    <span style="color: red;">*</span>
-                  </label>
-                <input type="password" class="form-control" id="inputPass" name="password" minlength="6" placeholder="Masukan password" value="{{ $user->password }}">
-                <small>Minimal 6 karakter</small>
+                  <input type="text" maxlength="20" size="40" class="form-control" id="nomor" name="nomor" placeholder="Masukan nomor identitas" value="{{ $user->no_pengenal }}" required>
                 </div>
                 <div class="col-md-12">
                   <label for="inputEmail" class="form-label">Email
@@ -72,8 +70,9 @@
                   <span style="color: red;">*</span>
                   </label>
                         <select name="Jenis" id="Jenis" class="form-select">
+                          <option>Pilih Jenis Kelamin</option>
                           @foreach ($jks as $item)  
-                          <option>{{$item->Name}}</option>
+                          <option value="{{ $item->ID }}">{{$item->Name}}</option>
                           @endforeach
                         </select>   
                 </div>
@@ -97,35 +96,38 @@
                   <label for="inputPend" class="active">Pendidikan
                   </label>
                         <select name="Pendidikan" id="Pendidikan" class="form-select">
-                        @foreach ($pend as $item)
-                            <option>{{$item->Nama}}</option>
-                        @endforeach
+                          <option>Pilih Pendidikan</option>
+                          @foreach ($pend as $item)
+                              <option value="{{$item->id}}">{{$item->Nama}}</option>
+                          @endforeach
                         </select>   
                 </div>
                 <div class="col-md-12">
                   <label for="inputKer" class="active">Pekerjaan
                   </label>
                         <select name="Kerja" id="Kerja" class="form-select">
+                          <option>Pilih Pekerjaan</option>
                           @foreach ($kerjas as $item)
-                          <option>{{$item->Pekerjaan}}</option>
+                          <option value="{{ $item->id }}">{{$item->Pekerjaan}}</option>
                           @endforeach
                         </select>   
                 </div>
                 <div class="col-md-12">
-                  <label for="inputStatus" class="active">Agama
-                  </label>
-                        <select name="agama" id="agama" class="form-select">
-                          @foreach ($pil as $item)
-                          <option>{{$item->Name}}</option>
-                          @endforeach
-                        </select>   
+                  <label for="inputStatus" class="active">Agama</label>
+                    <select name="agama" id="agama" class="form-select">
+                      <option>Pilih Agama</option>
+                      @foreach ($pil as $item)
+                      <option value="{{ $item->ID }}">{{$item->Name}}</option>
+                      @endforeach
+                    </select>   
                 </div>
                 <div class="col-md-12">
                   <label for="inputStatus" class="active">Status Perkawinan
                   </label>
                         <select name="Status" id="Status" class="form-select">
+                          <option>Pilih Status Perkawinan</option>
                           @foreach ($stat as $item)
-                          <option>{{$item->Nama}}</option>
+                          <option value="{{$item->id}}">{{$item->Nama}}</option>
                           @endforeach
                         </select>   
                 </div>

@@ -52,8 +52,20 @@
 
         {{-- NIM field --}}
         <div class="input-group mb-3">
+            <select class="custom-select" name="identitas" id="identitas" class="form-select">
+                <option selected>Silahkan Pilih Jenis Kartu Pengenal</option>
+                    <option value="KARTU MAHASISWA">KARTU MAHASISWA</option>
+                    <option value="KTP">KTP</option>
+            </select>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-id-card"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
             <input type="number" name="no_pengenal" class="form-control @error('no_pengenal') is-invalid @enderror"
-                   value="{{ old('nim') }}" placeholder="Masukkan NIM/NIK">
+                   value="{{ old('nim') }}" placeholder="Masukkan Nomor Identitas">
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -89,7 +101,7 @@
         {{-- Email field --}}
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                   value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}">
+                   value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" required>
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -102,6 +114,18 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
+        </div>
+
+        {{-- alamat field --}}
+        <div class="input-group mb-3">
+            <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror"
+                   value="{{ old('alamat') }}" placeholder="Masukkan Alamat" required>
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-id-card"></span>
+                </div>
+            </div>
         </div>
 
         {{-- Password field --}}

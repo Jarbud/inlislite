@@ -344,11 +344,38 @@ return [
             'can' => 'admin',
         ],
         [
+            'text' => 'Verifikasi Akun',
+            'url'  => 'admin/verifikasi-account',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
+        ],
+        [
             'text' => 'Dashboard',
             'url'  => '/home2',
             'icon' => 'fas fa-solid fa-briefcase',
             'can' => 'user-biasa',
         ],
+        [
+            'text' => 'Verifikasi',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Verifikasi Akun',
+                    'url'  => 'admin/verifikasi-account',
+                ],
+                [
+                    'text' => 'Verifikasi Anggota',
+                    'url'  => 'admin/verifikasi-anggota',
+                ]
+            ]
+        ],
+        // [
+        //     'text' => 'Verifikasi Akun',
+        //     'url'  => 'admin/verifikasi-account',
+        //     'icon' => 'fas fa-users',
+        //     'can' => 'admin',
+        // ],
         [
             'text' => 'Akuisisi',
             'icon' => 'fas fa-file-alt',
@@ -409,9 +436,15 @@ return [
         ],
         [
             'text' => 'Karya Ilmiah',
-            'url'  => '#',
+            'url'  => '/karya-ilmiah-mahasiswa',
             'icon' => 'fas fa-solid fa-newspaper',
-            'can' => 'user-biasa'
+            'can' => 'user-biasa',
+        ],
+        [
+            'text' => 'Karya Ilmiah',
+            'url'  => '/karya-ilmiah-admin',
+            'icon' => 'fas fa-solid fa-newspaper',
+            'can' => 'admin',
         ],
         [
             'text' => 'Baca Ditempat',

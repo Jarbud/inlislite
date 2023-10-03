@@ -43,7 +43,11 @@
       @if (Route::has('login'))
         <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
             @auth
+              @if(Auth::user()->jenis_anggota_id == 3)
                 <a href="{{ url('/home') }}" class="get-started-btn">{{ Auth::user()->name }}</a>
+              @else
+                <a href="{{ url('/dashboard') }}" class="get-started-btn">{{ Auth::user()->name }}</a>
+              @endif
             @else
             <div class="row">
               <div class="col-md-12">
