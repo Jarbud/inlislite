@@ -258,9 +258,61 @@ class KatalogController extends Controller
         $catalog->Worksheet_id = $catalogWorksheet;
         $catalog->Branch_id = $branch_id;
 
-        session(['saved_answer' => $title]);
+        if ($request->input('action') === 'save') {
+            $this->saveSession($request, $catalog);
+        }
 
         return redirect('katalog');
+    }
+
+    protected function saveSession(Request $request, Catalog $catalog)
+    {
+        $request->session()->put('CatalogId', $catalog->ID);
+        $request->session()->put('CatalogControl', $catalog->ControlNumber);
+        $request->session()->put('CatalogBIBID', $catalog->BIBID);
+        $request->session()->put('CatalogTitle', $catalog->Title);
+        $request->session()->put('CatalogAuthor', $catalog->Author);
+        $request->session()->put('CatalogEdition', $catalog->Edition);
+        $request->session()->put('CatalogPublisher', $catalog->Publisher);
+        $request->session()->put('CatalogPublishlocation', $catalog->PublishLocation);
+        $request->session()->put('CatalogPublishYear', $catalog->PublishYear);
+        $request->session()->put('CatalogPublikasi', $catalog->Publikasi);
+        $request->session()->put('CatalogSubject', $catalog->Subject);
+        $request->session()->put('CatalogPhysicalDescription', $catalog->PhysicalDescription);
+        $request->session()->put('CatalogIsbn', $catalog->ISBN);
+        $request->session()->put('CatalogCallNumber', $catalog->CallNumber);
+        $request->session()->put('CatalogNote', $catalog->Note);
+        $request->session()->put('CatalogLanguages', $catalog->Languages);
+        $request->session()->put('CatalogDeweyNo', $catalog->DeweyNo);
+        $request->session()->put('CatalogKarya', $catalog->IsRDA);
+        $request->session()->put('CatalogWorksheetId', $catalog->Worksheet_id);
+        $request->session()->put('CatalogBranchId', $catalog->Branch_id);
+    }
+
+    protected function getSession(Request $request)
+    {
+        return [
+            $catalogId = session('CatalogId'),
+            $catalogControl = session('CatalogControl'),
+            $catalogBIBID = session('CatalogBIBID'),
+            $catalogTitle = session('CatalogTitle'),
+            $catalogAuthor = session('CatalogAuthor'),
+            $catalogEdition = session('CatalogEdition'),
+            $catalogPublisher = session('CatalogPublisher'),
+            $catalogPublishLocation = session('CatalogPublishLocation'),
+            $catalogPublishYear = session('CatalogPublishYear'),
+            $catalogPublikasi = session('CatalogPublikasi'),
+            $catalogSubject = session('CatalogSubject'),
+            $catalogPhysicalDescription = session('CatalogPhysicalDesciption'),
+            $catalogIsbn = session('CatalogIsbn'),
+            $catalogCallNumber = session('CatalogCallNumber'),
+            $catalogNote = session('CatalogNote'),
+            $catalogLanguages = session('CatalogLanguages'),
+            $catalogDeweyNo = session('CatalogDeweyNo'),
+            $catalogKarya = session('CatalogKarya'),
+            $catalogWorksheetId = session('CatalogWorksheetId'),
+            $catalogBranchId = session('CatalogBranchId'),
+        ];
     }
 
     public function store2(Request $request)
@@ -459,5 +511,17 @@ class KatalogController extends Controller
         }
 
         return redirect()->back()->with('success', 'File PDF berhasil diunggah dan disimpan dalam koleksi "catalogfiles" di MongoDB.');
+    }
+
+    public function store(Request $request)
+    {
+        if ($request->input('action') === 'finish') {
+            $catalogData = $this->getSession($request);
+
+            $catalog = new Catalog($catalogData);
+            $catalog->save();
+
+            $request->session()->flush();
+        }
     }
 }

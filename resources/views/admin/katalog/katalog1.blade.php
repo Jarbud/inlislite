@@ -7,7 +7,9 @@
     <form action="{{ route('katalog-store') }}" autocomplete="off" method="POST">
         @csrf
         <div class="container" id="button-kat">
-            <button class="simpan-button" type="submit" name="action" value="save">Lanjutkan</button>
+            <button class="simpan-button" type="submit" name="action" value="save">Simpan
+
+            </button>
             <button class="salin-judul">Salin Judul</button>
             <button class="salin-katalog">Salin Katalog dari</button>
             <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button>
