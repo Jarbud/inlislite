@@ -1,5 +1,13 @@
 /* DAFTAR KATALOG */
 
+.bagian {
+    display: none;
+}
+
+#kat1 {
+    display: block;
+}
+
 #koleksi {
     background-color: rgba(255, 228, 196, 0.5);
     border-radius: 10px;

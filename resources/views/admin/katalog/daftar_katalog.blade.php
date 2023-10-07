@@ -98,7 +98,7 @@
                             <td>{{$item->PhysicalDescription}}</td>
                             <td>{{$item->Subject}}</td>
                             <td>{{$item->CallNumber}}</td>
-                            <td>{{$item->}}</td>
+                            <td></td>
                             <td>{{$item->Subject}}</td>
                             <td></td>
                         </tr>

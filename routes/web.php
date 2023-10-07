@@ -39,10 +39,6 @@ Route::get('/statistik', function () {
     return view('statistik_body');
 });
 
-Route::get('/daf_katalog', function () {
-    return view('admin/daftar_katalog');
-});
-
 Route::get('/salin_kat', function () {
     return view('admin/salin_katalog');
 });
@@ -110,16 +106,18 @@ Route::get('updateStatusVerifyAnggota/{id}/{email}/{status}', [App\Http\Controll
 Route::get('updateStatusVerifyKiAcc/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiAcc'])->name('updateStatusVerifyKiAcc');
 Route::get('updateStatusVerifyKiDitolak', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiDitolak'])->name('updateStatusVerifyKiDitolak');
 Route::get('karyailmiahadminshow/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'show'])->name('karyailmiahadminshow');
-Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show1'])->name('katalog');
-Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store1'])->name('katalog-store');
-Route::get('/koleksi', [App\Http\Controllers\KatalogController::class, 'show2'])->name('koleksi');
+Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
+Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
+Route::post('/katalog-upload', [\App\Http\Controllers\KatalogController::class, 'upload'])->name('katalog-upload');
+/*Route::get('/koleksi', [App\Http\Controllers\KatalogController::class, 'show2'])->name('koleksi');
 Route::post('/koleksi-store', [App\Http\Controllers\KatalogController::class, 'store2'])->name('koleksi-store');
 Route::get('/upload', [App\Http\Controllers\KatalogController::class, 'show3'])->name('upload.form');
 Route::post('/upload-cover', [App\Http\Controllers\KatalogController::class, 'upload3'])->name('upload.file');
 Route::get('/konten-Digital', [\App\Http\Controllers\KatalogController::class, 'show4'])->name('kontendigital');
-Route::post('/konten-Digital-store', [\App\Http\Controllers\KatalogController::class, 'upload4'])->name('kontendigital-store');
-Route::get('/daftar-katalog', [\App\Http\Controllers\DaftarKatalogKatalogController::class, 'index']);
-
+Route::post('/konten-Digital-store', [\App\Http\Controllers\KatalogController::class, 'upload4'])->name('kontendigital-store');*/
+Route::get('/daf-katalog', [App\Http\Controllers\DaftarKatalogController::class, 'index']);
+Route::get('/entri-katalog', [App\Http\Controllers\EntriCatalogController::class, 'show'])->name('entri');
+Route::post('/entri-katalog-store', [App\Http\Controllers\EntriCatalogController::class, 'store'])->name('entri-store');
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);

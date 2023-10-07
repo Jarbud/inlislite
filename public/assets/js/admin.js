@@ -256,3 +256,19 @@ function duplicateEksemplar() {
         alert("Masukkan jumlah eksemplar yang valid.");
     }
 }
+
+// Mendapatkan semua elemen <li>
+const menu = document.querySelectorAll("li");
+
+// Menambahkan event listener pada setiap elemen <li>
+menu.forEach((menu) => {
+    menu.addEventListener("click", function () {
+        const target = this.getAttribute("data-target");
+
+        document.querySelectorAll(".bagian").forEach((bagian) => {
+            bagian.style.display = "none";
+        });
+
+        document.querySelector(target).style.display = "block";
+    });
+});
