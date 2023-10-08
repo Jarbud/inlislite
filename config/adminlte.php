@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Inlis Lite',
+    'title' => 'Digilib',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>INLIS LITE</b>',
+    'logo' => '<b>DIGILIB</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -290,6 +290,19 @@ return [
     */
 
     'menu' => [
+        [
+            'type'         => 'navbar-notification',
+            'id'           => 'my-notification',
+            'icon'         => 'fas fa-bell',
+            'url'          => 'notifications/show',
+            'topnav_right' => true,
+            'dropdown_mode'   => true,
+            'dropdown_flabel' => 'All notifications',
+            'update_cfg'   => [
+                'url' => 'notifications/get',
+                'period' => 30,
+            ],
+        ],
         // Navbar items:
         // [
         //     'type'         => 'navbar-search',
@@ -320,9 +333,85 @@ return [
         // ],
         ['header' => 'menu'],
         [
-            'text' => 'Back Office',
-            'url'  => '#',
+            'text' => 'Home',
+            'url'  => '/',
+            'icon' => 'fas fa-home',
+        ],
+        [
+            'text' => 'Dashboard',
+            'url'  => '/home',
             'icon' => 'fas fa-solid fa-briefcase',
+            'can' => 'admin',
+        ],
+        [
+            'text' => 'Dashboard',
+            'url'  => '/home2',
+            'icon' => 'fas fa-solid fa-briefcase',
+            'can' => 'user-biasa',
+        ],
+        [
+            'text' => 'Akuisisi',
+            'icon' => 'fas fa-file-alt',
+            'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Entri Koleksi',
+                    'url' => '/entri_kol',
+                ],
+                [
+                    'text' => 'Daftar Koleksi',
+                    'url' => '#',
+                ],
+                [
+                    'text' => 'Keranjang Koleksi',
+                    'url' => '#',
+                ],
+                [
+                    'text' => 'Karantina Koleksi',
+                    'url' => '#',
+                ]
+            ],
+        ],
+        [
+            'text' => 'Katalog',
+            'icon' => 'fas fa-file-alt',
+            'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Entri Katalog',
+                    'url' => '/katalog',
+                ],
+                [
+                    'text' => 'Salin Katalog',
+                    'url' => '/salin_kat',
+                ],
+                [
+                    'text' => 'Daftar Katalog',
+                    'url' => '/daf_katalog',
+                ],
+                [
+                    'text' => 'Export Data Tag Katalog',
+                    'url' => '/export_kat',
+                ],
+                [
+                    'text' => 'Daftar Konten Digital',
+                    'url' => '/KontenDigital_kat'
+                ],
+                [
+                    'text' => 'Keranjang Katalog',
+                    'url' => '/keranjang_kat'
+                ],
+                [
+                    'text' => 'Karantina Katalog',
+                    'url' => '/karantina_kat'
+                ]
+            ],
+        ],
+        [
+            'text' => 'Karya Ilmiah',
+            'url'  => '#',
+            'icon' => 'fas fa-solid fa-newspaper',
+            'can' => 'user-biasa'
         ],
         [
             'text' => 'Baca Ditempat',
@@ -334,13 +423,13 @@ return [
             'url'  => '#',
             'icon' => 'fas fa-book-reader',
         ],
+        // [
+        //     'text' => 'Keanggotaan Online',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-people-arrows',
+        // ],
         [
-            'text' => 'Keanggotaan Online',
-            'url'  => '#',
-            'icon' => 'fas fa-people-arrows',
-        ],
-        [
-            'text' => 'Layanan Koleksi Digital',
+            'text' => 'Layanan Koleksi',
             'url'  => '#',
             'icon' => 'fas fa-digital-tachograph',
         ],
@@ -348,52 +437,69 @@ return [
             'text' => 'OPAC',
             'url'  => '#',
             'icon' => 'fas fa-solid fa-bars',
+            'can' => 'user-biasa'
         ],
+        // [
+        //     'text' => 'Artikel',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-newspaper',
+        // ],
+        // [
+        //     'text' => 'Pendaftaran Anggota',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-id-card',
+        // ],
+        // [
+        //     'text' => 'Statistik',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-signal',
+        // ],
+        // [
+        //     'text' => 'Survey',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-pen-nib',
+        // ],
         [
-            'text' => 'Artikel',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-newspaper',
-        ],
-        [
-            'text' => 'Pendaftaran Anggota',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-id-card',
-        ],
-        [
-            'text' => 'Statistik',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-signal',
-        ],
-        [
-            'text' => 'Survey',
-            'url'  => '#',
-            'icon' => 'fas fa-pen-nib',
-        ],
-        [
-            'text' => 'Pengembalian Mandiri',
-            'url'  => '#',
+            'text' => 'Pengembalian dan Peminjaman Mandiri',
             'icon' => 'fas fa-solid fa-book',
+            'submenu' => [
+                [
+                    'text' => 'Peminjaman',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Pengembalian',
+                    'url'  => '#',
+                ]
+            ]
         ],
-        [
-            'text' => 'Peminjaman Mandiri',
-            'url'  => '#',
-            'icon' => 'fas fa-solid fa-book-open',
-        ],
+        // [
+        //     'text' => 'Peminjaman Mandiri',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-solid fa-book-open',
+        // ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/changepassworduser',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'User Management',
-            'url'  => 'admin/settings',
+            'text' => 'Verifikasi Akun',
+            'url'  => 'admin/verifikasi-account',
             'icon' => 'fas fa-users',
+            'can' => 'admin',
+        ],
+        [
+            'text' => 'User Management',
+            'url'  => 'admin/usermanagement',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
         ],
         // [
         //     'text'    => 'multilevel',
@@ -487,7 +593,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

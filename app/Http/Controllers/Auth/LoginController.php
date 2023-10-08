@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -26,7 +28,14 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->jenis_anggota_id == '3') {
+            return redirect()->route('home');
+        } elseif ($user->jenis_anggota_id == '1' or $user->jenis_anggota_id == '2' or $user->jenis_anggota_id == '4') {
+            return redirect()->route('home2');
+        } 
+    }
 
     /**
      * Create a new controller instance.

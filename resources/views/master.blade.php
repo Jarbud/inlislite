@@ -203,9 +203,14 @@
         <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
         <script src="/assets/vendor/php-email-form/validate.js"></script>
+        <script src="/assets/vendor/jquery/jquery-3.7.0.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
 
         <!-- Template Main JS File -->
         <script src="/assets/js/main.js"></script>
+        <script src="{{ asset('/assets/js/kode.js') }}"></script>
+  <script src="{{ asset('/assets/js/survey.js') }}"></script>
 
     </body>
 

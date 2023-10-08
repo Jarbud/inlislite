@@ -14,7 +14,7 @@
 @section('auth_header', "Membuat Akun Baru")
 
 @section('auth_body')
-    <form action="{{ $register_url }}" method="post">
+<form action="{{ $register_url }}" method="post">
         @csrf
 
         {{-- Name field --}}
@@ -29,6 +29,57 @@
             </div>
 
             @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
+        {{-- Jenis Anggota field --}}
+        <div class="input-group mb-3">
+            <select class="custom-select" name="jenis_anggota_id">
+                <option selected>Silahkan Pilih Jenis Anggota</option>
+                <option value="1">Mahasiswa</option>
+                <option value="2">Umum</option>
+            </select>
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-people-arrows"></span>
+                </div>
+            </div>
+        </div>
+
+        {{-- NIM field --}}
+        <div class="input-group mb-3">
+            <input type="number" name="no_pengenal" class="form-control @error('no_pengenal') is-invalid @enderror"
+                   value="{{ old('nim') }}" placeholder="Masukkan NIM/NIK">
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-id-card"></span>
+                </div>
+            </div>
+
+            @error('nim')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
+        {{-- Telp field --}}
+        <div class="input-group mb-3">
+            <input type="number" name="telp" class="form-control @error('telp') is-invalid @enderror"
+                   value="{{ old('telp') }}" placeholder="Masukkan nomor WA aktif(08.....)">
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fab fa-whatsapp-square"></span>
+                </div>
+            </div>
+
+            @error('telp')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
