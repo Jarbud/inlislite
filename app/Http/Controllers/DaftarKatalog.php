@@ -10,6 +10,8 @@ class DaftarKatalog extends Controller
     public function index()
     {
         $data = Catalog::all();
-        return view('admin.katalog.daftar_katalog', ['data' => $data]);
+        $no = 0;
+        // return view('admin.katalog.daftar_katalog', ['data' => $data]);
+        return view('admin/katalog/daftar_katalog',compact('data','no'));
     }
 }

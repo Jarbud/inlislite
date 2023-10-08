@@ -15,7 +15,7 @@
               <div class="card bg-light d-flex flex-fill" >
                 <div class="card-header text-muted border-bottom-0">
                   @if(Auth::user()->verifikasi == "false")
-                    <a href="/verifikasi" class="btn btn-warning">Belum Terverifikasi</a>
+                    <a href="/pendaftaran" class="btn btn-warning">Belum Terverifikasi</a>
                   @elseif(Auth::user()->verifikasi == "true")
                     <a href="/verifikasi" class="btn btn-success">Terverifikasi</a>
                   @elseif(Auth::user()->verifikasi == "pending")
