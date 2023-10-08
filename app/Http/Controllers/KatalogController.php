@@ -23,19 +23,13 @@ use MongoDB\BSON\Binary;
 
 class KatalogController extends Controller
 {
-    public function show1(Request $request)
+    public function show(Request $request)
     {
         $jenisBahan = worksheets::all();
         $kataSandang = kata_sandang::all();
         $refitems = RefferenceItems::where('Refference_id', '5')->get();
         $refkarya = RefferenceItems::where('Refference_id', '17')->get();
         $branch = Branchs::all();
-
-        return view('admin/katalog/katalog1', compact('jenisBahan', 'kataSandang', 'refitems', 'refkarya', 'branch'));
-    }
-
-    public function show2()
-    {
         $colsources = CollectionSources::all();
         $colmedias = CollectionMedias::all();
         $colrules = CollectionRules::all();
@@ -45,7 +39,12 @@ class KatalogController extends Controller
         $matauang = Currency::all();
         $kategori = CollectionCategories::all();
 
-        return view('admin/katalog/koleksi1', compact(
+        return view('admin/katalog/katalog1', compact(
+            'jenisBahan',
+            'kataSandang',
+            'refitems',
+            'refkarya',
+            'branch',
             'colsources',
             'colmedias',
             'colrules',
@@ -57,17 +56,7 @@ class KatalogController extends Controller
         ));
     }
 
-    public function show3()
-    {
-        return view('admin/katalog/cover1');
-    }
-
-    public function show4()
-    {
-        return view('admin/katalog/kontenDigital1');
-    }
-
-    public function store1(Request $request)
+    public function store(Request $request)
     {
         $judulUtama = $request->input('judul_utama');
         $anakJudul = $request->input('anak_judul');
@@ -236,87 +225,42 @@ class KatalogController extends Controller
             $branch_id = null;
         }
 
-        $catalog = new Catalog();
-        $catalog->ID = $catalogsId;
-        $catalog->ControlNumber = $catalogsControl;
-        $catalog->BIBID = $catalogsBIBID;
-        $catalog->Title = $title;
-        $catalog->Author = $author;
-        $catalog->Edition = $edition;
-        $catalog->Publisher = $publisher;
-        $catalog->PublishLocation = $publishlocation;
-        $catalog->PublishYear = $publishyear;
-        $catalog->Publikasi = $publikasi;
-        $catalog->Subject = $subject;
-        $catalog->PhysicalDescription = $physicaldescription;
-        $catalog->ISBN = $isbn;
-        $catalog->CallNumber = $callnumber;
-        $catalog->Note = $note;
-        $catalog->Languages = $bahasa;
-        $catalog->DeweyNo = $deweyno;
-        $catalog->IsRDA = $karya;
-        $catalog->Worksheet_id = $catalogWorksheet;
-        $catalog->Branch_id = $branch_id;
+        $request->validate([
+            'image' => 'required|image|max:2048',
+        ]);
 
-        if ($request->input('action') === 'save') {
-            $this->saveSession($request, $catalog);
+        if ($request->file('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $coverURL = new Binary(file_get_contents($image->getRealPath()), Binary::TYPE_GENERIC);
         }
 
-        return redirect('katalog');
-    }
-
-    protected function saveSession(Request $request, Catalog $catalog)
-    {
-        $request->session()->put('CatalogId', $catalog->ID);
-        $request->session()->put('CatalogControl', $catalog->ControlNumber);
-        $request->session()->put('CatalogBIBID', $catalog->BIBID);
-        $request->session()->put('CatalogTitle', $catalog->Title);
-        $request->session()->put('CatalogAuthor', $catalog->Author);
-        $request->session()->put('CatalogEdition', $catalog->Edition);
-        $request->session()->put('CatalogPublisher', $catalog->Publisher);
-        $request->session()->put('CatalogPublishlocation', $catalog->PublishLocation);
-        $request->session()->put('CatalogPublishYear', $catalog->PublishYear);
-        $request->session()->put('CatalogPublikasi', $catalog->Publikasi);
-        $request->session()->put('CatalogSubject', $catalog->Subject);
-        $request->session()->put('CatalogPhysicalDescription', $catalog->PhysicalDescription);
-        $request->session()->put('CatalogIsbn', $catalog->ISBN);
-        $request->session()->put('CatalogCallNumber', $catalog->CallNumber);
-        $request->session()->put('CatalogNote', $catalog->Note);
-        $request->session()->put('CatalogLanguages', $catalog->Languages);
-        $request->session()->put('CatalogDeweyNo', $catalog->DeweyNo);
-        $request->session()->put('CatalogKarya', $catalog->IsRDA);
-        $request->session()->put('CatalogWorksheetId', $catalog->Worksheet_id);
-        $request->session()->put('CatalogBranchId', $catalog->Branch_id);
-    }
-
-    protected function getSession(Request $request)
-    {
-        return [
-            $catalogId = session('CatalogId'),
-            $catalogControl = session('CatalogControl'),
-            $catalogBIBID = session('CatalogBIBID'),
-            $catalogTitle = session('CatalogTitle'),
-            $catalogAuthor = session('CatalogAuthor'),
-            $catalogEdition = session('CatalogEdition'),
-            $catalogPublisher = session('CatalogPublisher'),
-            $catalogPublishLocation = session('CatalogPublishLocation'),
-            $catalogPublishYear = session('CatalogPublishYear'),
-            $catalogPublikasi = session('CatalogPublikasi'),
-            $catalogSubject = session('CatalogSubject'),
-            $catalogPhysicalDescription = session('CatalogPhysicalDesciption'),
-            $catalogIsbn = session('CatalogIsbn'),
-            $catalogCallNumber = session('CatalogCallNumber'),
-            $catalogNote = session('CatalogNote'),
-            $catalogLanguages = session('CatalogLanguages'),
-            $catalogDeweyNo = session('CatalogDeweyNo'),
-            $catalogKarya = session('CatalogKarya'),
-            $catalogWorksheetId = session('CatalogWorksheetId'),
-            $catalogBranchId = session('CatalogBranchId'),
+        $data = [
+            'ID' => $catalogsId,
+            'ControlNumber' => $catalogsControl,
+            'BIBID' => $catalogsBIBID,
+            'Title' => $title,
+            'Author' => $author,
+            'Edition' => $edition,
+            'Publisher' => $publisher,
+            'PublishLocation' => $publishlocation,
+            'PublishYear' => $publishyear,
+            'Publikasi' => $publikasi,
+            'Subject' => $subject,
+            'PhysicalDescription' => $physicaldescription,
+            'ISBN' => $isbn,
+            'CallNumber' => $callnumber,
+            'Note' => $note,
+            'Languages' => $bahasa,
+            'DeweyNo' => $deweyno,
+            'IsRDA' => $karya,
+            'CoverURL'  => $imageName,
+            'Branch_id' => $branch_id,
+            'Worksheet_id' => $catalogWorksheet,
         ];
-    }
 
-    public function store2(Request $request)
-    {
+        session()->put('form_data', $data);
+
         $nomor_barcode = $request->input('noBarcode');
         $nomor_induk = $request->input('noInduk');
         $currency = $request->input('mataUang');
@@ -456,8 +400,8 @@ class KatalogController extends Controller
         $collection->Price = $harga;
         $collection->TanggalPengadaan = $pengadaan;
         $collection->CallNumber = $Nopanggil;
-        //$collection->Branch_id = $branch;
-        //$collection->Catalog_id = $catalog;
+        $collection->Branch_id = $branch_id;
+        $collection->Catalog_id = $catalogsId;
         $collection->Partner_id = $Namasumber;
         $collection->Lokasi_id = $ruang;
         $collection->Rule_id = $akses;
@@ -466,14 +410,16 @@ class KatalogController extends Controller
         $collection->Source_id = $sumber;
         $collection->Status_id = $ketersediaan;
         $collection->Location_Library_id = $lokasi;
+        $collection->save();
 
-        return redirect('koleksi');
+        return redirect('katalog');
     }
 
-    public function upload3(Request $request)
+    public function upload(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|max:1024',
+            'image' => 'required|image|max:2048',
+            'files' => 'required|mimes:pdf|max:5120',
         ]);
 
         if ($request->file('image')) {
@@ -483,45 +429,24 @@ class KatalogController extends Controller
             $coverURL = new Binary(file_get_contents($image->getRealPath()), Binary::TYPE_GENERIC);
 
             $cover = new Catalog();
-            $cover->CoverURL = $coverURL;
+            $cover->CoverURL = $imageName;
             $cover->save();
 
-            return redirect()->route('upload.form')->with('success', 'Cover berhasil diunggah')->with('imageId', $cover->id);
+            return redirect()->back()->with('imageId', $cover->id);
         }
 
-        return redirect()->route('upload.form')->withErrors(['image' => 'Tidak ada gambar yang diunggah.']);
-    }
+        if ($request->file('files')) {
+            $files = $request->file('files');
+            $namaFlash = time() . '.' . $files->getClientOriginalExtension();
 
-    public function uploadFile(Request $request)
-    {
-        $request->validate([
-            'files.*' => 'required|mimes:pdf|max:5120', // Max 5MB
-            'namaFlash' => 'required',
-        ]);
+            $urlFlash = new Binary(file_get_contents($files->getRealPath()), Binary::TYPE_GENERIC);
 
-        $namaFlash = $request->input('namaFlash');
-
-        foreach ($request->file('files') as $file) {
-            $catalogFile = new CatalogFile([
-                'FileURL' => $namaFlash,
-                'FileFlash' => new Binary(file_get_contents($file->getRealPath()), Binary::TYPE_GENERIC)
-            ]);
-
+            $catalogFile = new CatalogFile();
+            $catalogFile->FileURL = $namaFlash;
+            $catalogFile->FileFlash = $urlFlash;
             $catalogFile->save();
         }
 
-        return redirect()->back()->with('success', 'File PDF berhasil diunggah dan disimpan dalam koleksi "catalogfiles" di MongoDB.');
-    }
-
-    public function store(Request $request)
-    {
-        if ($request->input('action') === 'finish') {
-            $catalogData = $this->getSession($request);
-
-            $catalog = new Catalog($catalogData);
-            $catalog->save();
-
-            $request->session()->flush();
-        }
+        return redirect()->route('katalog');
     }
 }

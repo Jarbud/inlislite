@@ -15,4 +15,13 @@ class Catalog extends Model
         'Note', 'Languages', 'DeweyNo', 'ApproveDateOPAC', 'IsOPAC', 'IsBNI', 'IsKIN', 'IsRDA',
         'CoverURL', 'Branch_id', 'Worksheet_id', 'Member_id'
     ];
+
+    public function saveFormDataFromSession()
+    {
+        $formData = session('form_data');
+        if ($formData) {
+            $this->create($formData);
+            session()->flush();
+        }
+    }
 }

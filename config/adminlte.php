@@ -344,12 +344,6 @@ return [
             'can' => 'admin',
         ],
         [
-            'text' => 'Verifikasi Akun',
-            'url'  => 'admin/verifikasi-account',
-            'icon' => 'fas fa-users',
-            'can' => 'admin',
-        ],
-        [
             'text' => 'Dashboard',
             'url'  => '/home2',
             'icon' => 'fas fa-solid fa-briefcase',
@@ -406,7 +400,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Entri Katalog',
-                    'url' => '/katalog',
+                    'url' => '/entri-katalog',
                 ],
                 [
                     'text' => 'Salin Katalog',
@@ -414,7 +408,7 @@ return [
                 ],
                 [
                     'text' => 'Daftar Katalog',
-                    'url' => '/daf_katalog',
+                    'url' => '/daf-katalog',
                 ],
                 [
                     'text' => 'Export Data Tag Katalog',
