@@ -44,7 +44,7 @@
 
     <div class="card">
         <div class="card-header" id="daftar-katalog">
-            <div class="box">
+            <div class="box" z>
                 <span><i class="fas fa-file-alt"> Daftar Katalog</i></span>
             </div>
         </div>

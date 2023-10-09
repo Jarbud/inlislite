@@ -462,9 +462,14 @@ return [
         ],
         [
             'text' => 'OPAC',
-            'url'  => '#',
             'icon' => 'fas fa-solid fa-bars',
-            'can' => 'user-biasa'
+            'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Riwayat Pencarian Sederhana',
+                    'url' => '/histori-sederhana',
+                ],
+            ],
         ],
         // [
         //     'text' => 'Artikel',
