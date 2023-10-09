@@ -23,14 +23,35 @@
         <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
 
         <!-- Template Main CSS File -->
-        <link href="/assets/css/style.css" rel="stylesheet"/>
+        <link href="/css/styling.css" rel="stylesheet"/>
+        <!--<link href="/assets/css/style.css" rel="stylesheet"/>-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+        <script>
+            let select = document.querySelector("select");
+            let divs = document.querySelector(".div-p");
+            let result = document.querySelector("#result");
+
+            function func1(par){
+                result.innerText = divs[par - 1].innerText;
+            }
+        </script>
 
         <script type="text/javascript">
             $(document).ready(function() {
             $('.carousel').carousel({interval: 7000});
             });
         </script>
+
+        <script>
+            $('#checkbox-all-koleksi').click(function() {
+                $(this.form.elements).filter(':checkbox').prop('checked' , this.checked);
+            });
+        </script>
+
+
 
     </head>
 
@@ -50,16 +71,16 @@
                         <li><a href="/">Beranda</a></li>
                         <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">Baca di Tempat</a></li>
+                                <li><a href="/baca">Baca di Tempat</a></li>
                                 <li><a href="/borrowed">Peminjaman Buku</a></li>
                                 <li><a href="/return">Pengembalian Buku</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>Jelajahi</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">OPAC</a></li>
+                                <li><a href="/opac">OPAC</a></li>
                                 <li><a href="/viewcollection">Koleksi Digital</a></li>
-                                <li><a href="/statistic">Statistik</a></li>
+                                <li><a href="/statistik">Statistik</a></li>
                                 <li><a href="/artikel">Artikel</a></li>
                                 <li><a href="/survei">Survei</a></li>
                             </ul>
@@ -205,12 +226,13 @@
         <script src="/assets/vendor/php-email-form/validate.js"></script>
         <script src="/assets/vendor/jquery/jquery-3.7.0.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
         <!-- Template Main JS File -->
         <script src="/assets/js/main.js"></script>
         <script src="{{ asset('/assets/js/kode.js') }}"></script>
-  <script src="{{ asset('/assets/js/survey.js') }}"></script>
+        <script src="{{ asset('/assets/js/survey.js') }}"></script>
 
     </body>
 

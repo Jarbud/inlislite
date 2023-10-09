@@ -10,7 +10,7 @@
     <section id="survei" class="survei">
         <div class="container">
             <h2>Selamat Datang,<br>Silahkan Memilih Survey</h2>
-            <a href="/surveiQ" class="btn btn-survei">Kepuasan Layanan Tahun 2023</a>
+            <a href="/survey-show" class="btn btn-survei">Kepuasan Layanan Tahun 2023</a>
         </div>
     </section>
 

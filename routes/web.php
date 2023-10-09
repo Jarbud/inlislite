@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/dashboard', function() {
     return view('dashboard');
 });
 
@@ -39,14 +43,6 @@ Route::get('/return', function() {
     return view('return');
 });
 
-Route::get('/fromsearch', function() {
-    return view('fromsearch');
-});
-
-Route::get('/bukutamu', function() {
-    return view('bukutamu');
-});
-
 Route::get('/survei', function() {
     return view('survei');
 });
@@ -65,6 +61,10 @@ Route::get('/carousel', function() {
 
 Route::get('/entrikoleksi', function() {
     return view('entrikoleksi');
+});
+
+Route::get('/optionvalues', function() {
+    return view('optionvalues');
 });
 
 Route::get('/all', function() {
@@ -128,6 +128,44 @@ Route::get('/admin/changepassworduser', function () {
     return view('admin/changepassworduser');
 });
 
+Route::get('/0importexcel', function() {
+    return view('admin/akuisisi/0importexcel');
+});
+
+/*Route::get('/0daftarkoleksi', function() {
+    return view('admin/0daftarkoleksi');
+});*/
+
+Route::get('/0jilidkoleksi', function() {
+    return view('admin/akuisisi/0jilidkoleksi');
+});
+
+Route::get('/0daftarusulan', function() {
+    return view('admin/akuisisi/0daftarusulan');
+});
+
+Route::get('/0emptymodal', function() {
+    return view('admin/akuisisi/0emptymodal');
+});
+
+
+Route::get('/0karantina', function() {
+    return view('admin/akuisisi/0karantinakoleksi');
+});
+
+Route::get('/0keranjang', function() {
+    return view('admin/akuisisi/0keranjangkoleksi');
+});
+
+Route::get('/0tambahfilter', function() {
+    return view('admin/akuisisi/0tambahfilter');
+});
+
+Route::get('/0tambah', function() {
+    return view('admin/akuisisi/0tambah');
+});
+
+
 Auth::routes();
 
 // URL
@@ -154,6 +192,16 @@ Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show'])
 Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
 Route::get('/koleksi', [App\Http\Controllers\KoleksiController::class, 'show'])->name('koleksi');
 Route::get('/konten-Digital', [\App\Http\Controllers\kontenDigitalController::class, 'show'])->name('kontendigital');
+
+Route::get('/0entrikoleksi', [\App\Http\Controllers\AkuisisiController::class, 'show'])->name('0entrikoleksi');
+Route::post('/0entrikoleksi-store', [\App\Http\Controllers\AkuisisiController::class, 'store'])->name('0entrikoleksi-store');
+Route::get('/viewcollection', [\App\Http\Controllers\ViewCollectionController::class, 'show'])->name('viewcollection');
+Route::get('/bukutamu', [\App\Http\Controllers\bukutamuController::class, 'show'])->name('bukutamu');
+Route::post('/bukutamu-store', [\App\Http\Controllers\bukutamuController::class, 'store'])->name('bukutamu-store');
+Route::get('/fromsearch', [\App\Http\Controllers\fromsearchController::class, 'show'])->name('fromsearch');
+
+Route::get('/0terbitanberkala', [\App\Http\Controllers\TerbitanBerkala::class, 'show'])->name('0terbitanberkala');
+Route::get('/0daftarkoleksi', [\App\Http\Controllers\DaftarKoleksi::class, 'show'])->name('0daftarkoleksi');
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);

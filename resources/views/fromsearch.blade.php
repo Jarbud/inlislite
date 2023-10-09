@@ -31,11 +31,11 @@
           
           <div class="col-sm-3 d-flex align-items-stretch">
             <div class="input-group rounded">
-              <select name="input-dropdown" id="input-dropdown" class="input-control rounded">
-                <option value="0">Pilih Jenis</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">D</option>
+              <select class="input-control rounded">
+                <option disbled selected>Pilih Jenis</option>
+                @foreach ( $jenis_bahan as $item )
+                <option>{{ $item->Name }}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -54,12 +54,6 @@
 
                 <div class="col-sm-9">
 
-                    <div class="tampung">
-                        <a class="btn btn-tampung">
-                            <i class="bi bi-basket"></i>Tambah ke Tampung
-                        </a>
-                    </div>
-
                     <table class="main-table table-striped" width="100%">
                         <tbody>
                             <tr>
@@ -67,7 +61,22 @@
                                     <div class="table-content">
                                         <div class="row">
                                             <div class="col-sm-1">
-                                                <input type="checkbox">
+                                                <input type="checkbox" onClick="checkAll(this)" name="checkbox-all-koleksi"/>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>Pilih Semua</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <a class="btn btn-tampungg">
+                                                    <i class="bi bi-basket"></i>Tambah ke Tampung
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-content">
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <input type="checkbox" name="checkbox-single-koleksi" id="checkbox-single-koleksi">
                                             </div>
                                             <div class="col-sm-2">
                                                 <a><img class="table1-img" src="assets/img/sampul.png"/></a>
@@ -108,7 +117,7 @@
                                     <div class="table-content">
                                         <div class="row">
                                             <div class="col-sm-1">
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="checkbox-single-koleksi" id="checkbox-single-koleksi">
                                             </div>
                                             <div class="col-sm-2">
                                                 <a><img class="table1-img" src="assets/img/sampul.png"/></a>
@@ -149,7 +158,7 @@
                                     <div class="table-content">
                                         <div class="row">
                                             <div class="col-sm-1">
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="checkbox-single-koleksi" id="checkbox-single-koleksi">
                                             </div>
                                             <div class="col-sm-2">
                                                 <a><img class="table1-img" src="assets/img/sampul.png"/></a>

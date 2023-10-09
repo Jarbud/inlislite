@@ -11,6 +11,7 @@
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
         <!-- Vendor CSS Files -->
         <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet"/>
@@ -22,8 +23,14 @@
         <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
 
         <!-- Template Main CSS File -->
-        <link href="/css/styling.css" rel="stylesheet"/>
+        <link href="/assets/css/style.css" rel="stylesheet"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" charset="utf-8"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $('.carousel').carousel({interval: 7000});
+            });
+        </script>
 
     </head>
 
@@ -63,23 +70,13 @@
                 </nav>
                 <!-- .navbar -->
 
-                <!--<div class="btn-profile">
-                    <button type="button" class="btn btn-profile dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                        <img class="profile header-profile"  src="assets/img/iqbaal.jpg"/>
-                    <!--</button>
-                    <li class="dropdown"></li>
-                        <ul>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </li>
-                </div>-->
+                <a href="#" class="get-started-btn">Login</a>
 
             </div>
         </header><!-- End Header -->
 
         <!-- ========= Konten ===========-->
-        
+        @yield('content')
 
         <!-- ======= Footer ======= -->
         <footer id="footer">
@@ -88,7 +85,72 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-3 col-md-6 footer-contact">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="contact">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <h3>Alamat :</h3>
+                                        <p>Fakultas Ekonomi & Bisnis<br>
+                                        Universitas Brawijaya<br>
+                                        Jl. MT. Haryono No.165<br>
+                                        Malang, 21212</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="contact">
+                                        <i class="bi bi-telephone"></i>
+                                        <h3>Hubungi Kami :</h3>
+                                        <p>0812 3456 7890<br>0341 098 765</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="contact">
+                                        <i class="bi bi-envelope"></i>
+                                        <h3>Email :</h3>
+                                        <p>contoh@email.com<br>contact@email.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="contact">
+                                        <i class="bi bi-clock"></i>
+                                        <h3>Jam Buka :</h3>
+                                        <p>Senin - Jum'at<br>9:00WIB - 17:00WIB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="footer-links">
+                                        <h4>Layanan Kami</h4>
+                                        <ul>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Online Public Access</a></li>                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan Koleksi Digital</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Statistika</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Artikel</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Survey</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="footer-links">
+                                        <h4>Layanan Kami</h4>
+                                        <ul>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Online Public Access</a></li>                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan Koleksi Digital</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Statistika</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Artikel</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Survey</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="col-lg-3 col-md-6 footer-contact">
                             <h3>Digital Library</h3>
                                 <p>
                                 Fakultas Ekonomi dan Bisnis<br>
@@ -119,7 +181,7 @@
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">Artikel</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">Survey</a></li>
                             </ul>
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>

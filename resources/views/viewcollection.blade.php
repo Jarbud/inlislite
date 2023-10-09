@@ -22,26 +22,27 @@
             <div class="input-group rounded">
               <select name="input-dropdown" id="input-dropdown" class="input-control rounded">
                 <option value="0">Pilih Jenis</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">D</option>
+                <option value="1">Judul</option>
+                <option value="2">Pengarang</option>
+                <option value="3">Penerbit</option>
+                <option value="4">Tahun Terbit</option>
               </select>
             </div>
           </div>
           
           <div class="col-sm-3 d-flex align-items-stretch">
             <div class="input-group rounded">
-              <select name="input-dropdown" id="input-dropdown" class="input-control rounded">
-                <option value="0">Pilih Jenis</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">D</option>
-              </select>
+              <select class="input-control rounded" style="width:100%">
+                <option disabled selected>Pilih Jenis</option>
+                @foreach ( $jenis_bahan as $item )
+                <option>{{$item->Name}}</option>
+                @endforeach
+              </select>            
             </div>
           </div>
 
           <div class="col-sm-1 d-flex align-items-stretch">
-            <a href="#" class="btn-search">Search</a>
+            <a href="/fromsearch" class="btn-search">Search</a>
           </div>
 
         </div>
@@ -58,7 +59,7 @@
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
                 <a href="/viewdetail" class="card-title">Pengaruh Self-Efficacy, Tolerance For Risk, dan Kebebasan dalam Bekerja terhadap Minat Entrepreneurship Mahasiswa Universitas Negeri Padang</a>
-                <h3><i class="bi bi-calendar-fill"></i>16 Mei 2022</h3>
+                <h3><i class="bi bi-journal"></i>Monograf</h3>
                 <p class="card-text">Nama Pengarang Panjang Bingit Wadawwww</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
@@ -71,7 +72,7 @@
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
                 <a href="#" class="card-title">The Influence Of Promotion, Perceived Ease Of Use, And Price Toward Repurchase Intention Transportation Services Go-Jek On Students in Universitas Negeri Padang</a>
-                <h3><i class="bi bi-calendar-fill"></i>8 November 2021</h3>
+                <h3><i class="bi bi-journal"></i>Monograf</h3>
                 <p class="card-text">Nama Pengarang</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
@@ -84,7 +85,7 @@
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
                 <a href="#" class="card-title">Pengaruh Financial Knowledge dan Internal Locus Of Control terhadap Personal Financial Management Behaviour Pelaku Umkm Kota Bukittinggi</a>
-                <h3><i class="bi bi-calendar-fill"></i>4 April 2018</h3>
+                <h3><i class="bi bi-journal"></i>Monograf</h3>
                 <p class="card-text">Nama Pengarang</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
@@ -97,7 +98,7 @@
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
                 <a href="#" class="card-title">Pengaruh Daya Tarik Iklan, Harga Dan Electronic Word Of Mouth (EWOM) terhadap Minat Pengguna Jasa Transportasi Online Grab di Kota Padang</a>
-                <h3><i class="bi bi-calendar-fill"></i>25 Juli 2015</h3>
+                <h3><i class="bi bi-journal"></i>Monograf</h3>
                 <p class="card-text">Nama Pengarang</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
@@ -110,7 +111,7 @@
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
                 <a href="/viewdetail" class="card-title">Hubungan Antara Kompensasi dengan Kepuasan Kerja Guru Honorer Sekolah Menengah Atas Negeri di Kota Administrasi Jakarta Timur</a>
-                <h3><i class="bi bi-calendar-fill"></i>13 Maret 2021</h3>
+                <h3><i class="bi bi-journal"></i>Monograf</h3>
                 <p class="card-text">Nama Pengarang</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
@@ -123,7 +124,7 @@
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
                 <a href="/viewdetail" class="card-title">Macam-Macam Faktor yang Mempengaruhi Profitabilitas di Perusahaan Industri Rokok yang Tercatat di BEJ</a>
-                <h3><i class="bi bi-calendar-fill"></i>5 September 2012</h3>
+                <h3><i class="bi bi-journal"></i>Monograf</h3>
                 <p class="card-text">Nama Pengarang</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
