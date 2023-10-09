@@ -12,9 +12,9 @@
         @csrf
         <div class="container" id="button-kat">
             <button class="simpan-button" type="submit" name="action" value="save">Simpan</button>
-            <button class="salin-judul">Salin Judul</button>
+            <!-- <button class="salin-judul">Salin Judul</button>
             <button class="salin-katalog">Salin Katalog dari</button>
-            <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button>
+            <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button> -->
         </div>
         <hr>
         <div class="dropdown" id="dropbahan">
@@ -248,7 +248,7 @@
                             <select name="Branch_id" id="lokasikol-daring" class="form-select">
                                 <option selected disabled>Masukan Lokasi Koleksi Daring</option>
                                 @foreach ($branch as $item)
-                                <option {{$item->ID}}>{{$item->Name}}</option>
+                                <option> {{$item->ID}} - {{$item->Name}}</option>
                                 @endforeach
                             </select>
                             <button id="plus-lokasikol_daring" type="button" onclick="duplicateLokDaring(this)"><i
@@ -262,13 +262,13 @@
             </div>
         </div>
         <div class="box" id="box-simpan-katalog">
-            <label for="tampilOpac"><input type="checkbox" id="tampilOpac" name="tampilOpac"> Tampil di
-                OPAC</label>
+            <!-- <label for="tampilOpac"><input type="checkbox" id="tampilOpac" name="tampilOpac"> Tampil di
+                OPAC</label> -->
             <div class="box" id="button-simpan-katalog">
                 <button class="simpan-entri-katalog" type="submit" name="action" value="save">Simpan</button>
-                <button class="salinjudul-entri-katalog">Salin Judul</button>
+                <!-- <button class="salinjudul-entri-katalog">Salin Judul</button>
                 <button class="salinkatalogdari-entri-katalog">Salin Katalog Dari</button>
-                <button class="selesai-entri-katalog" type="submit" name="action" value="finish">Selesai</button>
+                <button class="selesai-entri-katalog" type="submit" name="action" value="finish">Selesai</button> -->
             </div>
         </div>
     </form>

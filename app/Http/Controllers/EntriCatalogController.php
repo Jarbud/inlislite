@@ -215,7 +215,7 @@ class EntriCatalogController extends Controller
         $catalog->Branch_id = $branch_id;
         $catalog->save();
 
-
+        $request->session()->put('catalogid', $catalogsId);
 
         return redirect('katalog');
     }

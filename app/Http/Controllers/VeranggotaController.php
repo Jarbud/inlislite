@@ -63,9 +63,24 @@ class VeranggotaController extends Controller
                     'as' => 'status_perkawinan'
                 ]
             ],
+            // [
+            //     '$lookup' => [
+            //         'from' => 'master_status_perkawinan',
+            //         'localField' => 'MaritalStatus_id                    ',
+            //         'foreignField' => 'id',
+            //         'as' => 'status_perkawinan'
+            //     ]
+            // ],
             // Other aggregation stages if needed
         ]);
         return view('admin/verifikasianggota',compact('results','no'));
+    }
+
+    public function show($id)
+    {
+        $ki = Members::find($id);
+  
+        return response()->json($ki);
     }
 
     public function updateStatusVerify(string $id,string $email, string $status){

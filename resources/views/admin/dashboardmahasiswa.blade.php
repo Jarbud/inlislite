@@ -71,7 +71,7 @@
                           <td><span><i class="fas fa-lg fa-building"></i></span></td>
                           <td>Alamat</td>
                           <td>:</td>
-                          <td>Demo Street 123, Demo City 04312, NJ</td>
+                          <td>{{ Auth::user()->alamat }}</td>
                         </tr>
                       </table>
                     </div>
@@ -94,7 +94,7 @@
                 <div class="card-body pt-0">
                   <div class="row">
                     <div class="col-lg-12">
-                      <!-- {{ $qrcodes }} -->
+                      
                       <img src="https://niagaspace.sgp1.digitaloceanspaces.com/blog/wp-content/uploads/2021/02/02081213/tampilan-qr-code-1024x1024.jpg" alt="user-avatar" class="img-fluid">
                     </div>
                   </div>

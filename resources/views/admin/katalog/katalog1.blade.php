@@ -26,18 +26,24 @@
                 @csrf
                 <div class="container" id="button-kat">
                     <button class="simpan-button" type="submit" name="action" value="save">Simpan</button>
-                    <button class="salin-judul">Salin Judul</button>
-                    <button class="salin-katalog">Salin Katalog dari</button>
-                    <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button>
+                    <!-- <button class="salin-judul">Salin Judul</button>
+                    <button class="salin-katalog">Salin Katalog dari</button> -->
+                    <!-- <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button> -->
                 </div>
                 <hr>
                 <div class="dropdown" id="dropbahan">
                     <label for="jenis-bahan">Jenis Bahan</label>
+                    
                     <select name="jenis-bahan" id="jenis-bahan">
-                        <option disabled selected>-Jenis Bahan-</option>
+                        <!-- <option disabled selected>Jenis</option> -->
                         @foreach ( $jenisBahan as $item )
-                        <option value="{{ $item->ID }}">{{$item->Name}} ({{ $item->Keterangan }})</option>
+                            @if($item->ID == $katalog[0]->Worksheet_id)
+                                <option value="{{ $item->ID }}" selected>{{$item->Name}} ({{ $item->Keterangan }})</option>
+                            @else
+                                <option value="{{ $item->ID }}">{{$item->Name}} ({{ $item->Keterangan }})</option>
+                            @endif
                         @endforeach
+                        
                     </select>
                 </div>
                 <div class="box" id="form-entri">
@@ -56,7 +62,7 @@
                                     <div id="left1">
                                         <label for="utamaj">Judul Utama</label>
                                         <input type="text" placeholder="Masukan Judul Utama" id="judul_utama"
-                                            name="judul_utama" class="form-control" required>
+                                            name="judul_utama" class="form-control" required value="{{ $katalog[0]->Title }}">
                                     </div>
                                     <div id="left2">
                                         <label for="sandang">Diawali Kata Sandang</label>
@@ -92,7 +98,7 @@
                                     <div id="top-column">
                                         <label for="pUtama">Pengarang Utama</label>
                                         <input type="text" placeholder="Masukan Pengarang Utama" id="pUtama"
-                                            name="pUtama" class="form-control" required>
+                                            name="pUtama" class="form-control" required value="{{ $katalog[0]->Author }}">
                                     </div>
                                 </div>
                                 <div id="top2">
@@ -280,10 +286,10 @@
                         OPAC</label>
                     <div class="box" id="button-simpan-katalog">
                         <button class="simpan-entri-katalog" type="submit" name="action" value="save">Simpan</button>
-                        <button class="salinjudul-entri-katalog">Salin Judul</button>
-                        <button class="salinkatalogdari-entri-katalog">Salin Katalog Dari</button>
-                        <button class="selesai-entri-katalog" type="submit" name="action"
-                            value="finish">Selesai</button>
+                        <!-- <button class="salinjudul-entri-katalog">Salin Judul</button>
+                        <button class="salinkatalogdari-entri-katalog">Salin Katalog Dari</button> -->
+                        <!-- <button class="selesai-entri-katalog" type="submit" name="action"
+                            value="finish">Selesai</button> -->
                     </div>
                 </div>
             </form>
