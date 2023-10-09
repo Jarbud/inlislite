@@ -9,7 +9,7 @@ class DaftarKatalogController extends Controller
 {
     public function index()
     {
-        $data = Catalog::all();
+        $data = Catalog::with('catalogFile')->get();
         return view('admin\katalog\daftar_katalog', compact('data'));
     }
 }

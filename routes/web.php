@@ -71,8 +71,6 @@ Route::get('/berhasil-mendaftar', function () {
     return view('success_daftar');
 });
 
-
-
 // Route::get('/dashboard', function () {
 //     return view('admin/dashboardmahasiswa');
 // });
@@ -118,6 +116,7 @@ Route::post('/konten-Digital-store', [\App\Http\Controllers\KatalogController::c
 Route::get('/daf-katalog', [App\Http\Controllers\DaftarKatalogController::class, 'index']);
 Route::get('/entri-katalog', [App\Http\Controllers\EntriCatalogController::class, 'show'])->name('entri');
 Route::post('/entri-katalog-store', [App\Http\Controllers\EntriCatalogController::class, 'store'])->name('entri-store');
+Route::get('/histori-sederhana', [App\Http\Controllers\OpacLogsController::class, 'index']);
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);

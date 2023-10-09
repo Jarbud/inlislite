@@ -1,0 +1,72 @@
+#histori {
+    border-top: 3px solid #3c8dbc;
+    background-color: #ffffff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+}
+#histori-header {
+    background-color: rgba(43, 213, 219, 0.2);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #190d5c;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    margin-bottom: 0;
+}
+#histori-pil {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    border-top: none;
+    border-bottom: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+#histori-pil span {
+    margin-right: 10px;
+}
+#histori-pil select {
+    margin-right: 10px;
+    padding: 3px 10px;
+}
+#histori-table {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100px;
+}
+
+#histori-table td {
+    padding: 2px;
+}
+
+#histori-refresh {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    border-bottom: none;
+    border-top: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+#histori-refresh button {
+    border: 1px solid #1e99ca;
+    border-radius: 4px;
+    background-color: #25b9f3;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+#histori-page {
+    border: 1px solid rgba(43, 213, 219, 0.4);
+    border-top: none;
+    margin-top: 0;
+}

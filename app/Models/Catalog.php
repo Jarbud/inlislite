@@ -24,4 +24,9 @@ class Catalog extends Model
             session()->flush();
         }
     }
+
+    public function catalogFile()
+    {
+        return $this->hasMany(CatalogFile::class);
+    }
 }

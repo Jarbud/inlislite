@@ -9,5 +9,10 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class CatalogFile extends Model
 {
     protected $collection = 'catalogfiles';
-    protected $fillable = ['FileURL', 'FileFlash'];
+    protected $fillable = ['ID', 'Catalog_id', 'File-URL', 'FileFlash', 'IsPublish'];
+
+    public function catalog()
+    {
+        return $this->belongsTo(Catalog::class);
+    }
 }
