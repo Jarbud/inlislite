@@ -52,11 +52,6 @@
             <div class="container">
                 <div class="box" id="filter-halaman">
                     <span>Tampilkan :</span>
-                    <div class="box-hal">
-                        <select name="halaman" id="halaman">
-                            <option value="">20 per halaman</option>
-                        </select>
-                    </div>
                     <div class="dropdown">
                         <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <li class="fas fa-download"></li>
@@ -69,11 +64,10 @@
                 </div>
             </div>
             <div class="container" id="container-table-katalog">
-                <table class="table table-striped table-bordered">
+                <table id="data-table" class="table table-striped table-bordered">
                     <thead>
                         <th><input type="checkbox" name="daftar-katalog-checkbox" id="daftar-katalog-checkbox"></th>
-                        <th>#</th>
-                        <th>Member ID</th>
+                        <th>No Induk</th>
                         <th>BIBID</th>
                         <th>Judul</th>
                         <th>Edisi</th>
@@ -86,23 +80,6 @@
                         <th></th>
                     </thead>
                     <tbody>
-                        @foreach ($data as $item)
-                        <tr>
-                            <td><input type="checkbox" name="1" id="1"></td>
-                            <td></td>
-                            <td></td>
-                            <td>{{$item->BIBID}}</td>
-                            <td>{{$item->Title}}</td>
-                            <td>{{$item->Edition}}</td>
-                            <td>{{$item->Publikasi}}</td>
-                            <td>{{$item->PhysicalDescription}}</td>
-                            <td>{{$item->Subject}}</td>
-                            <td>{{$item->CallNumber}}</td>
-                            <td>{{$item->FileURL}}</td>
-                            <td>{{$item->Subject}}</td>
-                            <td></td>
-                        </tr>
-                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -133,6 +110,28 @@
                 dropdownMenu.classList.remove('show');
             }
         });
+    });
+
+    $(document).ready(function () {
+        $('#data-table').DataTable({
+            "responsive": true, 
+            "lengthChange": false, 
+            "autoWidth": false,
+            "serverSide": true,
+            "ajax": "{{ route('daf-katalog') }}",
+            "columns": [
+            { "data": null, "defaultContent": '<input type="checkbox" name="1" id="1">' },
+            { "data": "collection.NoInduk" },
+            { "data": "BIBID" },
+            { "data": "Title" },
+            { "data": "Edition" },
+            { "data": "Publikasi" },
+            { "data": "PhysicalDescription" },
+            { "data": "Subject" },
+            { "data": "CallNumber" },
+            { "data": "catalogFile.FileURL" },
+            { "data": null, "defaultContent": "" }
+        ],
     });
 </script>
 @stop

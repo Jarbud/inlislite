@@ -113,10 +113,11 @@ Route::get('/upload', [App\Http\Controllers\KatalogController::class, 'show3'])-
 Route::post('/upload-cover', [App\Http\Controllers\KatalogController::class, 'upload3'])->name('upload.file');
 Route::get('/konten-Digital', [\App\Http\Controllers\KatalogController::class, 'show4'])->name('kontendigital');
 Route::post('/konten-Digital-store', [\App\Http\Controllers\KatalogController::class, 'upload4'])->name('kontendigital-store');*/
-Route::get('/daf-katalog', [App\Http\Controllers\DaftarKatalogController::class, 'index']);
+Route::get('/daf-katalog', [App\Http\Controllers\DaftarKatalogController::class, 'index'])->name('daf-katalog');
 Route::get('/entri-katalog', [App\Http\Controllers\EntriCatalogController::class, 'show'])->name('entri');
 Route::post('/entri-katalog-store', [App\Http\Controllers\EntriCatalogController::class, 'store'])->name('entri-store');
 Route::get('/histori-sederhana', [App\Http\Controllers\OpacLogsController::class, 'index']);
+Route::get('/histori-sederhana/fetch_data', [App\Http\Controllers\OpacLogsController::class, 'fetch_data']);
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);
