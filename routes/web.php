@@ -39,6 +39,10 @@ Route::get('/statistik', function () {
     return view('statistik_body');
 });
 
+// Route::get('/daf_katalog', function () {
+//     return view('admin/katalog/daftar_katalog');
+// });
+
 Route::get('/salin_kat', function () {
     return view('admin/salin_katalog');
 });
@@ -104,7 +108,9 @@ Route::get('updateStatusVerifyAnggota/{id}/{email}/{status}', [App\Http\Controll
 Route::get('updateStatusVerifyKiAcc/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiAcc'])->name('updateStatusVerifyKiAcc');
 Route::get('updateStatusVerifyKiDitolak', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiDitolak'])->name('updateStatusVerifyKiDitolak');
 Route::get('karyailmiahadminshow/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'show'])->name('karyailmiahadminshow');
+Route::get('verifyshow/{id}', [App\Http\Controllers\VeranggotaController::class, 'show'])->name('verifyshow');
 Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
+Route::get('/daf_katalog', [\App\Http\Controllers\DaftarKatalog::class, 'index']);
 Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
 Route::post('/katalog-upload', [\App\Http\Controllers\KatalogController::class, 'upload'])->name('katalog-upload');
 /*Route::get('/koleksi', [App\Http\Controllers\KatalogController::class, 'show2'])->name('koleksi');

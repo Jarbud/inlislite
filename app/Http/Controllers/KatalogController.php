@@ -38,6 +38,8 @@ class KatalogController extends Controller
         $colstatus = CollectionStatus::all();
         $matauang = Currency::all();
         $kategori = CollectionCategories::all();
+        $katalogId = $request->session()->get('catalogid');
+        $katalog = Catalog::where('ID', $katalogId)->get();
 
         return view('admin/katalog/katalog1', compact(
             'jenisBahan',
@@ -53,6 +55,8 @@ class KatalogController extends Controller
             'colstatus',
             'matauang',
             'kategori',
+            'katalog',
+            'katalogId',
         ));
     }
 

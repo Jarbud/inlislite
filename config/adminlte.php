@@ -402,30 +402,30 @@ return [
                     'text' => 'Entri Katalog',
                     'url' => '/entri-katalog',
                 ],
-                [
-                    'text' => 'Salin Katalog',
-                    'url' => '/salin_kat',
-                ],
+                // [
+                //     'text' => 'Salin Katalog',
+                //     'url' => '/salin_kat',
+                // ],
                 [
                     'text' => 'Daftar Katalog',
                     'url' => '/daf-katalog',
                 ],
-                [
-                    'text' => 'Export Data Tag Katalog',
-                    'url' => '/export_kat',
-                ],
-                [
-                    'text' => 'Daftar Konten Digital',
-                    'url' => '/KontenDigital_kat'
-                ],
-                [
-                    'text' => 'Keranjang Katalog',
-                    'url' => '/keranjang_kat'
-                ],
-                [
-                    'text' => 'Karantina Katalog',
-                    'url' => '/karantina_kat'
-                ]
+                // [
+                //     'text' => 'Export Data Tag Katalog',
+                //     'url' => '/export_kat',
+                // ],
+                // [
+                //     'text' => 'Daftar Konten Digital',
+                //     'url' => '/KontenDigital_kat'
+                // ],
+                // [
+                //     'text' => 'Keranjang Katalog',
+                //     'url' => '/keranjang_kat'
+                // ],
+                // [
+                //     'text' => 'Karantina Katalog',
+                //     'url' => '/karantina_kat'
+                // ]
             ],
         ],
         [

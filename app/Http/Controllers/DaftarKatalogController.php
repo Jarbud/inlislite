@@ -4,21 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalog;
 use Illuminate\Http\Request;
-use Yajra\DataTables\DataTables;
 
 class DaftarKatalogController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        if ($request->ajax()) {
-            // Ambil data dari koleksi Catalog beserta relasinya
-            $data = Catalog::with('collection', 'catalogFile')
-                ->select('NoInduk', 'BIBID', 'Title', 'Edition', 'Publikasi', 'PhysicalDescription', 'Subject', 'CallNumber', 'FilleURL')
-                ->get();
-
-            return DataTables::of($data)->make();
-        }
-
-        return view('admin.katalog.daftar_katalog');
+        $data = Catalog::all();
+        $no = 1;
+        // return view('admin.katalog.daftar_katalog', ['data' => $data]);
+        return view('admin/katalog/daftar_katalog', compact('data', 'no'));
     }
 }

@@ -88,7 +88,7 @@
                     <div class="card">
                         <div class="card-body">
                             <label for="txtAlamatRumah" class="active">Alamat Tinggal Saat Ini<span style="color: Red;">*</span></label>
-                            <textarea name="AlamatSaatini" rows="4" cols="40" id="txtAlamat" class="form-control" placeholder="Masukan alamat tinggal saat ini" onchange="toggleCheckbox()"></textarea>
+                            <textarea name="AlamatSaatini" rows="4" cols="40" id="txtAlamat" class="form-control" placeholder="Masukan alamat tinggal saat ini" onchange="toggleCheckbox()" value="{{ $user->alamat }}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -153,6 +153,34 @@
                   <label for="inputNoIns" class="form-label">Telepon Institusi</label>
                   <input type="text" class="form-control" id="inputNoIns" name="NoIns">
                   <small>Masukan tanpa pemisah(ex:0241123456)</small>
+                </div>
+                <div class="col-md-12">
+                <div class="alert alert-info">
+                                    <ul>
+                                        <li>Photo yang anda upload harus jpeg,png,jpg,svg</li>
+                                        <li>Photo yang anda upload tidak boleh melebihi 2 mb</li>
+                                    </ul>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="photoinput" class="col-sm-2 col-form-label">Upload Foto KTP</label>
+                                    <div class="input-group col-sm-5">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input" id="photoinput" required>
+                                            <label class="custom-file-label" for="photoinput" >Pilih Foto</label>
+                                        </div>
+                                        <img id="preview" src="#" alt="your image" class="mt-3" style="width:100%;display:none;"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="photoinput2" class="col-sm-2 col-form-label">Upload Foto Selfie</label>
+                                    <div class="input-group col-sm-5">
+                                        <div class="custom-file">
+                                            <input type="file" name="image2" class="custom-file-input" id="photoinput2" required>
+                                            <label class="custom-file-label" for="photoinput2">Pilih Foto</label>
+                                        </div>
+                                        <img id="preview2" src="#" alt="your image" class="mt-3" style="width:100%;display:none;"/>
+                                    </div>
+                                </div>
                 </div>
                 <div class="mt-2 pt-2">
                   <label class="custom-control-label">
