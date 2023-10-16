@@ -196,6 +196,7 @@ Route::get('/konten-Digital', [\App\Http\Controllers\kontenDigitalController::cl
 Route::get('/0entrikoleksi', [\App\Http\Controllers\AkuisisiController::class, 'show'])->name('0entrikoleksi');
 Route::post('/0entrikoleksi-store', [\App\Http\Controllers\AkuisisiController::class, 'store'])->name('0entrikoleksi-store');
 Route::get('/viewcollection', [\App\Http\Controllers\ViewCollectionController::class, 'show'])->name('viewcollection');
+Route::get('/viewopac', [\App\Http\Controllers\ViewOpac::class, 'show'])->name('viewopac');
 Route::get('/bukutamu', [\App\Http\Controllers\bukutamuController::class, 'show'])->name('bukutamu');
 Route::post('/bukutamu-store', [\App\Http\Controllers\bukutamuController::class, 'store'])->name('bukutamu-store');
 Route::get('/fromsearch', [\App\Http\Controllers\fromsearchController::class, 'show'])->name('fromsearch');

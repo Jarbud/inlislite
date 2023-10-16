@@ -182,7 +182,7 @@
                     </div>
                     <div class="row">
                       <div class="col-3">
-                        <label for="AsalInstansi">Nama Istansi Lembaga</label>
+                        <label for="AsalInstansi">Nama Instansi Lembaga</label>
                       </div>
                       <div class="col-6">
                         <input type="text" id="AsalInstansi" name="AsalInstansi" style="width:100%" required>

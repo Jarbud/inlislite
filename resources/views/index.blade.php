@@ -104,7 +104,7 @@
 
           <div class="collection-button">
             <div class="d-flex justify-content-between align-items-center">
-              <a href="/viewcollection" class="btn-collection">Lihat Semua Koleksi</a>
+              <a href="/viewcollection" class="btn-collection">Lihat Semua Koleksi Digital</a>
             </div> 
           </div> 
 
@@ -230,7 +230,7 @@
           <div class="col-6">
             <div class="icon-box">
               <i class="bi bi-collection"></i>
-              <h3><a href="/viewcollection">Koleksi Digital</a></h3>
+              <h3><a href="/viewopac">OPAC</a></h3>
             </div>
           </div>
           <div class="col-6">
@@ -248,7 +248,7 @@
           <div class="col-6">
             <div class="icon-box">
               <i class="bi bi-clipboard-data"></i>
-              <h3><a href="">Survey</a></h3>
+              <h3><a href="">Survei</a></h3>
             </div>
           </div>
 

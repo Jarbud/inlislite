@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\worksheets;
+use App\Models\catalogs;
 use Illuminate\Http\Request;
 
 class ViewCollectionController extends Controller
@@ -10,6 +11,7 @@ class ViewCollectionController extends Controller
     public function show()
     {
         $jenis_bahan = worksheets::all();
-        return view('viewcollection', compact('jenis_bahan'));
+        $katalog = catalogs::all();
+        return view('viewcollection', compact('jenis_bahan', 'katalog'));
     }
 }

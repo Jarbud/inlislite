@@ -709,7 +709,7 @@ section {
 }
 
 .search .btn-search:hover {
-  background-color: #a2abff;
+  background-color: #ccc;
   color: #231a4b;
 }
 
@@ -1008,7 +1008,7 @@ section {
 }
 
 .view-collection .card {
-  margin: 15px;
+  margin: 10px;
   box-shadow: 0px 0 10px rgba(1, 41, 112, 0.1);
   border: 1px solid #eef0ef;
   transition: 0.3s;
@@ -1020,9 +1020,9 @@ section {
 }
 
 .view-collection .card-img-left {
-  width: 200px;
-  height: 283px;
-  margin: 15px 0 15px 15px;
+  width: 100px;
+  height: 141px;
+  margin: 12px 0 12px 12px;
 }
 
 .view-collection h3 i {
@@ -1030,7 +1030,7 @@ section {
 }
 
 .view-collection h3 {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 12px;
   font-family: 'Segoe UI', sans-serif;
   font-weight: 400;
@@ -1038,13 +1038,15 @@ section {
 }
 
 .view-collection p {
-  margin-top: 10px;
-  font-size: 14px;
-  width: 270px;
+  margin-top: 5px;
+  font-size: 12px;
+  width: 195px;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
-
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .view-collection i {
@@ -1052,13 +1054,14 @@ section {
 }
 
 .view-collection .btn-viewdetail {
+  margin-top: 0;
   color: #444444;
   border-color: #444444;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 5px 8px;
   transition: 0.3s;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 550;
   display: inline-block;
 }
 
@@ -1068,15 +1071,15 @@ section {
 }
 
 .view-collection .card-title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 550;
   transition: 0.3s;
-  width: 270px;
+  width: 195px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 
@@ -1086,7 +1089,7 @@ section {
 
 .view-collection h2 {
   font-weight: 600;
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 15px;
 }
 
@@ -1103,6 +1106,7 @@ section {
 
 .fromsearch .table-content {
   padding: 20px;
+  font-size: 15px;
 }
 
 .fromsearch .table1-img {
@@ -1123,12 +1127,13 @@ section {
 
 .fromsearch .btn-viewdetail {
   margin-top: 5px;
-  font-size: 14px;
+  margin-left: 3px;
+  font-size: 13px;
   color: #231a4b;
   border: 1px solid #231a4b;
   border-radius: 5px;
   transition: 0.3s;
-  padding: 5px 10px;
+  padding: 5px 8px;
 }
 
 .fromsearch .btn-viewdetail:hover {
@@ -1267,7 +1272,7 @@ section {
 .accordion-title h1 {
   color: #231a4b;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .accordion-title h1 i {
@@ -1276,7 +1281,7 @@ section {
 
 .accordion .accordion-header .accordion-button {
   background-color: #ddd;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .accordion .accordion-body .content-list li {
@@ -1286,7 +1291,7 @@ section {
   /*border-bottom: 1px solid #ddd;*/
   list-style: none;
   margin-left: -15px;
-  font-size: 14px;
+  font-size: 15px;
   width: 185px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1302,6 +1307,12 @@ section {
 
 .accordion .accordion-body .content-list li a:hover {
   color: #a2abff;
+}
+
+.accordion .accordion-body .content-list .badge {
+  background-color: #5342a2;
+  border-radius: 50px;
+  float: right;
 }
 
 /*--.detail .table-content .bookmark {
@@ -1516,6 +1527,44 @@ section {
   background-color: #231a4b;
   color: #fff;
 }
+
+.question-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.question-icon {
+  margin-right: 50px;
+}
+.question-icon:hover {
+  color: #a2abff;
+}
+
+.question-icon:last-child {
+  margin-right: 0;
+}
+
+.question {
+  text-align: center;
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.survey-header {
+  background-color: #a2abff;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 
 /*--------------------------------------------------------------
 # Artikel

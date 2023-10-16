@@ -3,7 +3,7 @@
 
     <section id="title" class="title">
       <div class="container" class="fade-up">
-        <h1>Koleksi Digital</h1>
+        <h1>Online Public Access Catalog</h1>
       </div>
     </section>
 
@@ -73,9 +73,9 @@
           <!--<div class="col-lg-6 d-flex align-items-stretch">
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
-                <a href="#" class="card-title">The Influence Of Promotion, Perceived Ease Of Use, And Price Toward Repurchase Intention Transportation Services Go-Jek On Students in Universitas Negeri Padang</a>
+                <a href="/viewdetail" class="card-title">Pengaruh Self-Efficacy, Tolerance For Risk, dan Kebebasan dalam Bekerja terhadap Minat Entrepreneurship Mahasiswa Universitas Negeri Padang</a>
                 <h3><i class="bi bi-journal"></i>Monograf</h3>
-                <p class="card-text">Nama Pengarang</p>
+                <p class="card-text">Nama Pengarang Panjang Bingit Wadawwww</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
                 </a>
@@ -86,9 +86,9 @@
           <div class="col-lg-6 d-flex align-items-stretch">
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
-                <a href="/viewdetail" class="card-title">Pengaruh Self-Efficacy, Tolerance For Risk, dan Kebebasan dalam Bekerja terhadap Minat Entrepreneurship Mahasiswa Universitas Negeri Padang</a>
+                <a href="#" class="card-title">The Influence Of Promotion, Perceived Ease Of Use, And Price Toward Repurchase Intention Transportation Services Go-Jek On Students in Universitas Negeri Padang</a>
                 <h3><i class="bi bi-journal"></i>Monograf</h3>
-                <p class="card-text">Nama Pengarang Panjang Bingit Wadawwww</p>
+                <p class="card-text">Nama Pengarang</p>
                 <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
                 </a>

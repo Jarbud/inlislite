@@ -71,15 +71,15 @@
                         <li><a href="/">Beranda</a></li>
                         <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="/baca">Baca di Tempat</a></li>
+                                <li><a href="#">Baca di Tempat</a></li>
                                 <li><a href="/borrowed">Peminjaman Buku</a></li>
                                 <li><a href="/return">Pengembalian Buku</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>Jelajahi</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="/opac">OPAC</a></li>
                                 <li><a href="/viewcollection">Koleksi Digital</a></li>
+                                <li><a href="/viewopac">OPAC</a></li>
                                 <li><a href="/statistik">Statistik</a></li>
                                 <li><a href="/artikel">Artikel</a></li>
                                 <li><a href="/survei">Survei</a></li>
@@ -153,7 +153,7 @@
                                             <li><i class="bx bx-chevron-right"></i> <a href="#">Online Public Access</a></li>                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan Koleksi Digital</a></li>
                                             <li><i class="bx bx-chevron-right"></i> <a href="#">Statistika</a></li>
                                             <li><i class="bx bx-chevron-right"></i> <a href="#">Artikel</a></li>
-                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Survey</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Survei</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@
                                             <li><i class="bx bx-chevron-right"></i> <a href="#">Online Public Access</a></li>                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan Koleksi Digital</a></li>
                                             <li><i class="bx bx-chevron-right"></i> <a href="#">Statistika</a></li>
                                             <li><i class="bx bx-chevron-right"></i> <a href="#">Artikel</a></li>
-                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Survey</a></li>
+                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Survei</a></li>
                                         </ul>
                                     </div>
                                 </div>

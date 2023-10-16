@@ -21,10 +21,11 @@
           <div class="col-sm-3 d-flex align-items-stretch">
             <div class="input-group rounded">
               <select name="input-dropdown" id="input-dropdown" class="input-control rounded">
-                <option value="0">Pilih Jenis</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">D</option>
+                    <option disabled selected>Pilih Jenis</option>
+                    <option value="1">Judul</option>
+                    <option value="2">Pengarang</option>
+                    <option value="3">Penerbit</option>
+                    <option value="4">Tahun Terbit</option>
               </select>
             </div>
           </div>
@@ -32,7 +33,7 @@
           <div class="col-sm-3 d-flex align-items-stretch">
             <div class="input-group rounded">
               <select class="input-control rounded">
-                <option disbled selected>Pilih Jenis</option>
+                <option disabled selected>Pilih Jenis</option>
                 @foreach ( $jenis_bahan as $item )
                 <option>{{ $item->Name }}</option>
                 @endforeach
@@ -64,7 +65,7 @@
                                                 <input type="checkbox" onClick="checkAll(this)" name="checkbox-all-koleksi"/>
                                             </div>
                                             <div class="col-sm-2">
-                                                <label>Pilih Semua</label>
+                                                <label><strong>Pilih Semua</strong></label>
                                             </div>
                                             <div class="col-sm-9">
                                                 <a class="btn btn-tampungg">
@@ -73,7 +74,47 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    @foreach ( $katalog as $item )
                                     <div class="table-content">
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <input type="checkbox" name="checkbox-single-koleksi" id="checkbox-single-koleksi">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a><img class="table1-img" src="assets/img/sampul.png"/></a>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <table class="table1" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2"><a class="table1-title" href="/viewdetail">{{ $item->Title }}</a></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="22%">Jenis Bahan</td>
+                                                            <td width="78%">Monograf</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Pengarang</td>
+                                                            <td>{{ $item->Author }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Penerbitan</td>
+                                                            <td>{{ $item->Publisher }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Konten Digital</td>
+                                                            <td>pdf, rar</td>
+                                                        </tr>
+                                                    </tbody>                                                    
+                                                </table>
+                                                <a class="btn btn-viewdetail" href="/viewdetail">Lihat Detail</a>
+                                            </div>    
+                                        </div>
+                                    </div>  
+                                    @endforeach
+
+                                    <!--<div class="table-content">
                                         <div class="row">
                                             <div class="col-sm-1">
                                                 <input type="checkbox" name="checkbox-single-koleksi" id="checkbox-single-koleksi">
@@ -109,11 +150,7 @@
                                             </div>    
                                         </div>
                                     </div>  
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td>
                                     <div class="table-content">
                                         <div class="row">
                                             <div class="col-sm-1">
@@ -150,11 +187,7 @@
                                             </div>    
                                         </div>
                                     </div>  
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td>
                                     <div class="table-content">
                                         <div class="row">
                                             <div class="col-sm-1">
@@ -190,7 +223,7 @@
                                                 <a class="btn btn-viewdetail" href="/viewdetail">Lihat Detail</a>
                                             </div>    
                                         </div>
-                                    </div>  
+                                    </div>-->
                                 </td>
                             </tr>
                         </tbody>
@@ -210,11 +243,21 @@
                                 <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading" data-bs-parent="accordionParent">
                                     <div class="accordion-body">
                                         <ul class="content-list">
-                                            <li><a href="#">Monograf</a></li>
-                                            <li><a href="#">Terbitan Berkala</a></li>
-                                            <li><a href="#">Bahan Campuran</a></li>
-                                            <li><a href="#">Bahan Kartografis</a></li>
-                                            <li><a href="#">Rekaman Suara</a></li>
+                                            <li><a href="#">Monograf</a>
+                                                <span class="badge">14</span>
+                                            </li>
+                                            <li><a href="#">Terbitan Berkala</a>
+                                                <span class="badge">14</span>
+                                            </li>
+                                            <li><a href="#">Bahan Campuran</a>
+                                                <span class="badge">14</span>
+                                            </li>
+                                            <li><a href="#">Bahan Kartografis</a>
+                                                <span class="badge">14</span>
+                                            </li>
+                                            <li><a href="#">Rekaman Suara</a>
+                                                <span class="badge">14</span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -229,7 +272,9 @@
                                 <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading" data-bs-parent="accordionParent">
                                     <div class="accordion-body">
                                         <ul class="content-list">
-                                            <li><a href="#">Indonesia</a></li>
+                                            <li><a href="#">Indonesia</a>
+                                                <span class="badge">14</span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -244,8 +289,12 @@
                                 <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading" data-bs-parent="accordionParent">
                                     <div class="accordion-body">
                                         <ul class="content-list">
-                                            <li><a href="#">Perpustakaan</a></li>
-                                            <li><a href="#">Nama Penerbit</a></li>
+                                            <li><a href="#">Perpustakaan</a>
+                                                <span class="badge">14</span>
+                                            </li>
+                                            <li><a href="#">Nama Penerbit</a>
+                                                <span class="badge">14</span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
