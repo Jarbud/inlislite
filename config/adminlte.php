@@ -354,10 +354,10 @@ return [
             'icon' => 'fas fa-users',
             'can' => 'admin',
             'submenu' => [
-                [
-                    'text' => 'Verifikasi Akun',
-                    'url'  => 'admin/verifikasi-account',
-                ],
+                // [
+                //     'text' => 'Verifikasi Akun',
+                //     'url'  => 'admin/verifikasi-account',
+                // ],
                 [
                     'text' => 'Verifikasi Anggota',
                     'url'  => 'admin/verifikasi-anggota',
@@ -521,12 +521,12 @@ return [
             'url'  => 'admin/changepassworduser',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text' => 'Verifikasi Akun',
-            'url'  => 'admin/verifikasi-account',
-            'icon' => 'fas fa-users',
-            'can' => 'admin',
-        ],
+        // [
+        //     'text' => 'Verifikasi Akun',
+        //     'url'  => 'admin/verifikasi-account',
+        //     'icon' => 'fas fa-users',
+        //     'can' => 'admin',
+        // ],
         [
             'text' => 'User Management',
             'url'  => 'admin/usermanagement',
