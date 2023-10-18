@@ -70,7 +70,7 @@
                         {{ __('adminlte::adminlte.remember_me') }}
                     </label>
                 </div> -->
-                <a href="{{ $register_url }}" class="btn btn-block btn-flat btn-primary">
+                <a href="http://127.0.0.1:8000/pendaftaran" class="btn btn-block btn-flat btn-primary">
                     <i class="fas fa-solid fa-user-tie"></i>
                     Register
                 </a>

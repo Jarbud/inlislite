@@ -74,9 +74,10 @@
                         <th><input type="checkbox" name="daftar-katalog-checkbox" id="daftar-katalog-checkbox"></th>
                         <!-- <th>#</th> -->
                         <th>no</th>
-                        <th>Member ID</th>
                         <th>BIBID</th>
                         <th>Judul</th>
+                        <th>Pengarang</th>
+                        <th>ISBN</th>
                         <th>Edisi</th>
                         <th>Penerbitan/Publikasi</th>
                         <th>Deskripsi Fisik</th>
@@ -91,13 +92,14 @@
                             <td>{{$no++}}</td>
                             <td>{{$item->BIBID}}</td>
                             <td>{{$item->Title}}</td>
+                            <td>{{$item->Author}}</td>
+                            <td>{{$item->ISBN}}</td>
                             <td>{{$item->Edition}}</td>
                             <td>{{$item->Publikasi}}</td>
                             <td>{{$item->PhysicalDescription}}</td>
                             <td>{{$item->Subject}}</td>
                             <td>{{$item->CallNumber}}</td>
                             <td>{{$item->Subject}}</td>
-                            <td></td>
                         </tr>
                         @endforeach
                     </tbody>

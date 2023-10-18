@@ -19,8 +19,10 @@ class EntriCatalogController extends Controller
         $refitems = RefferenceItems::where('Refference_id', '5')->get();
         $refkarya = RefferenceItems::where('Refference_id', '17')->get();
         $branch = Branchs::all();
+        $data = Catalog::all();
+        $no = 1;
 
-        return view('admin/katalog/entrikatalog', compact('jenisBahan', 'kataSandang', 'refitems', 'refkarya', 'branch'));
+        return view('admin/katalog/entrikatalog', compact('jenisBahan', 'kataSandang', 'refitems', 'refkarya', 'branch', 'data', 'no'));
     }
 
     public function store(Request $request)

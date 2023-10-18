@@ -237,18 +237,18 @@ function duplicateEksemplar() {
 
             var labelNoInduk = document.createElement("label");
             labelNoInduk.innerHTML =
-                "No Induk <input type='text' name='noInduk' id='noInduk'>";
+                "No Induk/Barcode/RFID <input type='text' name='noInduk"+i+"' id='noInduk'>";
             eksemplarDiv.appendChild(labelNoInduk);
 
-            var labelNoBarcode = document.createElement("label");
-            labelNoBarcode.innerHTML =
-                "No Barcode <input type='text' name='noBarcode' id='noBarcode'>";
-            eksemplarDiv.appendChild(labelNoBarcode);
+            // var labelNoBarcode = document.createElement("label");
+            // labelNoBarcode.innerHTML =
+            //     "No Barcode <input type='text' name='noBarcode' id='noBarcode'>";
+            // eksemplarDiv.appendChild(labelNoBarcode);
 
-            var labelNoRFID = document.createElement("label");
-            labelNoRFID.innerHTML =
-                "No RFID <input type='text' name='noRFID' id='noRFID'>";
-            eksemplarDiv.appendChild(labelNoRFID);
+            // var labelNoRFID = document.createElement("label");
+            // labelNoRFID.innerHTML =
+            //     "No RFID <input type='text' name='noRFID' id='noRFID'>";
+            // eksemplarDiv.appendChild(labelNoRFID);
 
             containerEksemplar.appendChild(eksemplarDiv);
         }

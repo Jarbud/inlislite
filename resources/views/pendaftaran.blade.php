@@ -87,9 +87,9 @@
         </div>
         <div class="mt-2 pt-2">
         <form action="{{ route('daftar-show') }}">
-            <small style="color: red;"><i class="bi bi-pencil-square"></i>  Harap login terlebih dahulu</small> <br>
+            <!-- <small style="color: red;"><i class="bi bi-pencil-square"></i>  Harap login terlebih dahulu</small> <br> -->
             <label style="padding-top: 20px;">
-                <input type="checkbox" id="agree" name="agree" {{ Auth::check() ? '' : 'disabled' }} onchange="document.getElementById('button').disabled = !this.checked;"> 
+                <input type="checkbox" id="agree" name="agree"  onchange="document.getElementById('button').disabled = !this.checked;"> 
                 Saya telah membaca & menyetujui atas persyaratan dan kondisi yang berlaku.
             </label><br>
             <input type="submit" value="Lanjutkan Pendaftaran" class="btn btn-primary" style="margin-top: 10px;" id="button" name="button" disabled>

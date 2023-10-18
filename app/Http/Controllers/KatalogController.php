@@ -40,6 +40,8 @@ class KatalogController extends Controller
         $kategori = CollectionCategories::all();
         $katalogId = $request->session()->get('catalogid');
         $katalog = Catalog::where('ID', $katalogId)->get();
+        $data = Catalog::all();
+        $no = 1;
 
         return view('admin/katalog/katalog1', compact(
             'jenisBahan',
@@ -57,6 +59,8 @@ class KatalogController extends Controller
             'kategori',
             'katalog',
             'katalogId',
+            'data',
+            'no',
         ));
     }
 

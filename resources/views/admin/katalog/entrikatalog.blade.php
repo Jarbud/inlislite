@@ -12,6 +12,7 @@
         @csrf
         <div class="container" id="button-kat">
             <button class="simpan-button" type="submit" name="action" value="save">Simpan</button>
+            <button class="salin-judul" data-toggle="modal" data-target="#pencarianKoleksi">Pencarian</button>
             <!-- <button class="salin-judul">Salin Judul</button>
             <button class="salin-katalog">Salin Katalog dari</button>
             <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button> -->
@@ -273,6 +274,45 @@
         </div>
     </form>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="pencarianKoleksi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Pencarian Koleksi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                <table id="example1" class="table table-striped table-bordered">
+                    <thead>
+                        <th>no</th>
+                        <th>Judul</th>
+                        <th>Pengarang</th>
+                        <th>ISBN</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $item)
+                        <tr>
+                            <td>{{$no++}}</td>
+                            <td>{{$item->Title}}</td>
+                            <td>{{$item->Author}}</td>
+                            <td>{{$item->ISBN}}</td>
+                            <td><button class="btn btn-info">Pilih</button></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="submit"  class="btn btn-primary">Submit</button> -->
+      </div>
+    </div>
+  </div>
+</div>
 @stop
 
 @section('css')
@@ -280,5 +320,13 @@
 @stop
 
 @section('js')
+
 <script src="{{ asset('/assets/js/admin.js') }}"></script>
+<script>
+    $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false
+    });
+  });
+</script>
 @stop

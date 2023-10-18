@@ -370,36 +370,36 @@ return [
         //     'icon' => 'fas fa-users',
         //     'can' => 'admin',
         // ],
+        // [
+        //     'text' => 'Akuisisi',
+        //     'icon' => 'fas fa-file-alt',
+        //     'can' => 'admin',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Entri Koleksi',
+        //             'url' => '/entri_kol',
+        //         ],
+        //         [
+        //             'text' => 'Daftar Koleksi',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'text' => 'Keranjang Koleksi',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'text' => 'Karantina Koleksi',
+        //             'url' => '#',
+        //         ]
+        //     ],
+        // ],
         [
-            'text' => 'Akuisisi',
+            'text' => 'Koleksi',
             'icon' => 'fas fa-file-alt',
             'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Entri Koleksi',
-                    'url' => '/entri_kol',
-                ],
-                [
-                    'text' => 'Daftar Koleksi',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'Keranjang Koleksi',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'Karantina Koleksi',
-                    'url' => '#',
-                ]
-            ],
-        ],
-        [
-            'text' => 'Katalog',
-            'icon' => 'fas fa-file-alt',
-            'can' => 'admin',
-            'submenu' => [
-                [
-                    'text' => 'Entri Katalog',
                     'url' => '/entri-katalog',
                 ],
                 // [
@@ -407,7 +407,7 @@ return [
                 //     'url' => '/salin_kat',
                 // ],
                 [
-                    'text' => 'Daftar Katalog',
+                    'text' => 'Daftar Koleksi',
                     'url' => '/daf-katalog',
                 ],
                 // [
