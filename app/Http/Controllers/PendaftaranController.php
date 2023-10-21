@@ -19,19 +19,20 @@ use App\Models\Members;
 
 class PendaftaranController extends Controller
 {
-    public function show() {
+    public function show()
+    {
         $pend = master_pendidikan::all();
         $jks = jenis_kelamin::all();
         $kerjas = master_pekerjaan::all();
         $stat = master_status_perkawinan::all();
         $pil = agama::all();
         $identitas = master_jenis_identitas::all();
-        $identitas_teks = master_jenis_identitas::where('id', '=', Auth::user()->identitas_id)->first();
         // dd($identitas_teks->Nama);
-        return view('daftar',compact('pend','jks', 'kerjas', 'stat', 'pil', 'identitas', 'identitas_teks'));
+        return view('daftar', compact('pend', 'jks', 'kerjas', 'stat', 'pil', 'identitas'));
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         Members::create([
             'IdentityType_id' => $request->input('identitas'),
             'IdentityNo' => $request->input('nomor'),

@@ -10,7 +10,6 @@
 <div class="container">
     <form action="{{ route('entri-store') }}" autocomplete="off" method="POST">
         @csrf
-        @method('PUT')
         <div class="container" id="button-kat">
             <button class="simpan-button" type="submit" name="action" value="save">Simpan</button>
         </div>
@@ -40,7 +39,7 @@
                             <div id="left1">
                                 <label for="utamaj">Judul Utama</label>
                                 <input type="text" placeholder="Masukan Judul Utama" id="judul_utama" name="judul_utama"
-                                    class="form-control" value="{{ $catalog->Title }}" required>
+                                    class="form-control" value="{{ $judulUtama }}" required>
                             </div>
                             <div id="left2">
                                 <label for="sandang">Diawali Kata Sandang</label>
@@ -56,12 +55,12 @@
                             <div id="right1">
                                 <label for="anakj">Anak Judul</label>
                                 <input type="text" placeholder="Masukan Anak Judul" id="anak_judul" name="anak_judul"
-                                    class="form-control">
+                                    class="form-control" value="{{ $anakJudul }}">
                             </div>
                             <div id="right2">
                                 <label for="pjawab">Penanggung Jawab</label>
                                 <input type="text" placeholder="Masukan Penanggung Jawab" id="pjawab" name="pjawab"
-                                    class="form-control">
+                                    class="form-control" value="{{ $penanggungJawab }}">
                             </div>
                         </div>
                     </div>
@@ -76,14 +75,14 @@
                             <div id="top-column">
                                 <label for="pUtama">Pengarang Utama</label>
                                 <input type="text" placeholder="Masukan Pengarang Utama" id="pUtama" name="pUtama"
-                                    class="form-control" value="{{ $catalog->Author }}" required>
+                                    class="form-control" value="{{ $pengarangUtama }}" required>
                             </div>
                         </div>
                         <div id="top2">
                             <div id="pengarang">
                                 <label for="pTambahan">Pengarang Tambahan</label>
                                 <input type="text" placeholder="Masukan Pengarang Tambahan" id="pTambahan"
-                                    name="pTambahan[]" class="form-control">
+                                    name="pTambahan[]" class="form-control" value="{{ $pengarangTambahan }}">
                                 <button id="plus-pengarang" type="button" onclick="duplicatePengarang(this)"><i
                                         class="fas fa-plus"></i></button>
                                 <button id="hapus-pengarang" style="display: none;" type="button"
@@ -124,22 +123,22 @@
                         <div id="DesFisik1">
                             <label for="jHalaman">Jumlah Halaman</label>
                             <input type="text" placeholder="Masukan Jumlah Halaman" id="jHalaman" name="jHalaman"
-                                class="form-control" value="{{ $catalog->PhysicalDescription }}">
+                                class="form-control" value="{{ $jumlahHalaman }}">
                         </div>
                         <div id="DesFisik2">
                             <label for="ilustrasi">Ket. Ilustrasi</label>
                             <input type="text" placeholder="Masukan Ket. Ilustrasi" id="ilustrasi" name="ilustrasi"
-                                class="form-control">
+                                class="form-control" value="{{ $ketIlustrasi }}">
                         </div>
                         <div id="DesFisik3">
                             <label for="dimensi">Dimensi</label>
                             <input type="text" placeholder="Masukan Dimensi" id="dimensi" name="dimensi"
-                                class="form-control">
+                                class="form-control" value="{{ $Dimensi }}">
                         </div>
                         <div id="DesFisik4">
                             <label for="bahansertaan">bib_Bahan Sertaan</label>
                             <input type="text" placeholder="Masukan bib_Bahan Sertaan" id="bahansertaan"
-                                name="bahansertaan" class="form-control">
+                                name="bahansertaan" class="form-control" value="{{ $bahanSertaan }}">
                         </div>
                     </div>
                 </div>

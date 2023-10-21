@@ -27,7 +27,7 @@
                 <table id="example1" class="table table-striped table-bordered">
                     <thead>
                         <th><input type="checkbox" name="daftar-katalog-checkbox" id="daftar-katalog-checkbox"></th>
-                        <th>No Induk</th>
+                        <th>No</th>
                         <th>BIBID</th>
                         <th>Judul</th>
                         <th>Pengarang</th>
@@ -37,13 +37,16 @@
                         <th>Deskripsi Fisik</th>
                         <th>Subjek</th>
                         <th>Nomor Panggil</th>
-                        <th>Konten Digital</th>
+                        <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach ($catalogs as $item)
+                        @php
+                        $no = 1;
+                        @endphp
+                        @foreach ($catalog as $item)
                         <tr>
                             <td><input type="checkbox" name="1" id="1"></td>
-                            <td>{{$item->NomorInduk}}</td>
+                            <td>{{$no++}}</td>
                             <td>{{$item->BIBID}}</td>
                             <td>{{$item->Title}}</td>
                             <td>{{$item->Author}}</td>
@@ -53,7 +56,6 @@
                             <td>{{$item->PhysicalDescription}}</td>
                             <td>{{$item->Subject}}</td>
                             <td>{{$item->CallNumber}}</td>
-                            <td>{{$item->FileURL}}</td>
                             <td><a href="{{ route('catalog', ['id' => $item->_id]) }}">Edit</a></td>
                         </tr>
                         @endforeach

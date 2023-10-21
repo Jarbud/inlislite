@@ -15,10 +15,9 @@ class DaftarKatalogController extends Controller
 {
     public function index()
     {
-        $catalogs = Catalog::with('collection', 'catalogFile')
-            ->select('ID', 'NomorInduk', 'BIBID', 'Title', 'Edition', 'Publikasi', 'PhysicalDescription', 'Subject', 'CallNumber', 'FileURL')
-            ->get();
-        return view('admin.katalog.daftar_katalog', compact('catalogs'));
+        $catalog = Catalog::all();
+
+        return view('admin.katalog.daftar_katalog', compact('catalog'));
     }
 
     public function edit(Request $request, $id)
@@ -30,7 +29,46 @@ class DaftarKatalogController extends Controller
         $refkarya = RefferenceItems::where('Refference_id', '17')->get();
         $branch = Branchs::all();
 
-        return view('admin.katalog.oentrikatalog', compact('catalog', 'jenisBahan', 'kataSandang', 'refitems', 'refkarya', 'branch'));
+        $title = $catalog->Title;
+        $components = explode(': ', $title);
+        $judulUtama = $components[0] ?? '';
+        $anakJudul = $components[1] ?? '';
+        $penanggungJawab = $components[2] ?? '';
+        ########################################################
+
+        $author = $catalog->Author;
+        $components1 = explode(";", "$author");
+        $pengarangUtama = $components1[0] ?? "";
+        $pengarangTambahan = $components1[1] ?? "";
+        ########################################################
+
+        $physicaldescription = $catalog->PhysicalDescription;
+        $components2 = preg_split("/[:|,]/", "$physicaldescription");
+        $jumlahHalaman = $components2[1] ?? "";
+        $ketIlustrasi = $components2[2] ?? "";
+        $Dimensi = $components2[3] ?? "";
+        $bahanSertaan = $components2[0] ?? "";
+        ########################################################
+
+
+
+        return view('admin.katalog.oentrikatalog', compact(
+            'catalog',
+            'jenisBahan',
+            'kataSandang',
+            'refitems',
+            'refkarya',
+            'branch',
+            'judulUtama',
+            'anakJudul',
+            'penanggungJawab',
+            'pengarangUtama',
+            'pengarangTambahan',
+            'jumlahHalaman',
+            'ketIlustrasi',
+            'Dimensi',
+            'bahanSertaan',
+        ));
     }
 
     public function update(Request $request, $id)
@@ -74,7 +112,6 @@ class DaftarKatalogController extends Controller
             }
             $title .= $penanggungJawab;
         }
-
         $author = "";
         if (!empty($pengarangUtama)) {
             $author .= $pengarangUtama;
@@ -85,7 +122,6 @@ class DaftarKatalogController extends Controller
             }
             $author .= implode(':', $pengarangTambahan);
         }
-
         $publishlocation = "$tempatTerbit";
         $publisher = "$Penerbit";
         $publishyear = "$tahunTerbit";
@@ -132,7 +168,6 @@ class DaftarKatalogController extends Controller
         if ($physicaldescription === "") {
             $physicaldescription = null;
         }
-
         $edition = "";
         if (!empty($Edisi)) {
             $edition .= $Edisi;
@@ -225,6 +260,6 @@ class DaftarKatalogController extends Controller
         $catalog->Branch_id = $branch_id;
         $catalog->save();
 
-        return redirect('katalog');
+        return view('admin/katalog/katalog1');
     }
 }
