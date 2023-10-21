@@ -24,12 +24,14 @@
                 </div>
             </div>
             <div class="container" id="container-table-katalog">
-                <table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
+                <table id="example1" class="table table-striped table-bordered">
                     <thead>
                         <th><input type="checkbox" name="daftar-katalog-checkbox" id="daftar-katalog-checkbox"></th>
                         <th>No Induk</th>
                         <th>BIBID</th>
                         <th>Judul</th>
+                        <th>Pengarang</th>
+                        <th>ISBN</th>
                         <th>Edisi</th>
                         <th>Penerbitan/Publikasi</th>
                         <th>Deskripsi Fisik</th>
@@ -44,6 +46,8 @@
                             <td>{{$item->NomorInduk}}</td>
                             <td>{{$item->BIBID}}</td>
                             <td>{{$item->Title}}</td>
+                            <td>{{$item->Author}}</td>
+                            <td>{{$item->ISBN}}</td>
                             <td>{{$item->Edition}}</td>
                             <td>{{$item->Publikasi}}</td>
                             <td>{{$item->PhysicalDescription}}</td>
@@ -67,8 +71,24 @@
 
 @section('js')
 <script>
-    $(document).ready( function () {
-    $('#tabel-data').DataTable();
-} );
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        dropdownToggle.addEventListener('click', function () {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!dropdownMenu.contains(event.target) && !dropdownToggle.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    });
+    $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false
+    });
+  });
 </script>
 @stop

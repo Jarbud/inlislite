@@ -299,7 +299,7 @@
             <div class="box" id="tambah-Eksemplar">
                 <small><button id="popupOpen">Tambah Eksemplar</button></small>
             </div>
-            <section id="koleksi1">
+            <!-- <section id="koleksi1">
                 <div class="container" id="add-filter">
                     <small><button class="dan-button">Dan</button></small>
                     <small><button class="atau-button">Atau</button></small>
@@ -322,7 +322,7 @@
             <div class="search-box1">
                 <button class="searchButton"><i class='fas fa-search'></i> Cari</button>
                 <button class="refreshButton"><i class='fas fa-undo'></i> Ulangi</button>
-            </div>
+            </div> -->
             <div class="box" id="aksi-koleksi1">
                 <span>Aksi</span>
                 <select name="aksi" id="aksi" class="left-align">
@@ -411,9 +411,9 @@
                                         class="fas fa-plus"></i></button>
                             </div>
                             <div id="isi-si1">
-                                <label>No Induk <input type="text" name="noInduk" id="noInduk" required></label>
-                                <label>No Barcode <input type="text" name="noBarcode" id="noBarcode" required></label>
-                                <label>No RFID <input type="text" name="noRFID" id="noRFID" required></label>
+                                <label>No Induk/Barcode/RFID <input type="text" name="noInduk" id="noInduk" required></label>
+                                <!-- <label>No Barcode <input type="text" name="noBarcode" id="noBarcode" required readonly></label>
+                                <label>No RFID <input type="text" name="noRFID" id="noRFID" required readonly></label> -->
                             </div>
                         </div>
                         <div class="col" id="si2">
@@ -658,4 +658,10 @@
 
 @section('js')
 <script src="{{ asset('/assets/js/admin.js') }}"></script>
+<script>
+    function updateInput(val){
+        document.getElementById("noBarcode").value = val;
+        document.getElementById("noRFID").value = val;
+    }
+</script>
 @stop
