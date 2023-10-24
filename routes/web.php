@@ -109,10 +109,8 @@ Route::get('updateStatusVerifyKiAcc/{id}', [App\Http\Controllers\Karyailmiahadmi
 Route::get('updateStatusVerifyKiDitolak', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiDitolak'])->name('updateStatusVerifyKiDitolak');
 Route::get('karyailmiahadminshow/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'show'])->name('karyailmiahadminshow');
 Route::get('verifyshow/{id}', [App\Http\Controllers\VeranggotaController::class, 'show'])->name('verifyshow');
-Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
-Route::get('/daf_katalog', [\App\Http\Controllers\DaftarKatalog::class, 'index']);
-Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
-Route::post('/katalog-upload', [\App\Http\Controllers\KatalogController::class, 'upload'])->name('katalog-upload');
+Route::post('/katalog-store', [App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
+Route::post('/katalog-upload', [App\Http\Controllers\KatalogController::class, 'upload'])->name('katalog-upload');
 Route::get('/daf-katalog', [App\Http\Controllers\DaftarKatalogController::class, 'index']);
 Route::get('catalog/edit/{id}', [App\Http\Controllers\DaftarKatalogController::class, 'edit'])->name('catalog');
 Route::put('catalog/update/{id}', [App\Http\Controllers\DaftarKatalogController::class, 'update'])->name('catalog-update');
@@ -120,7 +118,10 @@ Route::get('/entri-katalog', [App\Http\Controllers\EntriCatalogController::class
 Route::post('/entri-katalog-store', [App\Http\Controllers\EntriCatalogController::class, 'store'])->name('entri-store');
 Route::get('/histori-sederhana', [App\Http\Controllers\OpacLogsController::class, 'index']);
 Route::get('/histori-sederhana/fetch_data', [App\Http\Controllers\OpacLogsController::class, 'fetch_data']);
-
+Route::get('/bukuTamu', [App\Http\Controllers\BukuTamuController::class, 'show']);
+Route::get('/bukuTamu', [App\Http\Controllers\BukuTamuController::class, 'store'])->name('Bukutamu.store');
+Route::get('/bukuTamu', [App\Http\Controllers\KunjunganController::class, 'get'])->name('bukutamu');
+Route::post('/bukuTamu-store', [App\Http\Controllers\KunjunganController::class, 'store'])->name('bukutamu.store');
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);

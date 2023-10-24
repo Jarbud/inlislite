@@ -60,3 +60,42 @@ function checkAll(ele) {
         }
     }
 }
+
+document.getElementById("checkButton").addEventListener("click", function () {
+    var nim = document.getElementById("NoPengunjung").value;
+
+    fetch(`/get?NoPengunjung=${nim}`)
+        .then((response) => response.json())
+        .then((data) => {
+            if (data) {
+                document.getElementById("Fullname").textContent = data.Fullname;
+                document.getElementById("mahasiswaData").style.display =
+                    "block";
+            } else {
+                alert("NIM tidak ditemukan.");
+            }
+        });
+});
+
+document.getElementById("simpanButton").addEventListener("click", function () {
+    document.getElementById("NoPengunjung").value = "";
+    document.getElementById("mahasiswaData").style.display = "none";
+});
+
+Quagga.init({
+    inputStream: {
+        name: "Live",
+        type: "LiveStream",
+        target: document.querySelector("#NoPengunjung"),
+    },
+    decoder: {
+        readers: ["code_128_reader"],
+    },
+});
+
+Quagga.start();
+
+Quagga.onDetected((result) => {
+    const nim = result.codeResult.code;
+    document.getElementById("NoPengunjung").value = nim;
+});
