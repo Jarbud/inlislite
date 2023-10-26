@@ -1,9 +1,7 @@
 @extends('master')
 @section('content')
 
-@php
-    $user = auth()->user();
-@endphp
+
 
 <div class="container">
     <div class="content-wrapper">
@@ -27,30 +25,62 @@
                   </label>
                   <select name="identitas" id="identitas" class="form-select">
                     @foreach ($identitas as $item)  
-                      @if($item->id == $user->identitas_id)
-                        <option value="{{ $item->id }}" selected>{{$item->Nama}}</option>
-                      @else
+                      
                         <option value="{{ $item->id }}">{{$item->Nama}}</option>
-                      @endif
+                      
                     @endforeach
-                    <!-- <option value="{{ $user->identitas_id }}">{{ $identitas_teks->Nama }}</option> -->
                   </select>   
                 </div>
                 <div class="col-md-9">
                   <label for="inputNo" style="opacity: 0;"></label><br>
-                  <input type="text" maxlength="20" size="40" class="form-control" id="nomor" name="nomor" placeholder="Masukan nomor identitas" value="{{ $user->no_pengenal }}" required>
+                  <input type="text" maxlength="20" size="40" class="form-control" id="nomor" name="nomor" placeholder="Masukan nomor identitas" required>
                 </div>
                 <div class="col-md-12">
                   <label for="inputEmail" class="form-label">Email
                       <span style="color: red;">*</span>
                   </label>
-                  <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" onchange="toggleCheckbox()" value="{{ $user->email }}">
+                  <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" onchange="toggleCheckbox()" >
+                </div>
+                <div class="col-md-12">
+                {{-- Password field --}}
+                <label for="inputEmail" class="form-label">Password
+                      <span style="color: red;">*</span>
+                  </label>
+        <div class="input-group mb-3">
+            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                   placeholder="{{ __('adminlte::adminlte.password') }}">
+
+
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
+        {{-- Confirm password field --}}
+        <label for="inputEmail" class="form-label">Re-Type Password
+                      <span style="color: red;">*</span>
+                  </label>
+        <div class="input-group mb-3">
+            <input type="password" name="password_confirmation"
+                   class="form-control @error('password_confirmation') is-invalid @enderror"
+                   placeholder="Ketik ulang password">
+
+            
+
+            @error('password_confirmation')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
                 </div>
                 <div class="col-md-12">
                   <label for="inputNama" class="form-label">Nama Lengkap
                       <span style="color: red;">*</span>
                   </label>
-                  <input type="text" class="form-control" id="Nama" name="name" placeholder="Masukan nama lengkap anda sesuai kartu identitas" onchange="toggleCheckbox()" value="{{ $user->name }}">
+                  <input type="text" class="form-control" id="Nama" name="name" placeholder="Masukan nama lengkap anda sesuai kartu identitas" onchange="toggleCheckbox()">
                   <small>Sesuai dengan identitas</small>
                 </div>
                 <div class="col-md-6">
@@ -88,7 +118,7 @@
                     <div class="card">
                         <div class="card-body">
                             <label for="txtAlamatRumah" class="active">Alamat Tinggal Saat Ini<span style="color: Red;">*</span></label>
-                            <textarea name="AlamatSaatini" rows="4" cols="40" id="txtAlamat" class="form-control" placeholder="Masukan alamat tinggal saat ini" onchange="toggleCheckbox()" value="{{ $user->alamat }}"></textarea>
+                            <textarea name="AlamatSaatini" rows="4" cols="40" id="txtAlamat" class="form-control" placeholder="Masukan alamat tinggal saat ini" onchange="toggleCheckbox()"></textarea>
                         </div>
                     </div>
                 </div>

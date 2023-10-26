@@ -26,9 +26,9 @@ class PendaftaranController extends Controller
         $stat = master_status_perkawinan::all();
         $pil = agama::all();
         $identitas = master_jenis_identitas::all();
-        $identitas_teks = master_jenis_identitas::where('id', '=', Auth::user()->identitas_id)->first();
+        // $identitas_teks = master_jenis_identitas::where('id', '=', Auth::user()->identitas_id)->first();
         // dd($identitas_teks->Nama);
-        return view('daftar',compact('pend','jks', 'kerjas', 'stat', 'pil', 'identitas', 'identitas_teks'));
+        return view('daftar',compact('pend','jks', 'kerjas', 'stat', 'pil', 'identitas'));
     }
 
     public function store(Request $request) {
