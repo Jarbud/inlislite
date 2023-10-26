@@ -12,10 +12,6 @@
         @csrf
         <div class="container" id="button-kat">
             <button class="simpan-button" type="submit" name="action" value="save">Simpan</button>
-            <button class="salin-judul" data-toggle="modal" data-target="#pencarianKoleksi">Pencarian</button>
-            <!-- <button class="salin-judul">Salin Judul</button>
-            <button class="salin-katalog">Salin Katalog dari</button>
-            <button class="selesai-button" type="submit" name="action" value="finish">Selesai</button> -->
         </div>
         <hr>
         <div class="dropdown" id="dropbahan">
@@ -23,7 +19,8 @@
             <select name="jenis-bahan" id="jenis-bahan">
                 <option disabled selected>-Jenis Bahan-</option>
                 @foreach ( $jenisBahan as $item )
-                <option value="{{ $item->ID }}">{{$item->Name}} ({{ $item->Keterangan }})</option>
+                <option value="{{ $item->ID }}" @if ($item->ID == $catalog->Worksheet_id) selected
+                    @endif>{{$item->Name}} ({{ $item->Keterangan }})</option>
                 @endforeach
             </select>
         </div>
@@ -33,7 +30,6 @@
             </div>
             <hr>
             <div class="box-body">
-
                 <div class="card" id="ek1">
                     <div class="card-header">
                         Judul
@@ -43,7 +39,7 @@
                             <div id="left1">
                                 <label for="utamaj">Judul Utama</label>
                                 <input type="text" placeholder="Masukan Judul Utama" id="judul_utama" name="judul_utama"
-                                    class="form-control" required>
+                                    class="form-control" value="{{ $judulUtama }}" required>
                             </div>
                             <div id="left2">
                                 <label for="sandang">Diawali Kata Sandang</label>
@@ -59,12 +55,12 @@
                             <div id="right1">
                                 <label for="anakj">Anak Judul</label>
                                 <input type="text" placeholder="Masukan Anak Judul" id="anak_judul" name="anak_judul"
-                                    class="form-control">
+                                    class="form-control" value="{{ $anakJudul }}">
                             </div>
                             <div id="right2">
                                 <label for="pjawab">Penanggung Jawab</label>
                                 <input type="text" placeholder="Masukan Penanggung Jawab" id="pjawab" name="pjawab"
-                                    class="form-control">
+                                    class="form-control" value="{{ $penanggungJawab }}">
                             </div>
                         </div>
                     </div>
@@ -79,14 +75,14 @@
                             <div id="top-column">
                                 <label for="pUtama">Pengarang Utama</label>
                                 <input type="text" placeholder="Masukan Pengarang Utama" id="pUtama" name="pUtama"
-                                    class="form-control" required>
+                                    class="form-control" value="{{ $pengarangUtama }}" required>
                             </div>
                         </div>
                         <div id="top2">
                             <div id="pengarang">
                                 <label for="pTambahan">Pengarang Tambahan</label>
                                 <input type="text" placeholder="Masukan Pengarang Tambahan" id="pTambahan"
-                                    name="pTambahan[]" class="form-control">
+                                    name="pTambahan[]" class="form-control" value="{{ $pengarangTambahan }}">
                                 <button id="plus-pengarang" type="button" onclick="duplicatePengarang(this)"><i
                                         class="fas fa-plus"></i></button>
                                 <button id="hapus-pengarang" style="display: none;" type="button"
@@ -104,17 +100,17 @@
                         <div id="penerbit1">
                             <label for="tempatT">Tempat Terbit</label>
                             <input type="text" placeholder="Masukan Tempat Terbit" id="tempatT" name="tempatT"
-                                class="form-control" required>
+                                class="form-control" value="{{ $catalog->PublishLocation }}" required>
                         </div>
                         <div id="penerbit2">
                             <label for="penerbit">Penerbit</label>
                             <input type="text" placeholder="Masukan Penerbit" id="penerbit" name="penerbit"
-                                class="form-control" required>
+                                class="form-control" value="{{ $catalog->Publisher }}" required>
                         </div>
                         <div id="penerbit3">
                             <label for="tahunT">Tahun Terbit</label>
                             <input type="text" placeholder="Masukan Tahun Terbit" id="tahunT" name="tahunT"
-                                class="form-control" required>
+                                class="form-control" value="{{ $catalog->PublishYear }}" required>
                         </div>
                     </div>
                 </div>
@@ -127,22 +123,22 @@
                         <div id="DesFisik1">
                             <label for="jHalaman">Jumlah Halaman</label>
                             <input type="text" placeholder="Masukan Jumlah Halaman" id="jHalaman" name="jHalaman"
-                                class="form-control">
+                                class="form-control" value="{{ $jumlahHalaman }}">
                         </div>
                         <div id="DesFisik2">
                             <label for="ilustrasi">Ket. Ilustrasi</label>
                             <input type="text" placeholder="Masukan Ket. Ilustrasi" id="ilustrasi" name="ilustrasi"
-                                class="form-control">
+                                class="form-control" value="{{ $ketIlustrasi }}">
                         </div>
                         <div id="DesFisik3">
                             <label for="dimensi">Dimensi</label>
                             <input type="text" placeholder="Masukan Dimensi" id="dimensi" name="dimensi"
-                                class="form-control">
+                                class="form-control" value="{{ $Dimensi }}">
                         </div>
                         <div id="DesFisik4">
                             <label for="bahansertaan">bib_Bahan Sertaan</label>
                             <input type="text" placeholder="Masukan bib_Bahan Sertaan" id="bahansertaan"
-                                name="bahansertaan" class="form-control">
+                                name="bahansertaan" class="form-control" value="{{ $bahanSertaan }}">
                         </div>
                     </div>
                 </div>
@@ -152,13 +148,13 @@
                         <div id="ForEdisi1">
                             <label for="edisi">Edisi</label>
                             <input type="text" placeholder="Masukan Edisi" id="edisi" name="Edition"
-                                class="form-control">
+                                class="form-control" value="{{ $catalog->Edition }}">
                         </div>
                         <div id="ForEdisi2">
                             <div id="subjek-column">
                                 <label for="subjek">Subjek</label>
                                 <input type="text" placeholder="Masukan Subjek" id="subjek" name="Subject[]"
-                                    class="form-control">
+                                    class="form-control" value="{{ $catalog->Subject }}">
                                 <button id="plus-subjek" type="button" onclick="duplicateSubjek(this)"><i
                                         class="fas fa-plus"></i></button>
                                 <button id="hapus-subjek" style="display: none;" type="button"
@@ -168,13 +164,13 @@
                         <div id="ForEdisi3">
                             <label for="klasddc">No. Klas DDC</label>
                             <input type="text" placeholder="Masukan No. Klas DDC" id="klasddc" name="DeweyNo"
-                                class="form-control">
+                                class="form-control" value="{{ $catalog->DeweyNo }}">
                         </div>
                         <div id="ForEdisi4">
                             <div id="Edisi4-container">
                                 <label for="No. Panggil">No. Panggil</label>
                                 <input type="text" placeholder="Masukan No. Panggil" id="nopanggil" name="CallNumber[]"
-                                    class="form-control">
+                                    class="form-control" value="{{ $catalog->CallNumber }}">
                                 <button id="plus-noPanggil" type="button" onclick="duplicateNoPanggil(this)"><i
                                         class="fas fa-plus"></i></button>
                                 <button id="hapus-noPanggil" style="display: none;" type="button"
@@ -185,7 +181,7 @@
                             <div id="Edisi5-container">
                                 <label for="isbn">ISBN</label>
                                 <input type="text" placeholder="Masukan ISBN" id="isbn" name="ISBN[]"
-                                    class="form-control">
+                                    class="form-control" value="{{ $catalog->ISBN }}">
                                 <button id="plus-ISBN" type="button" onclick="duplicateISBN(this)"><i
                                         class="fas fa-plus"></i></button>
                                 <button id="hapus-ISBN" style="display: none;" type="button"
@@ -203,7 +199,7 @@
                         <div id="catatan1">
                             <label for="catatan">Catatan</label>
                             <textarea placeholder="Masukan Jumlah Halaman" id="catatan" name="Note[]"
-                                class="form-control"></textarea>
+                                class="form-control">{{ $catalog->Note }}</textarea>
                             <button id="plus-catatan" type="button" onclick="duplicateCatatan(this)"><i
                                     class="fas fa-plus"></i></button>
                             <button id="hapus-catatan" style="display: none;" type="button"
@@ -226,7 +222,7 @@
                             <label for="karya">Bentuk Karya Tulis</label>
                             <select name="karya" id="karya" class="form-select">
                                 @foreach ($refkarya as $item)
-                                <option>{{$item->Code}} - {{$item->Name}}</option>
+                                <option value="{{ $catalog->IsRDA }}">{{$item->Code}} - {{$item->Name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -249,7 +245,7 @@
                             <select name="Branch_id" id="lokasikol-daring" class="form-select">
                                 <option selected disabled>Masukan Lokasi Koleksi Daring</option>
                                 @foreach ($branch as $item)
-                                <option> {{$item->ID}} - {{$item->Name}}</option>
+                                <option value="{{ $catalog->Branch_id }}"> {{$item->ID}} - {{$item->Name}}</option>
                                 @endforeach
                             </select>
                             <button id="plus-lokasikol_daring" type="button" onclick="duplicateLokDaring(this)"><i
@@ -274,46 +270,6 @@
         </div>
     </form>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="pencarianKoleksi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Pencarian Koleksi</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table id="example1" class="table table-striped table-bordered">
-                    <thead>
-                        <th>no</th>
-                        <th>Judul</th>
-                        <th>Pengarang</th>
-                        <th>ISBN</th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                        @foreach ($data as $item)
-                        <tr>
-                            <td>{{$no++}}</td>
-                            <td>{{$item->Title}}</td>
-                            <td>{{$item->Author}}</td>
-                            <td>{{$item->ISBN}}</td>
-                            <td><button class="btn btn-info">Pilih</button></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="submit"  class="btn btn-primary">Submit</button> -->
-            </div>
-        </div>
-    </div>
-</div>
 @stop
 
 @section('css')
@@ -321,13 +277,5 @@
 @stop
 
 @section('js')
-
 <script src="{{ asset('/assets/js/admin.js') }}"></script>
-<script>
-    $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false
-    });
-  });
-</script>
 @stop

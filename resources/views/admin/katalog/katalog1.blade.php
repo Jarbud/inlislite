@@ -23,6 +23,7 @@
     <div class="card-body" id="entriDrop">
         <div id="kat1" class="bagian">
             <form action="{{ route('katalog-store') }}" autocomplete="off" method="POST">
+                @method('PUT')
                 @csrf
                 <div class="container" id="button-kat">
                     <button class="simpan-button" type="submit" name="action" value="save">Simpan</button>
@@ -33,17 +34,17 @@
                 <hr>
                 <div class="dropdown" id="dropbahan">
                     <label for="jenis-bahan">Jenis Bahan</label>
-                    
+
                     <select name="jenis-bahan" id="jenis-bahan">
                         <!-- <option disabled selected>Jenis</option> -->
                         @foreach ( $jenisBahan as $item )
-                            @if($item->ID == $katalog[0]->Worksheet_id)
-                                <option value="{{ $item->ID }}" selected>{{$item->Name}} ({{ $item->Keterangan }})</option>
-                            @else
-                                <option value="{{ $item->ID }}">{{$item->Name}} ({{ $item->Keterangan }})</option>
-                            @endif
+                        @if($item->ID == $katalog[0]->Worksheet_id)
+                        <option value="{{ $item->ID }}" selected>{{$item->Name}} ({{ $item->Keterangan }})</option>
+                        @else
+                        <option value="{{ $item->ID }}">{{$item->Name}} ({{ $item->Keterangan }})</option>
+                        @endif
                         @endforeach
-                        
+
                     </select>
                 </div>
                 <div class="box" id="form-entri">
@@ -62,7 +63,8 @@
                                     <div id="left1">
                                         <label for="utamaj">Judul Utama</label>
                                         <input type="text" placeholder="Masukan Judul Utama" id="judul_utama"
-                                            name="judul_utama" class="form-control" required value="{{ $katalog[0]->Title }}">
+                                            name="judul_utama" class="form-control" required
+                                            value="{{ $katalog[0]->Title }}">
                                     </div>
                                     <div id="left2">
                                         <label for="sandang">Diawali Kata Sandang</label>
@@ -98,7 +100,8 @@
                                     <div id="top-column">
                                         <label for="pUtama">Pengarang Utama</label>
                                         <input type="text" placeholder="Masukan Pengarang Utama" id="pUtama"
-                                            name="pUtama" class="form-control" required value="{{ $katalog[0]->Author }}">
+                                            name="pUtama" class="form-control" required
+                                            value="{{ $katalog[0]->Author }}">
                                     </div>
                                 </div>
                                 <div id="top2">
@@ -411,7 +414,8 @@
                                         class="fas fa-plus"></i></button>
                             </div>
                             <div id="isi-si1">
-                                <label>No Induk/Barcode/RFID <input type="text" name="noInduk" id="noInduk" required></label>
+                                <label>No Induk/Barcode/RFID <input type="text" name="noInduk" id="noInduk"
+                                        required></label>
                                 <!-- <label>No Barcode <input type="text" name="noBarcode" id="noBarcode" required readonly></label>
                                 <label>No RFID <input type="text" name="noRFID" id="noRFID" required readonly></label> -->
                             </div>

@@ -85,18 +85,19 @@
                 </div>
                 <div class="col-md-6">
                 <label for="inputTtl" class="form-label">Tempat Tanggal Lahir
-                    <span style="color: red;">*</span>
+                  <span style="color: red;">*</span>
                 </label>
-                  <input type="text" class="form-control" id="Tempat" name="tempat" placeholder="Masukan Tempat Lahir" onchange="toggleCheckbox()">
-                </div>
-                <div class="col-md-3">
+                <input type="text" class="form-control" id="Tempat" name="tempat" placeholder="Masukan Tempat Lahir"
+                  onchange="toggleCheckbox()">
+              </div>
+              <div class="col-md-3">
                 <label for="inputTtl" class="form-label" style="opacity: 0;">Tempat Tanggal Lahir
-                    <span style="color: red;">*</span>
+                  <span style="color: red;">*</span>
                 </label><br>
                 <input type="date" class="form-control" id="Tempat" name="tanggal" onchange="toggleCheckbox()">
-                </div>
-                <div class="col-md-12">
-                  <label for="inputJen" class="active">Jenis Kelamin
+              </div>
+              <div class="col-md-12">
+                <label for="inputJen" class="active">Jenis Kelamin
                   <span style="color: red;">*</span>
                   </label>
                         <select name="Jenis" id="Jenis" class="form-select">
@@ -186,48 +187,49 @@
                 </div>
                 <div class="col-md-12">
                 <div class="alert alert-info">
-                                    <ul>
-                                        <li>Photo yang anda upload harus jpeg,png,jpg,svg</li>
-                                        <li>Photo yang anda upload tidak boleh melebihi 2 mb</li>
-                                    </ul>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="photoinput" class="col-sm-2 col-form-label">Upload Foto KTP</label>
-                                    <div class="input-group col-sm-5">
-                                        <div class="custom-file">
-                                            <input type="file" name="image" class="custom-file-input" id="photoinput" required>
-                                            <label class="custom-file-label" for="photoinput" >Pilih Foto</label>
-                                        </div>
-                                        <img id="preview" src="#" alt="your image" class="mt-3" style="width:100%;display:none;"/>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="photoinput2" class="col-sm-2 col-form-label">Upload Foto Selfie</label>
-                                    <div class="input-group col-sm-5">
-                                        <div class="custom-file">
-                                            <input type="file" name="image2" class="custom-file-input" id="photoinput2" required>
-                                            <label class="custom-file-label" for="photoinput2">Pilih Foto</label>
-                                        </div>
-                                        <img id="preview2" src="#" alt="your image" class="mt-3" style="width:100%;display:none;"/>
-                                    </div>
-                                </div>
+                  <ul>
+                    <li>Photo yang anda upload harus jpeg,png,jpg,svg</li>
+                    <li>Photo yang anda upload tidak boleh melebihi 2 mb</li>
+                  </ul>
                 </div>
-                <div class="mt-2 pt-2">
-                  <label class="custom-control-label">
-                    <input onChange="showButton();" type="checkbox" class="custom-control-input" disabled>
-                    Saya menyatakan data yang diisi benar dan dapat dipertanggungjawabkan.
-                  </label>
-                  <div>
-                    <button type="submit" class="btn btn-primary" id="idBtnSub" style="visibility: hidden;">Daftar</button>
+                <div class="form-group row">
+                  <label for="photoinput" class="col-sm-2 col-form-label">Upload Foto KTP</label>
+                  <div class="input-group col-sm-5">
+                    <div class="custom-file">
+                      <input type="file" name="image" class="custom-file-input" id="photoinput" required>
+                      <label class="custom-file-label" for="photoinput">Pilih Foto</label>
+                    </div>
+                    <img id="preview" src="#" alt="your image" class="mt-3" style="width:100%;display:none;" />
                   </div>
                 </div>
-              </form>
-            </div>
+                <div class="form-group row">
+                  <label for="photoinput2" class="col-sm-2 col-form-label">Upload Foto Selfie</label>
+                  <div class="input-group col-sm-5">
+                    <div class="custom-file">
+                      <input type="file" name="image2" class="custom-file-input" id="photoinput2" required>
+                      <label class="custom-file-label" for="photoinput2">Pilih Foto</label>
+                    </div>
+                    <img id="preview2" src="#" alt="your image" class="mt-3" style="width:100%;display:none;" />
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2 pt-2">
+                <label class="custom-control-label">
+                  <input onChange="showButton();" type="checkbox" class="custom-control-input" disabled>
+                  Saya menyatakan data yang diisi benar dan dapat dipertanggungjawabkan.
+                </label>
+                <div>
+                  <button type="submit" class="btn btn-primary" id="idBtnSub"
+                    style="visibility: hidden;">Daftar</button>
+                </div>
+              </div>
+            </form>
           </div>
-          </div>
-          </section>
         </div>
     </div>
+    </section>
+  </div>
+</div>
 </div>
 
 @endsection

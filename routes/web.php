@@ -109,20 +109,27 @@ Route::get('updateStatusVerifyKiAcc/{id}', [App\Http\Controllers\Karyailmiahadmi
 Route::get('updateStatusVerifyKiDitolak', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiDitolak'])->name('updateStatusVerifyKiDitolak');
 Route::get('karyailmiahadminshow/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'show'])->name('karyailmiahadminshow');
 Route::get('verifyshow/{id}', [App\Http\Controllers\VeranggotaController::class, 'show'])->name('verifyshow');
-Route::get('/katalog', [\App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
-Route::get('/daf_katalog', [\App\Http\Controllers\DaftarKatalog::class, 'index']);
-Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
-Route::post('/katalog-upload', [\App\Http\Controllers\KatalogController::class, 'upload'])->name('katalog-upload');
-/*Route::get('/koleksi', [App\Http\Controllers\KatalogController::class, 'show2'])->name('koleksi');
-Route::post('/koleksi-store', [App\Http\Controllers\KatalogController::class, 'store2'])->name('koleksi-store');
-Route::get('/upload', [App\Http\Controllers\KatalogController::class, 'show3'])->name('upload.form');
-Route::post('/upload-cover', [App\Http\Controllers\KatalogController::class, 'upload3'])->name('upload.file');
-Route::get('/konten-Digital', [\App\Http\Controllers\KatalogController::class, 'show4'])->name('kontendigital');
-Route::post('/konten-Digital-store', [\App\Http\Controllers\KatalogController::class, 'upload4'])->name('kontendigital-store');*/
+Route::post('/katalog-store', [App\Http\Controllers\KatalogController::class, 'store'])->name('katalog-store');
+Route::post('/katalog-upload', [App\Http\Controllers\KatalogController::class, 'upload'])->name('katalog-upload');
 Route::get('/daf-katalog', [App\Http\Controllers\DaftarKatalogController::class, 'index']);
+Route::get('catalog/edit/{id}', [App\Http\Controllers\DaftarKatalogController::class, 'edit'])->name('catalog');
+Route::put('catalog/update/{id}', [App\Http\Controllers\DaftarKatalogController::class, 'update'])->name('catalog-update');
 Route::get('/entri-katalog', [App\Http\Controllers\EntriCatalogController::class, 'show'])->name('entri');
 Route::post('/entri-katalog-store', [App\Http\Controllers\EntriCatalogController::class, 'store'])->name('entri-store');
 Route::get('/histori-sederhana', [App\Http\Controllers\OpacLogsController::class, 'index']);
+Route::get('/histori-sederhana/fetch_data', [App\Http\Controllers\OpacLogsController::class, 'fetch_data']);
+Route::get('/buku', [App\Http\Controllers\KunjunganController::class, 'show1']);
+Route::post('/bukuTamu/store', [App\Http\Controllers\KunjunganController::class, 'store1'])->name('Bukutamu.store');
+Route::get('/input', [App\Http\Controllers\KunjunganController::class, 'show'])->name('input');
+Route::get('/check', [App\Http\Controllers\KunjunganController::class, 'check'])->name('bukutamu');
+Route::post('/simpan', [App\Http\Controllers\KunjunganController::class, 'store'])->name('bukutamu.store');
+Route::get('/bacaditempat', [App\Http\Controllers\BacaDiTempatController::class, 'index']);
+
+Route::get('barcode-blade', function () {
+
+
+    return view('dashboardmahasiswa', compact('barcode'));
+});
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);

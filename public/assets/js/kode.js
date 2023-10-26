@@ -35,15 +35,6 @@ function showButton() {
     }
 }
 
-document.getElementById("myForm").addEventListener("keydown", function (event) {
-    if (
-        event.key === "Enter" &&
-        !event.target.tagName.toLowerCase() === "textarea"
-    ) {
-        event.preventDefault();
-    }
-});
-
 function checkAll(ele) {
     var checkboxes = document.getElementsByTagName("input");
     if (ele.checked) {
@@ -60,3 +51,7 @@ function checkAll(ele) {
         }
     }
 }
+
+document.getElementById("codeunik").addEventListener("input", function (event) {
+    this.value = event.target.value;
+});

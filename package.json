@@ -18,6 +18,9 @@
     "dependencies": {
         "bs-stepper": "^1.7.0",
         "chart.js": "^4.3.2",
-        "jquery": "^3.7.0"
+        "datatables.net": "^1.13.6",
+        "datatables.net-dt": "^1.13.6",
+        "jquery": "^3.7.1",
+        "quagga": "^0.12.1"
     }
 }

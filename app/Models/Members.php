@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Illuminate\Database\Eloquent\Model;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 
-class Members extends Eloquent
+class Members extends Model
 {
-    use HasFactory;
+    protected $collection = "Members";
 
     protected $fillable = [
         'IdentityType_id',

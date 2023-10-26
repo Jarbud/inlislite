@@ -19,7 +19,8 @@ use App\Models\Members;
 
 class PendaftaranController extends Controller
 {
-    public function show() {
+    public function show()
+    {
         $pend = master_pendidikan::all();
         $jks = jenis_kelamin::all();
         $kerjas = master_pekerjaan::all();
@@ -31,7 +32,8 @@ class PendaftaranController extends Controller
         return view('daftar',compact('pend','jks', 'kerjas', 'stat', 'pil', 'identitas'));
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         Members::create([
             'IdentityType_id' => $request->input('identitas'),
             'IdentityNo' => $request->input('nomor'),

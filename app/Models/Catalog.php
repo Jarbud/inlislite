@@ -16,17 +16,13 @@ class Catalog extends Model
         'CoverURL', 'Branch_id', 'Worksheet_id', 'Member_id'
     ];
 
-    public function saveFormDataFromSession()
+    public function collection()
     {
-        $formData = session('form_data');
-        if ($formData) {
-            $this->create($formData);
-            session()->flush();
-        }
+        return $this->hasOne(Collection::class, 'catalog_id');
     }
 
     public function catalogFile()
     {
-        return $this->hasMany(CatalogFile::class);
+        return $this->hasOne(CatalogFile::class, 'catalog_id');
     }
 }
