@@ -8,26 +8,35 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#anggota">Anggota</a>
+                    <a class="nav-link active" href="#anggota" onclick="showTab('anggota')">Anggota</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Non Anggota</a>
+                    <a class="nav-link" href="#nonAnggota" onclick="showTab('nonAnggota')">Non Anggota</a>
                 </li>
             </ul>
         </div>
     </div>
-    <section id="anggota">
+    <section id="anggota-content">
         <p>Silahkan pindai kartu anggota Anda</p>
         <br>
-        <form id="nimForm" action="{{route('buku-tamu')}}" method="POST">
+        <form method="GET" action="{{route('bukutamu')}}">
             @csrf
-            <input type="text" name="NoPengunjung" id="NoPengunjung" placeholder="No.anggota/pengunjung">
-            <button type="button" id="checkButton"><i class="bi bi-check2"></i></button>
+            <label for="no_pengenal" style="margin-right: 10px">No Pengenal </label>
+            <input type="text" name="no_pengenal" id="codeunik">
+            <button type="submit"><i class="bi bi-check2"></i></button>
         </form>
-        <div id="mahasiswaData" style="display: none">
-            <h2 id="Fullname"></h2>
-            <button type="submit" id="simpanButton">Simpan</button>
-        </div>
+
+        @if (isset($user))
+        <p>Name: {{ $user['name'] }}</p>
+        <p>Photo: {{ $user['photo'] }}</p>
+        <form method="POST" action="{{route('bukutamu.store')}}">
+            @csrf
+            <input type="hidden" name="no_pengenal" value="{{ $user['no_pengenal'] }}">
+            <input type="hidden" name="name" value="{{ $user['name'] }}">
+            <button type="submit">Simpan</button>
+        </form>
+        @endif
     </section>
+
 </section>
 @endsection

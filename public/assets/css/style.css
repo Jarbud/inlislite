@@ -1657,7 +1657,7 @@ section {
 
 #bukutamu #boxbuku {
     background-color: rgba(60, 141, 188, 0.2);
-    height: 2.5cm;
+    height: 2.61cm;
     margin-top: 0px;
     margin-right: 0px;
     margin-left: 0px;
@@ -1686,20 +1686,20 @@ section {
 }
 
 #kunjungan {
-    text-align: center;
-    align-items: center;
     padding: 0px;
 }
 
 #kunjungan #baratas {
     background-color: rgba(60, 141, 188, 0.2);
-    height: 2.5cm;
+    height: 2.61cm;
     margin-top: 0px;
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 50px;
     padding: 10px;
     width: auto;
+    text-align: center;
+    align-items: center;
 }
 
 #kunjungan button {
@@ -1709,4 +1709,10 @@ section {
     color: #ffffff;
     margin-top: 10px;
     margin-bottom: 90px;
+}
+
+#anggota-content {
+    text-align: center;
+    align-items: center;
+    display: block;
 }

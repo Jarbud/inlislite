@@ -9,5 +9,5 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class BacaDiTempat extends Model
 {
     protected $collection = 'bacaditempat';
-    protected $fillable = ['TanggalKunjungan', 'NoPengunjung', 'IP'];
+    protected $fillable = ['no_pengenal', 'name', 'ip', 'tanggal_kunjungan'];
 }

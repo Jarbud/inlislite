@@ -28,7 +28,7 @@
             <li><a href="#">Survey</a></li>
           </ul>
         </li>
-        <li><a href="/bukuTamu">Buku Tamu</a></li>
+        <li><a href="/buku">Buku Tamu</a></li>
         <li><a href="{{ url('/pendaftaran') }}">Pendaftaran Anggota</a></li>
 
         <!-- <li><a href="#">Keanggotaan Online</a></li> -->

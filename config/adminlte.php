@@ -447,7 +447,7 @@ return [
         ],
         [
             'text' => 'Buku Tamu',
-            'url'  => '#',
+            'url'  => '/bacaditempat',
             'icon' => 'fas fa-book-reader',
         ],
         // [
