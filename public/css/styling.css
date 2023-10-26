@@ -698,6 +698,7 @@ section {
 }
 
 .search .btn-search {
+  border: none;
   border-radius: 5px;
   height: 36px;
   width: 100%;
@@ -711,6 +712,46 @@ section {
 .search .btn-search:hover {
   background-color: #ccc;
   color: #231a4b;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.pagination a {
+  color: black;
+  padding: 7px 14px;
+  text-decoration: none;
+  background-color: #eee;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #231a4b;
+  border: 1px solid #191235;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.paginate-links li {
+  background-color: #337ab7; /* Ganti dengan warna yang sesuai */
+  border-radius: 4px;
+  padding: 5px;
+  margin: 2px;
+  display: inline;
+}
+
+.paginate-links li a {
+  color: #fff; /* Ganti dengan warna teks yang sesuai */
+  text-decoration: none;
+}
+
+.paginate-links li.active {
+  background-color: #1e88e5; /* Ganti dengan warna latar belakang aktif yang sesuai */
 }
 
 /*---------------------------------------------------------
@@ -735,13 +776,13 @@ section {
 }
 
 .collection .collection-content {
-  padding: 10px;
+  padding: 15px 0px 15px 15px;
 }
 
 .collection .collection-content h3 {
   font-weight: 500;
   font-size: 15px;
-  width: 145px;
+  width: 135px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
@@ -762,7 +803,7 @@ section {
 .collection .collection-content p {
   font-size: 12px;
   color: #777777;
-  width: 145px;
+  width: 135px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
@@ -1114,6 +1155,10 @@ section {
   height: 141px;
   border: 1px solid #eef0ef;
   box-shadow: 0px 0 5px rgba(1, 41, 112, 0.1);
+}
+
+.fromsearch .table1 tr {
+  vertical-align: baseline;
 }
 
 .fromsearch .table1 .table1-title {

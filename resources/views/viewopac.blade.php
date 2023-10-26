@@ -59,10 +59,10 @@
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="card flex-row"><img class="card-img-left" src="assets/img/sampul.png"/>
               <div class="card-body">
-                <a href="/viewdetail" class="card-title">{{ $item->Title }}</a>
+                <a href="{{ route('viewdetail', $item->id) }}" class="card-title">{{ $item->Title }}</a>
                 <!--<h3><i class="bi bi-journal"></i>Monograf</h3>-->
                 <p class="card-text">{{ $item->Author }}</p>
-                <a href="/viewdetail" class="btn btn-viewdetail">Lihat Detail
+                <a href="{{ route('viewdetail', $item->id) }}" class="btn btn-viewdetail">Lihat Detail
                   <i class="bi bi-arrow-right-short"></i>
                 </a>
               </div>
@@ -147,6 +147,10 @@
               </div>
             </div>
           </div>-->
+
+          <div class="pagination">
+              {{ $katalog->links() }}
+          </div>
           
         </div>          
       </div>

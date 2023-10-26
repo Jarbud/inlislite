@@ -24,54 +24,46 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
-                                                <a><img src="assets/img/sampul.png"/></a>
+                                                <a><img src="{{ asset('assets/img/sampul.png') }}" alt="fotosampul"/></a>
                                             </div>
                                             <div class="col-sm-8">
                                                 <table class="table1" width="100%">
                                                     <tbody>
                                                         <tr>
                                                             <td width="25%">Judul</td>
-                                                            <th width="75%"><Strong>Analisis Ketimpangan Ekonomi Wilayah Antar Kabupaten/Kota di Provinsi Daerah Istimewa Yogyakarta</Strong></th>
+                                                            <th width="75%"><Strong>{{ $katalog->Title }}</Strong></th>
                                                         </tr>
                                                         <tr>
                                                             <td width="25%">Jenis Bahan</td>
-                                                            <td width="75%">Skripsi</td>
+                                                            <td width="75%">{{ $katalog->worksheets->Name }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Pengarang</td>
-                                                            <td>Novita Mukti Rinusara</td>
+                                                            <td>{{ $katalog->Author }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Edisi</td>
-                                                            <td>165020107111007</td>
+                                                            <td>{{ $katalog->Edition }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Penerbit</td>
-                                                            <td>Malang : Ilmu Ekonomi FEB-UB, 2020</td>
+                                                            <td>{{ $katalog->Publisher }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Deskripsi Fisik</td>
-                                                            <td>230 hal : Illus, table ; 28 cm</td>
+                                                            <td>{{ $katalog->PhysicalDescription }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>ISBN</td>
-                                                            <td>165020107111007</td>
+                                                            <td>{{ $katalog->ISBN }}7</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Subjek</td>
-                                                            <td>Economic</td>
+                                                            <td>{{ $katalog->Subject }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Abstrak</td>
-                                                            <td>The objective of this study is to empirically assess the effect of audit fees, audit evidence, and auditor attributes on audit report lag. Audit work experience and professional skepticism are the proxies for auditor attribute variables. The primary data of this study include 86 respondents collected from a survey with convenience sampling by distributing questionnaires to 96 auditors of the Public Accounting Firms in Surabaya and Malang. The results of multiple regression analysis indicate that partially audit fee and auditor attributes with professional skepticism as the proxy significantly and positively affect audit report lag. Whilst, audit evidence and auditor attributes with audit work experience as the proxy positively yet insignificantly affect audit report lag.</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Lokasi Konten Digital</td>
-                                                            <td>Self Access Centre</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Konten Digital</td>
-                                                            <td>pdf, rar</td>
+                                                            <td>{{ $katalog->Note }}</td>
                                                         </tr>
                                                     </tbody>                                                    
                                                 </table>
@@ -132,11 +124,11 @@
                                                         data-bs-toggle="tab" data-bs-target="#kontendigital" type="button" role="tab" 
                                                         aria-controls="kontendigital" aria-selected="false">Konten Digital</button>
                                                     </li>
-                                                    <li class="nav-item" role="presentation">
+                                                    <!--<li class="nav-item" role="presentation">
                                                         <button class="nav-link" id="marc-tab" 
                                                         data-bs-toggle="tab" data-bs-target="#marc" type="button" role="tab" 
                                                         aria-controls="marc" aria-selected="false">MARC</button>
-                                                    </li>
+                                                    </li>-->
                                                     <li class="nav-item" role="presentation">
                                                         <button class="nav-link" id="unduhkatalog-tab" 
                                                         data-bs-toggle="tab" data-bs-target="#unduhkatalog" type="button" role="tab" 
@@ -203,7 +195,7 @@
                                                             </tr>
                                                         </table> 
                                                     </div>
-                                                    <div class="tab-pane fade" id="marc" role="tabpanel" aria-labelledby="marc-tab">
+                                                    <!--<div class="tab-pane fade" id="marc" role="tabpanel" aria-labelledby="marc-tab">
                                                         <table class="table" width="100%">
                                                             <tr class="tabel-header">
                                                                 <th width="10%">Tag</th>
@@ -224,7 +216,7 @@
                                                                 <td></td>
                                                             </tr>
                                                         </table> 
-                                                    </div>
+                                                    </div>-->
                                                     <div class="tab-pane fade" id="unduhkatalog" role="tabpanel" aria-labelledby="unduhkatalog-tab">
                                                         
                                                     </div>
@@ -252,12 +244,12 @@
 
                 <div class="col-sm-3">
                     <div class="accordion-title">
-                        <h1><i class="bi bi-book"></i>Baca Yang Lain :</h1>
+                        <h1><i class="bi bi-book"></i>Baca Juga :</h1>
                     </div>
                     <div class="accordion" id="accordionParent">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNow" aria-expanded="true" aria-controls="collapseNow">Konten Terkait</button>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNow" aria-expanded="true" aria-controls="collapseNow">Konten Lainnya :</button>
                             </h2>
                             <div id="collapseNow" class="accordion-collapse collapse show" aria-labelledby="heading" data-bs-parent="accordionParent">
                                 <div class="accordion-body">

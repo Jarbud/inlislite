@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\worksheets;
 use App\Models\catalogs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ViewCollectionController extends Controller
+class sssCont extends Controller
 {
     public function show()
     {
         $jenis_bahan = worksheets::all();
-        $katalog = catalogs::latest()->paginate(15);
-        return view('viewcollection', compact('jenis_bahan', 'katalog'));
+        $katalog = catalogs::paginate(18);
+
+        return view('fromsearch', compact('jenis_bahan', 'katalog'));
     }
+
+    
 }

@@ -41,18 +41,19 @@
             </div>
         </div> -->
 
-
+        @foreach ($katalog as $item)
         <div class="col-lg-2 d-flex align-items-stretch">
             <div class="collection-item">
               <img src="assets/img/sampul.png" class="img-fluid rounded-top" alt="..."/>
               <div class="collection-content">
-                <h3><a href="#">Judul Yang Panjang Banget Sampe Menuh Menuhin Bla Bla Bla Gitu</a></h3>
-                <p>Nama Pengarang</p>
+                <h3><a href="{{ route('viewdetail', $item->id) }}">{{$item->Title}}</a></h3>
+                <p>{{$item->Author}}</p>
               </div>
             </div>
         </div> <!-- End collection Item-->
+        @endforeach
 
-        <div class="col-lg-2 d-flex align-items-stretch">
+        <!--<div class="col-lg-2 d-flex align-items-stretch">
             <div class="collection-item">
               <img src="assets/img/sampul.png" class="img-fluid rounded-top" alt="..."/>
               <div class="collection-content">
@@ -60,7 +61,7 @@
                 <p>Nama Pengarang</p>
               </div>
             </div>
-        </div> <!-- End collection Item-->
+        </div>
 
         <div class="col-lg-2 d-flex align-items-stretch">
             <div class="collection-item">
@@ -70,7 +71,7 @@
                 <p>Nama Pengarang</p>
               </div>
             </div>
-        </div> <!-- End collection Item-->
+        </div> 
 
         <div class="col-lg-2 d-flex align-items-stretch">
             <div class="collection-item">
@@ -80,7 +81,7 @@
                 <p>Nama Pengarang</p>
               </div>
             </div>
-        </div> <!-- End collection Item-->
+        </div>
 
         <div class="col-lg-2 d-flex align-items-stretch">
             <div class="collection-item">
@@ -90,7 +91,7 @@
                 <p>Nama Pengarang</p>
               </div>
             </div>
-        </div> <!-- End collection Item-->
+        </div>
 
         <div class="col-lg-2 d-flex align-items-stretch">
             <div class="collection-item">
@@ -100,7 +101,7 @@
                 <p>Nama Pengarang</p>
               </div>
             </div>
-        </div> <!-- End collection Item-->
+        </div>-->
 
           <div class="collection-button">
             <div class="d-flex justify-content-between align-items-center">
@@ -115,23 +116,28 @@
 
 
     <!-- ============ Popular =========== -->
-    <section id="popular" class="popular">
+    <!--<section id="popular" class="popular">
       <div class="container" data-aos="fade-up">
 
-        <h1>Terpopuler</h1>
-        <p>Yang paling sering dicari</p>
+        <h1>Terbaru</h1>
+        <p>Koleksi Yang Paling Baru</p>
+        
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          
+          @foreach ($catalog as $post)
           <div class="col-md-3 d-flex align-items-stretch">
             <div class="popular-item">
               <img src="assets/img/sampul.png" class="img-fluid rounded-top" alt="..."/>
               <div class="popular-content">
-                <h3><a href="#">Pengaruh Media Sosial dan Rasa Percaya Diri (Self Confidence) terhadap Minat Berwirausaha</a></h3>
-                <h4>Nama Pengarang</h4>
+                <h3><a href="{{ route('viewdetail', $item->id) }}">{{ $post->Title }}</a></h3>
+                <h4>{{ $post->Author }}</h4>
               </div>
             </div>
           </div>
-          <div class="col-md-3 d-flex align-items-stretch">
+          @endforeach-->
+
+          <!--<div class="col-md-3 d-flex align-items-stretch">
             <div class="popular-item">
               <img src="assets/img/sampul.png" class="img-fluid rounded-top" alt="..."/>
               <div class="popular-content">
@@ -157,10 +163,11 @@
                 <h4>Nama Pengarang</h4>
               </div>
             </div>    
-          </div>
-        </div>
+          </div>-->
+        
+        <!--</div>
       </div>
-    </section>
+    </section>-->
 
 
     <!-- ======= Breadcrumbs ======= -->

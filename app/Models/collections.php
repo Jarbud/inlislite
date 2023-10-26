@@ -18,4 +18,19 @@ class collections extends Model
         'Currency', 'Price', 'PriceType',
         'CallNumber', 
     ];
+
+    public function Locations()
+    {
+        return $this->belongsTo('\App\Models\Locations', 'Location_id', 'ID');
+    }
+
+    public function CollectionRules()
+    {
+        return $this->belongsTo('\App\Models\CollectionRules', 'Location_id', 'ID');
+    }
+
+    public function CollectionStatus()
+    {
+        return $thus->belongsTo('\App\Models\CollectionRules', 'Rule_id', 'ID');
+    }
 }

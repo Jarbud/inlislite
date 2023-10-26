@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('index');
-});
+});*/
 
 Route::get('/dashboard', function() {
     return view('dashboard');
@@ -29,10 +29,6 @@ Route::get('/viewcollection', function() {
 
 Route::get('/statistic', function() {
     return view('statistic');
-});
-
-Route::get('/viewdetail', function() {
-    return view('viewdetail');
 });
 
 Route::get('/borrowed', function() {
@@ -193,6 +189,8 @@ Route::post('/katalog-store', [\App\Http\Controllers\KatalogController::class, '
 Route::get('/koleksi', [App\Http\Controllers\KoleksiController::class, 'show'])->name('koleksi');
 Route::get('/konten-Digital', [\App\Http\Controllers\kontenDigitalController::class, 'show'])->name('kontendigital');
 
+Route::get('/', [\App\Http\Controllers\BagianDepanController::class, 'show'])->name('index');
+
 Route::get('/0entrikoleksi', [\App\Http\Controllers\AkuisisiController::class, 'show'])->name('0entrikoleksi');
 Route::post('/0entrikoleksi-store', [\App\Http\Controllers\AkuisisiController::class, 'store'])->name('0entrikoleksi-store');
 Route::get('/viewcollection', [\App\Http\Controllers\ViewCollectionController::class, 'show'])->name('viewcollection');
@@ -203,6 +201,13 @@ Route::get('/fromsearch', [\App\Http\Controllers\fromsearchController::class, 's
 
 Route::get('/0terbitanberkala', [\App\Http\Controllers\TerbitanBerkala::class, 'show'])->name('0terbitanberkala');
 Route::get('/0daftarkoleksi', [\App\Http\Controllers\DaftarKoleksi::class, 'show'])->name('0daftarkoleksi');
+
+Route::get('/katalog/{id}', [\App\Http\Controllers\ItemController::class, 'show'])->name('viewdetail');
+
+Route::get('/fromsearch.search', [\App\Http\Controllers\fromsearchController::class, 'search'])->name('fromsearch.search');
+Route::get('/fromsearch.kolom', [\App\Http\Controllers\fromsearchController::class, 'kolom'])->name('fromsearch.kolom');
+
+
 
 //RESOURCES
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);

@@ -11,12 +11,11 @@
       <div class="container">
         <h1>Pencarian</h1>
 
-        <form action="{{ route('fromsearch.search') }}" method="GET">
-            @csrf
+        <form action="{{ route('fromsearch-cari') }}" method="GET">
             <div class="row">
                 <div class="col-sm-5 d-flex align-items-stretch">
                     <div class="input-group rounded">
-                        <input type="text" name="" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="text" name="cari" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                     </div>
                 </div>
 
@@ -24,20 +23,19 @@
                     <div class="input-group rounded">
                         <select name="input-dropdown" id="input-dropdown" class="input-control rounded">
                             <option disabled selected>Pilih Jenis</option>
-                            <option name="Title" value="">Judul</option>
-                            <option name="Author" value="">Pengarang</option>
-                            <option name="Publisher" value="">Penerbit</option>
-                            <option name="PublishYear" value="">Tahun</option>
+                            <option value="">Judul</option>
+                            <option value="">Pengarang</option>
+                            <option value="">Penerbit</option>
                         </select>
                     </div>
                 </div>
           
                 <div class="col-sm-3 d-flex align-items-stretch">
                     <div class="input-group rounded">
-                        <select class="input-control rounded" name="search[]">
+                        <select class="input-control rounded">
                             <option disabled selected>Pilih Jenis</option>
-                            @foreach ( $jenis_bahan as $itemjenis )
-                            <option value="{{ $itemjenis }}">{{ $itemjenis->Name }}</option>
+                            @foreach ( $jenis_bahan as $item )
+                            <option>{{ $item->Name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -92,11 +90,11 @@
                                                 <table class="table1" width="100%"  id="example">
                                                     <tbody>
                                                         <tr>
-                                                            <th colspan="2"><a href="{{ route('viewdetail', $item->id) }}" class="table1-title">{{ $item->Title }}</a></th>
+                                                            <th colspan="2"><a class="table1-title" href="/viewdetail">{{ $item->Title }}</a></th>
                                                         </tr>
                                                         <tr>
                                                             <td width="22%">Jenis Bahan</td>
-                                                            <td width="78%">: {{ $item->worksheets->Name }}</td>
+                                                            <td width="78%">: {{ $item->Worksheets_id }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Pengarang</td>
@@ -112,15 +110,11 @@
                                                         </tr>
                                                     </tbody>                                                    
                                                 </table>
-                                                <a class="btn btn-viewdetail" href="{{ route('viewdetail', $item->id) }}">Lihat Detail</a>
+                                                <a class="btn btn-viewdetail" href="/viewdetail">Lihat Detail</a>
                                             </div>    
                                         </div>
                                     </div>  
                                     @endforeach
-
-                                    <!--@foreach ( $koleksi as $item )
-                                        <h1>{{ $item->Locations->Name }}</h1><br>
-                                    @endforeach-->
 
                                     <!--<div class="table-content">
                                         <div class="row">
@@ -238,7 +232,14 @@
                     </table>
 
                     <div class="pagination">
-                        {{ $katalog->links() }}
+                        <a href="#">&laquo;</a>
+                        <a class="active" href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>     
+                        <a href="#">6</a>
+                        <a href="#">&raquo;</a>
                     </div>
 
                 </div>

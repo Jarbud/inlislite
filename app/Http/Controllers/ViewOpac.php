@@ -11,7 +11,7 @@ class ViewOpac extends Controller
     public function show()
     {
         $jenis_bahan = worksheets::all();
-        $katalog = catalogs::all();
+        $katalog = catalogs::paginate(99);
         return view('viewopac', compact('jenis_bahan', 'katalog'));
     }
 }

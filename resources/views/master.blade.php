@@ -51,8 +51,6 @@
             });
         </script>
 
-
-
     </head>
 
     <body>
@@ -61,8 +59,8 @@
         <header id="header" class="fixed-top">
             <div class="container d-flex align-items-center">
 
-                <a class="navbar-logo" href="#">
-                    <img src="assets/img/logo-perpus-100.png" alt="...">
+                <a class="navbar-logo" href="/">
+                    <img src="{{ asset('assets/img/logo-perpus-100.png') }}" alt="...">
                 </a>
                 <h1 class="logo me-auto"><a href="#">Digital Library</a></h1>
       

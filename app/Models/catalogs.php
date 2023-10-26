@@ -9,4 +9,8 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class catalogs extends Model
 {
     protected $collection = 'catalogs';
+
+    public function worksheets(){
+        return $this->belongsTo('App\Models\worksheets', 'Worksheet_id', 'ID');
+    }
 }
