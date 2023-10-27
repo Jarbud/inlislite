@@ -16,13 +16,13 @@
             <div class="row">
                 <div class="col-sm-5 d-flex align-items-stretch">
                     <div class="input-group rounded">
-                        <input type="text" name="" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="text" name="inputsearch" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                     </div>
                 </div>
 
                 <div class="col-sm-3 d-flex align-items-stretch">
                     <div class="input-group rounded">
-                        <select name="input-dropdown" id="input-dropdown" class="input-control rounded">
+                        <select name="jenispencarian" id="input-dropdown" class="input-control rounded">
                             <option disabled selected>Pilih Jenis</option>
                             <option name="Title" value="">Judul</option>
                             <option name="Author" value="">Pengarang</option>
@@ -34,7 +34,7 @@
           
                 <div class="col-sm-3 d-flex align-items-stretch">
                     <div class="input-group rounded">
-                        <select class="input-control rounded" name="search[]">
+                        <select class="input-control rounded" name="jenisbahan">
                             <option disabled selected>Pilih Jenis</option>
                             @foreach ( $jenis_bahan as $itemjenis )
                             <option value="{{ $itemjenis }}">{{ $itemjenis->Name }}</option>
@@ -45,7 +45,6 @@
 
                 <div class="col-sm-1 d-flex align-items-stretch">
                     <button type="submit" class="btn-search">Search</button>
-                    <!--<a href="#" class="btn-search">Search</a>-->
                 </div>
             </div>
         </form>
@@ -86,7 +85,7 @@
                                                 <input type="checkbox" name="checkbox-single-koleksi" id="checkbox-single-koleksi">
                                             </div>
                                             <div class="col-sm-2">
-                                                <a><img class="table1-img" src="assets/img/sampul.png"/></a>
+                                                <a><img class="table1-img" src="{{ asset('assets/img/sampul.png') }}"/></a>
                                             </div>
                                             <div class="col-sm-9">
                                                 <table class="table1" width="100%"  id="example">
@@ -96,7 +95,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td width="22%">Jenis Bahan</td>
-                                                            <td width="78%">: {{ $item->worksheets->Name }}</td>
+                                                            <td width="78%">: {{ $item->worksheets ? $item->worksheets->Name : '(Tidak diketahui)' }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Pengarang</td>
@@ -117,10 +116,6 @@
                                         </div>
                                     </div>  
                                     @endforeach
-
-                                    <!--@foreach ( $koleksi as $item )
-                                        <h1>{{ $item->Locations->Name }}</h1><br>
-                                    @endforeach-->
 
                                     <!--<div class="table-content">
                                         <div class="row">

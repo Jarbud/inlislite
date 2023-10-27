@@ -198,15 +198,12 @@ Route::get('/viewopac', [\App\Http\Controllers\ViewOpac::class, 'show'])->name('
 Route::get('/bukutamu', [\App\Http\Controllers\bukutamuController::class, 'show'])->name('bukutamu');
 Route::post('/bukutamu-store', [\App\Http\Controllers\bukutamuController::class, 'store'])->name('bukutamu-store');
 Route::get('/fromsearch', [\App\Http\Controllers\fromsearchController::class, 'show'])->name('fromsearch');
+Route::get('/fromsearch/search', [\App\Http\Controllers\fromsearchController::class, 'search'])->name('fromsearch.search');
 
 Route::get('/0terbitanberkala', [\App\Http\Controllers\TerbitanBerkala::class, 'show'])->name('0terbitanberkala');
 Route::get('/0daftarkoleksi', [\App\Http\Controllers\DaftarKoleksi::class, 'show'])->name('0daftarkoleksi');
 
 Route::get('/katalog/{id}', [\App\Http\Controllers\ItemController::class, 'show'])->name('viewdetail');
-
-Route::get('/fromsearch.search', [\App\Http\Controllers\fromsearchController::class, 'search'])->name('fromsearch.search');
-Route::get('/fromsearch.kolom', [\App\Http\Controllers\fromsearchController::class, 'kolom'])->name('fromsearch.kolom');
-
 
 
 //RESOURCES

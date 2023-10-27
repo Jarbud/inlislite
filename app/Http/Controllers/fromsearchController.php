@@ -21,6 +21,38 @@ class fromsearchController extends Controller
         return view('fromsearch', compact('jenis_bahan', 'katalog', 'koleksi'));
     }
 
+    public function search(Request $request)
+    {
+        $inputsearch = $request->input('inputsearch');
+        $jenispencarian = $request->input('jenispencarian');
+        $jenisbahan = $request->input('jenisbahan');
+
+        $query = catalogs::query();
+
+        if (!empty($inputsearch)) {
+            $query->where(function ($q) use ($inputsearch, $jenispencarian) {
+                if ($jenispencarian == 'Title') {
+                    $q->orWhere('Title', 'like', '%' . $inputsearch . '%');
+                } elseif ($jenispencarian == 'Author') {
+                    $q->orWhere('Author', 'like', '%' . $inputsearch . '%');
+                } elseif ($jenispencarian == 'Publisher') {
+                    $q->orWhere('Publisher', 'like', '%' . $inputsearch . '%');
+                } elseif ($jenispencarian == 'PublishYear') {
+                    $q->orWhere('PublishYear', 'like', '%' . $inputsearch . '%');
+                }
+            });
+        }
+
+        if (!empty($jenisbahan)) {
+            $query->where('jenisbahan', $jenisbahan);
+        }
+    
+        $katalog = $query->paginate(15);
+        $jenis_bahan = worksheets::all();
+    
+        return view('fromsearch', compact('jenis_bahan', 'katalog'));
+    }
+
     /*public function cari(Request $request)
     {
         $jenis_bahan = worksheets::all();
