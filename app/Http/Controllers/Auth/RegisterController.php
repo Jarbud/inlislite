@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\master_jenis_identitas;
+
 
 class RegisterController extends Controller
 {
@@ -29,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::DASHBOARD;
 
     /**
      * Create a new controller instance.
@@ -67,14 +69,37 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // $kode = "";
+        // $hitung = 0;
+        // if($data['jenis_anggota_id'] == 1 ){
+        //     $users = User::all();
+        //     foreach ($users as $user){
+        //         if($user->jenis_anggota_id == 1){
+        //             $hitung++;
+        //         }
+        //     }
+        //     $kode = "M-00".$hitung;
+        // }elseif($data['jenis_anggota_id'] == 1){
+        //     $users = User::all();
+        //     foreach ($users as $user){
+        //         if($user->jenis_anggota_id == 2){
+        //             $hitung++;
+        //         }
+        //     }
+        //     $kode = "U-00".$hitung;
+        // }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'jenis_anggota_id' => $data['jenis_anggota_id'],
+            'identitas_id' => $data['identitas'],
             'no_pengenal' => $data['no_pengenal'],
             'telp' => $data['telp'],
-
+            'verifikasi' => "false",
+            'alamat' => $data['alamat'],
+            // 'kode_verifikasi' => $kode,
         ]);
+        // return redirect()->route('dashboard');
     }
 }

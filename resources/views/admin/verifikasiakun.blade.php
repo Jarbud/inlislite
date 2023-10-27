@@ -28,8 +28,6 @@
                     <th>Nama</th>
                     <th>Photo KTP</th>
                     <th>Photo Selfie</th>
-                    <th>Kode Yang Dikirim</th>
-                    <th>Kode Verifikasi</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -46,12 +44,10 @@
                        
                           </td>
                         <td>
-                        <img id="myImg2" class="img-fluid" style="height:100px;"
+                        <img id="myImg" class="img-fluid" style="height:100px;"
                        src="{{ asset('storage/selfie/'.$verify->photoSelfie ) }}"
                        alt="Photo Selfie">
                           </td>
-                        <td>{{ $verify->kode }}</td>
-                        <td>1232132132</td>
                         <td>
                           @if($verify->joined_data[0]->verifikasi == "true")
                             <span class="badge bg-success">Diterima</span>
@@ -187,17 +183,17 @@ var img = document.getElementById("myImg");
 var img2 = document.getElementById("myImg2")
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
+// img.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
 
-img2.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
+// img2.onclick = function(){
+//   modal.style.display = "block";
+//   modalImg.src = this.src;
+//   captionText.innerHTML = this.alt;
+// }
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

@@ -9,4 +9,6 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class master_pekerjaan extends Model
 {
     protected $collection = 'master_pekerjaan';
+
+    protected $fillable = ['id', 'Pekerjaan'];
 }

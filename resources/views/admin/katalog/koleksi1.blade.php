@@ -1,4 +1,4 @@
-@extends('admin/entrikatalog')
+@extends('admin/katalog/entrikatalog')
 
 @section('title', 'Koleksi')
 
@@ -109,16 +109,18 @@
     <div class="container" id="popupContainer">
         <div id="popupContent">
             <h4>Tambah Eksemplar | ...</h4>
-            <form action="#" autocomplete="off" method="POST">
+            <form action="{{ route('koleksi-store') }}" autocomplete="off" method="POST">
                 <div class="col" id="si1">
                     <div id="pilihan-si1">
                         <label for="jEksemplar">Jumlah Eksemplar</label>
                         <input type="text" name="jEksemplar" id="jEksemplar">
+                        <button type="button" id="plus-eksemplar" onclick="duplicateEksemplar()"><i
+                                class="fas fa-plus"></i></button>
                     </div>
                     <div id="isi-si1">
-                        <label>No Induk <input type="text" name="noInduk" id="noInduk"></label>
-                        <label>No Barcode <input type="text" name="noBarcode" id="noBarcode"></label>
-                        <label>No RFID <input type="text" name="noRFID" id="noRFID"></label>
+                        <label>No Induk <input type="text" name="noInduk" id="noInduk" required></label>
+                        <label>No Barcode <input type="text" name="noBarcode" id="noBarcode" required></label>
+                        <label>No RFID <input type="text" name="noRFID" id="noRFID" required></label>
                     </div>
                 </div>
                 <div class="col" id="si2">
@@ -152,7 +154,9 @@
                 <div class="col" id="si6">
                     <label for="kategori">Kategori</label>
                     <select name="kategori" id="kategori">
-                        <option value=""></option>
+                        @foreach ($kategori as $item)
+                        <option>{{$item->Name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col" id="si7">
@@ -190,7 +194,9 @@
                 <div class="col" id="si11">
                     <label for="mataUang">Mata Uang</label>
                     <select name="mataUang" id="mataUang">
-                        <option value=""></option>
+                        @foreach ($matauang as $item)
+                        <option>{{$item->Currency}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col" id="si12">
@@ -202,7 +208,7 @@
                     <input type="text" name="noPanggil" id="noPanggil">
                 </div>
                 <div class="col" id="si14">
-                    <button>Simpan</button>
+                    <button id="save-eksemplar">Simpan</button>
                     <button id="popupClose">Batal</button>
                 </div>
             </form>

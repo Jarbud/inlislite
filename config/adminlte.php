@@ -350,68 +350,95 @@ return [
             'can' => 'user-biasa',
         ],
         [
-            'text' => 'Akuisisi',
+            'text' => 'Verifikasi',
+            'icon' => 'fas fa-users',
+            'can' => 'admin',
+            'submenu' => [
+                // [
+                //     'text' => 'Verifikasi Akun',
+                //     'url'  => 'admin/verifikasi-account',
+                // ],
+                [
+                    'text' => 'Verifikasi Anggota',
+                    'url'  => 'admin/verifikasi-anggota',
+                ]
+            ]
+        ],
+        // [
+        //     'text' => 'Verifikasi Akun',
+        //     'url'  => 'admin/verifikasi-account',
+        //     'icon' => 'fas fa-users',
+        //     'can' => 'admin',
+        // ],
+        // [
+        //     'text' => 'Akuisisi',
+        //     'icon' => 'fas fa-file-alt',
+        //     'can' => 'admin',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Entri Koleksi',
+        //             'url' => '/entri_kol',
+        //         ],
+        //         [
+        //             'text' => 'Daftar Koleksi',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'text' => 'Keranjang Koleksi',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'text' => 'Karantina Koleksi',
+        //             'url' => '#',
+        //         ]
+        //     ],
+        // ],
+        [
+            'text' => 'Koleksi',
             'icon' => 'fas fa-file-alt',
             'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Entri Koleksi',
-                    'url' => '/entri_kol',
+                    'url' => '/entri-katalog',
                 ],
+                // [
+                //     'text' => 'Salin Katalog',
+                //     'url' => '/salin_kat',
+                // ],
                 [
                     'text' => 'Daftar Koleksi',
-                    'url' => '#',
+                    'url' => '/daf-katalog',
                 ],
-                [
-                    'text' => 'Keranjang Koleksi',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'Karantina Koleksi',
-                    'url' => '#',
-                ]
-            ],
-        ],
-        [
-            'text' => 'Katalog',
-            'icon' => 'fas fa-file-alt',
-            'can' => 'admin',
-            'submenu' => [
-                [
-                    'text' => 'Entri Katalog',
-                    'url' => '/katalog',
-                ],
-                [
-                    'text' => 'Salin Katalog',
-                    'url' => '/salin_kat',
-                ],
-                [
-                    'text' => 'Daftar Katalog',
-                    'url' => '/daf_katalog',
-                ],
-                [
-                    'text' => 'Export Data Tag Katalog',
-                    'url' => '/export_kat',
-                ],
-                [
-                    'text' => 'Daftar Konten Digital',
-                    'url' => '/KontenDigital_kat'
-                ],
-                [
-                    'text' => 'Keranjang Katalog',
-                    'url' => '/keranjang_kat'
-                ],
-                [
-                    'text' => 'Karantina Katalog',
-                    'url' => '/karantina_kat'
-                ]
+                // [
+                //     'text' => 'Export Data Tag Katalog',
+                //     'url' => '/export_kat',
+                // ],
+                // [
+                //     'text' => 'Daftar Konten Digital',
+                //     'url' => '/KontenDigital_kat'
+                // ],
+                // [
+                //     'text' => 'Keranjang Katalog',
+                //     'url' => '/keranjang_kat'
+                // ],
+                // [
+                //     'text' => 'Karantina Katalog',
+                //     'url' => '/karantina_kat'
+                // ]
             ],
         ],
         [
             'text' => 'Karya Ilmiah',
-            'url'  => '#',
+            'url'  => '/karya-ilmiah-mahasiswa',
             'icon' => 'fas fa-solid fa-newspaper',
-            'can' => 'user-biasa'
+            'can' => 'user-biasa',
+        ],
+        [
+            'text' => 'Karya Ilmiah',
+            'url'  => '/karya-ilmiah-admin',
+            'icon' => 'fas fa-solid fa-newspaper',
+            'can' => 'admin',
         ],
         [
             'text' => 'Baca Ditempat',
@@ -420,7 +447,7 @@ return [
         ],
         [
             'text' => 'Buku Tamu',
-            'url'  => '#',
+            'url'  => '/bacaditempat',
             'icon' => 'fas fa-book-reader',
         ],
         // [
@@ -435,9 +462,14 @@ return [
         ],
         [
             'text' => 'OPAC',
-            'url'  => '#',
             'icon' => 'fas fa-solid fa-bars',
-            'can' => 'user-biasa'
+            'can' => 'admin',
+            'submenu' => [
+                [
+                    'text' => 'Riwayat Pencarian Sederhana',
+                    'url' => '/histori-sederhana',
+                ],
+            ],
         ],
         // [
         //     'text' => 'Artikel',
@@ -489,12 +521,12 @@ return [
             'url'  => 'admin/changepassworduser',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text' => 'Verifikasi Akun',
-            'url'  => 'admin/verifikasi-account',
-            'icon' => 'fas fa-users',
-            'can' => 'admin',
-        ],
+        // [
+        //     'text' => 'Verifikasi Akun',
+        //     'url'  => 'admin/verifikasi-account',
+        //     'icon' => 'fas fa-users',
+        //     'can' => 'admin',
+        // ],
         [
             'text' => 'User Management',
             'url'  => 'admin/usermanagement',

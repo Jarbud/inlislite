@@ -82,7 +82,6 @@ class VerifikasiController extends Controller
         }else{
             $request->image2->storeAs('public/selfie', $fileNameSelfie);
         }
-        $verify->kode = $request->input('kode');
         $verify->photoKtp =  $fileNameKTP;
         $verify->photoSelfie=   $fileNameSelfie ;
         $user->verifikasi = "pending";

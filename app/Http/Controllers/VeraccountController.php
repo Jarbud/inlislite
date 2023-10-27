@@ -35,11 +35,11 @@ class VeraccountController extends Controller
 
         $user = User::find($id);
         if($status == "accept"){
-            $startDate = Carbon::now();
-            $daysToAdd = 30;
-            $newDate = $startDate->addDays($daysToAdd);
+            // $startDate = Carbon::now();
+            // $daysToAdd = 30;
+            // $newDate = $startDate->addDays($daysToAdd);
             $user->verifikasi = "true";
-            $user->tgl_habis_anggota = $newDate->format('d/m/Y');
+            // $user->tgl_habis_anggota = $newDate->format('d/m/Y');
         }else if($status == "decline"){
             $user->verifikasi = "decline";
         }

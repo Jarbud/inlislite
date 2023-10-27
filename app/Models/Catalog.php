@@ -10,9 +10,19 @@ class Catalog extends Model
 {
     protected $collection = 'catalogs';
     protected $fillable = [
-        'ID', 'ControlNumber', 'BIBID', 'Title', 'PenanggungJawab', 'Author', 'Edition', 'Publisher',
-        'PublishLocation', 'PublishYear', 'Publikasi', 'Subject', 'PhysicalDescription',
-        'ISBN', 'CallNumber', 'Note', 'Languages', 'DeweyNo', 'ApproveDateOPAC', 'IsOPAC',
-        'IsBNI', 'IsKIN', 'IsRDA', 'CoverURL', 'Branch_id', 'Worksheet_id', 'Member_id'
+        'ID', 'ControlNumber', 'BIBID', 'Title', 'Author', 'Edition', 'Publisher',
+        'PublishLocation', 'PublishYear', 'Publikasi', 'Subject', 'PhysicalDescription', 'ISBN', 'CallNumber',
+        'Note', 'Languages', 'DeweyNo', 'ApproveDateOPAC', 'IsOPAC', 'IsBNI', 'IsKIN', 'IsRDA',
+        'CoverURL', 'Branch_id', 'Worksheet_id', 'Member_id'
     ];
+
+    public function collection()
+    {
+        return $this->hasOne(Collection::class, 'catalog_id');
+    }
+
+    public function catalogFile()
+    {
+        return $this->hasOne(CatalogFile::class, 'catalog_id');
+    }
 }

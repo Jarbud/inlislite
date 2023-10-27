@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use MongoDB\BSON\Binary;
-use App\Models\Cover;
+use App\Models\Catalog;
 use Illuminate\Http\Request;
 
 class coverUploadController extends Controller
 {
-    public function showUploadForm()
+    public function show()
     {
         return view('admin/cover1');
     }
@@ -23,10 +23,10 @@ class coverUploadController extends Controller
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
 
-            $imageData = new Binary(file_get_contents($image->getRealPath()), Binary::TYPE_GENERIC);
+            $coverURL = new Binary(file_get_contents($image->getRealPath()), Binary::TYPE_GENERIC);
 
-            $cover = new Cover();
-            $cover->image_data = $imageData;
+            $cover = new Catalog();
+            $cover->CoverURL = $coverURL;
             $cover->save();
 
             return redirect()->route('upload.form')->with('success', 'Cover berhasil diunggah')->with('imageId', $cover->id);

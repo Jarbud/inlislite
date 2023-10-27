@@ -1,4 +1,4 @@
-@extends('admin/entrikatalog')
+@extends('admin/katalog/entrikatalog')
 
 @section('title', 'Konten Digital')
 
@@ -6,16 +6,23 @@
 <section id="kat4">
     <div class="box" id="box-kat4">
         <h4>Unggah Konten Digital</h4>
-        <label for="namaFlash">
-            <span>Nama File Format Flash</span>
-            <input type="text" name="namaFlash" id="namaflash">
-        </label>
-        <div class="box" id="box-berkas">
-            <small><button id="pilih-berkas"><i class="fas fa-plus"></i> Pilih berkas</button></small>
-            <small><button id="unggah-berkas"><i class="fas fa-arrow-circle-up"></i> Unggah semua
-                    berkas</button></small>
-            <small><button id="batalkan-berkas"><i class="fas fa-ban"></i> Batalkan semua berkas</button></small>
-        </div>
+        <form action="{{ route('upload.file') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
+            @csrf
+            <label for="namaFlash">
+                <span>Nama File Format Flash</span>
+                <input type="text" name="namaFlash" id="namaflash" class="form-control" readonly>
+            </label>
+            <input type="file" name="files[]" id="files" multiple style="display: none;" onchange="flashFileName()">
+            <label for="file" id="file-flash">
+                <small><button type="button" id="pilih-berkas" onclick="document.getElementById('files').click()"><i
+                            class="fas fa-plus"></i> Pilih
+                        berkas</button></small>
+            </label>
+            <div class="box" id="box-berkas">
+                <small><button id="unggah-berkas" onclick="unggahBerkas()"><i class="fas fa-arrow-circle-up"></i> Unggah
+                        semua berkas</button></small>
+            </div>
+        </form>
     </div>
     <div class="box" id="box-aksi">
         <small>Aksi</small>

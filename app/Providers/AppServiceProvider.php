@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\master_jenis_identitas;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 
@@ -21,5 +22,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrap();
+        //
+        view()->composer('*',function($view) {
+            $view->with('jenis_identitas', master_jenis_identitas::all());
+        });
     }
 }
