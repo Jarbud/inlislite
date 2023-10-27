@@ -16,9 +16,8 @@ class fromsearchController extends Controller
     {
         $jenis_bahan = worksheets::all();
         $katalog = catalogs::paginate(15);
-        $koleksi = collections::paginate(2);
 
-        return view('fromsearch', compact('jenis_bahan', 'katalog', 'koleksi'));
+        return view('fromsearch', compact('jenis_bahan', 'katalog'));
     }
 
     public function search(Request $request)
