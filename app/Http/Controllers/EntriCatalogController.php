@@ -221,4 +221,10 @@ class EntriCatalogController extends Controller
 
         return redirect('katalog');
     }
+
+    public function pilihkatalog(string $id)
+    {
+        session(['catalogid' => $id]);
+        return redirect('katalog');
+    }
 }

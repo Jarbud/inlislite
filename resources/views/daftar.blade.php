@@ -17,18 +17,22 @@
                 </div>
             </div>
             <div class="card-body">
-              <form class="row g-3" autocomplete="off" method="POST" action="{{route('daftar')}}">
+            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </div>
+                        @endif   
+              <form class="row g-3" autocomplete="off" method="POST" action="{{route('daftar')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-3">
                   <label for="inputNo" class="active">No Identitas
                     <span style="color: red;">*</span>
                   </label>
                   <select name="identitas" id="identitas" class="form-select">
-                    @foreach ($identitas as $item)  
-                      
-                        <option value="{{ $item->id }}">{{$item->Nama}}</option>
-                      
-                    @endforeach
+                    <option value="1">KTP / NIK</option>
+                    <option value="3">KARTU MAHASISWA / NIM</option>
                   </select>   
                 </div>
                 <div class="col-md-9">
@@ -41,6 +45,7 @@
                   </label>
                   <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" onchange="toggleCheckbox()" >
                 </div>
+                
                 <div class="col-md-12">
                 {{-- Password field --}}
                 <label for="inputEmail" class="form-label">Password
@@ -58,23 +63,17 @@
             @enderror
         </div>
 
-        {{-- Confirm password field --}}
-        <label for="inputEmail" class="form-label">Re-Type Password
-                      <span style="color: red;">*</span>
+        
+                </div>
+                
+        <div class="col-md-12">
+                  <label for="jenis_anggota_id" class="active">Silahkan Pilih Jenis Anggota
+                    <span style="color: red;">*</span>
                   </label>
-        <div class="input-group mb-3">
-            <input type="password" name="password_confirmation"
-                   class="form-control @error('password_confirmation') is-invalid @enderror"
-                   placeholder="Ketik ulang password">
-
-            
-
-            @error('password_confirmation')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
+                  <select name="jenis_anggota_id" id="jenis_anggota_id" class="form-select">
+                  <option value="1">Mahasiswa</option>
+                <option value="2">Umum</option>
+                  </select>   
                 </div>
                 <div class="col-md-12">
                   <label for="inputNama" class="form-label">Nama Lengkap

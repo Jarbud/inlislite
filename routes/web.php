@@ -39,6 +39,8 @@ Route::get('/statistik', function () {
     return view('statistik_body');
 });
 
+
+
 // Route::get('/daf_katalog', function () {
 //     return view('admin/katalog/daftar_katalog');
 // });
@@ -83,6 +85,7 @@ Auth::routes();
 
 // URL
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/katalog', [App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
 Route::get('/dashboard', [App\Http\Controllers\DashboardmhsController::class, 'index'])->name('dashboard');
 Route::get('/karya-ilmiah-mahasiswa', [App\Http\Controllers\KaryailmiahmhsController::class, 'index'])->name('karya-ilmiah-mahasiswa');
 Route::get('/karya-ilmiah-admin', [App\Http\Controllers\KaryailmiahadminController::class, 'index'])->name('karya-ilmiah-admin');
@@ -116,6 +119,7 @@ Route::get('catalog/edit/{id}', [App\Http\Controllers\DaftarKatalogController::c
 Route::put('catalog/update/{id}', [App\Http\Controllers\DaftarKatalogController::class, 'update'])->name('catalog-update');
 Route::get('/entri-katalog', [App\Http\Controllers\EntriCatalogController::class, 'show'])->name('entri');
 Route::post('/entri-katalog-store', [App\Http\Controllers\EntriCatalogController::class, 'store'])->name('entri-store');
+Route::get('pilihkatalog/{id}', [App\Http\Controllers\EntriCatalogController::class, 'pilihkatalog'])->name('pilihkatalog');
 Route::get('/histori-sederhana', [App\Http\Controllers\OpacLogsController::class, 'index']);
 Route::get('/histori-sederhana/fetch_data', [App\Http\Controllers\OpacLogsController::class, 'fetch_data']);
 Route::get('/buku', [App\Http\Controllers\KunjunganController::class, 'show1']);

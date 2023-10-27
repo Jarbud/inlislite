@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="alert alert-success">
-                <p>Terimakasih {{ $user->name }} sudah mendaftar menjadi anggota kami.</p>
+                <p>Terimakasih sudah mendaftar menjadi anggota kami, silahkan login akun menggunakan akun yang sudah di daftarkan.</p>
             </div>
             <div class="card text-white bg-secondary mb-3">
                 <div class="card-header"></div>
