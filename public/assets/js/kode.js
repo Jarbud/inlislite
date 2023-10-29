@@ -52,6 +52,28 @@ function checkAll(ele) {
     }
 }
 
-document.getElementById("codeunik").addEventListener("input", function (event) {
-    this.value = event.target.value;
+/* const barcodeInput = document.getElementById("codeunik");
+barcodeInput.addEventListener("input", function (event) {
+    const scannedText = event.target.value;
+    barcodeInput.value = scannedText;
+}); */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const lokasiPerpustakaan = document.getElementById("lokasiPerpustakaan");
+    const lokasiBaca = document.getElementById("lokasiBaca");
+    const lanjutkanButton = document.getElementById("lanjutkanButton");
+
+    lokasiPerpustakaan.addEventListener("change", validateForm);
+    lokasiBaca.addEventListener("change", validateForm);
+
+    function validateForm() {
+        const selectedPerpustakaan = lokasiPerpustakaan.value;
+        const selectedBaca = lokasiBaca.value;
+
+        if (selectedPerpustakaan && selectedBaca) {
+            lanjutkanButton.removeAttribute("disabled");
+        } else {
+            lanjutkanButton.setAttribute("disabled", "true");
+        }
+    }
 });

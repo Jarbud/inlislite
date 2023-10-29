@@ -6,7 +6,7 @@ namespace App\Models;
 //use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class BacaDiTempatLocation extends Model
+class JenisAnggota extends Model
 {
-    protected $collection = "bacaditempat_Location";
+    protected $collection = "jenis_anggota";
 }

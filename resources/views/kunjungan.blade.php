@@ -5,16 +5,6 @@
     <div id="baratas">
         <strong>Selamat Datang</strong> <br>
         <strong>Di Ruang Baca Umum</strong>
-        <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#anggota" onclick="showTab('anggota')">Anggota</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#nonAnggota" onclick="showTab('nonAnggota')">Non Anggota</a>
-                </li>
-            </ul>
-        </div>
     </div>
     <section id="anggota-content">
         <p>Silahkan pindai kartu anggota Anda</p>
@@ -31,12 +21,16 @@
         <p>Photo: {{ $user['photo'] }}</p>
         <form method="POST" action="{{route('bukutamu.store')}}">
             @csrf
-            <input type="hidden" name="no_pengenal" value="{{ $user['no_pengenal'] }}">
-            <input type="hidden" name="name" value="{{ $user['name'] }}">
+            <input type="hidden" name="no_pengenal" value="{{ $user->no_pengenal }}">
+            <input type="hidden" name="name" value="{{ $user->name }}">
+            @if ($user->jenis_anggota)
+            <input type="hidden" name="jenis_anggota" value="{{ $user->jenis_anggota->jenisanggota }}">
+            @endif
             <button type="submit">Simpan</button>
         </form>
+        @elseif (isset($message))
+        <p>{{ $message }}</p>
         @endif
     </section>
-
 </section>
 @endsection

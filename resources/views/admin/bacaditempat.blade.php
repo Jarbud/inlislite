@@ -17,6 +17,7 @@
                     <th>IP</th>
                     <th>No Pengunjung</th>
                     <th>Nama</th>
+                    <th>Jenis Anggota</th>
                     <th>Lokasi Perpustakaan</th>
                     <th>Lokasi Baca</th>
                 </tr>
@@ -32,6 +33,7 @@
                     <td>{{$item->ip}}</td>
                     <td>{{$item->no_pengenal}}</td>
                     <td>{{$item->name}}</td>
+                    <td>{{$item->jenis_anggota}}</td>
                     <td>{{$item->LokasiPerpustakaan}}</td>
                     <td>{{$item->LokasiBaca}}</td>
                 </tr>

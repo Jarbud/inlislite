@@ -27,7 +27,7 @@
                 @endforeach
             </select>
             <br>
-            <button type="submit">Simpan</button>
+            <button type="submit" id="lanjutkanButton" disabled>Simpan</button>
             <br>
         </form>
     </div>
