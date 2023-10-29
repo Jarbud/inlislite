@@ -7,7 +7,7 @@
       </div>
     </section>
 
-    <section id="search" class="search">
+    <!--<section id="search" class="search">
       <div class="container" data-aos="fade-up">
         <h1>Pencarian</h1>
         <div class="row " data-aos="zoom-in" data-aos-delay="100">
@@ -47,12 +47,28 @@
 
         </div>
       </div>
-    </section>
+    </section>-->
 
 
     <section id="view-collection" class="view-collection">
       <div class="container" class="fade-up">
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+            <div class="pencarian">
+                <form action="{{ route('pencariankoleksi.search') }}" method="GET">
+                    <div class="row">
+                        <div class="col-sm-6 d-flex align-items-stretch">
+                            <div class="input-group rounded">
+                                <input type="text" name="query" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            </div>
+                        </div>
+                        <div class="col-sm-1 d-flex align-items-stretch">
+                            <button type="submit" class="btn-search">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
           <h2>Koleksi Unggulan Yang Tersedia</h2>
 
           @foreach ( $katalog as $item )

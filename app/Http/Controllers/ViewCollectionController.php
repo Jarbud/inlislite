@@ -11,7 +11,7 @@ class ViewCollectionController extends Controller
     public function show()
     {
         $jenis_bahan = worksheets::all();
-        $katalog = catalogs::latest()->paginate(15);
+        $katalog = catalogs::paginate(15);
         return view('viewcollection', compact('jenis_bahan', 'katalog'));
     }
 }
