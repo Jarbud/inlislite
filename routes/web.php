@@ -19,10 +19,6 @@ use Illuminate\Support\Facades\Route;
     return view('index');
 });*/
 
-Route::get('/dashboard', function() {
-    return view('dashboard');
-});
-
 Route::get('/viewcollection', function() {
     return view('viewcollection');
 });
@@ -220,9 +216,25 @@ Route::get('/check', [App\Http\Controllers\KunjunganController::class, 'check'])
 Route::post('/simpan', [App\Http\Controllers\KunjunganController::class, 'store'])->name('bukutamu.store');
 Route::get('/bacaditempat', [App\Http\Controllers\BacaDiTempatController::class, 'index']);
 
+Route::get('/', [\App\Http\Controllers\BagianDepanController::class, 'show'])->name('index');
+
+Route::get('/0entrikoleksi', [\App\Http\Controllers\AkuisisiController::class, 'show'])->name('0entrikoleksi');
+Route::post('/0entrikoleksi-store', [\App\Http\Controllers\AkuisisiController::class, 'store'])->name('0entrikoleksi-store');
+Route::get('/viewcollection', [\App\Http\Controllers\ViewCollectionController::class, 'show'])->name('viewcollection');
+Route::get('/viewopac', [\App\Http\Controllers\ViewOpac::class, 'show'])->name('viewopac');
+Route::post('/bukutamu-store', [\App\Http\Controllers\bukutamuController::class, 'store'])->name('bukutamu-store');
+Route::get('/fromsearch', [\App\Http\Controllers\fromsearchController::class, 'show'])->name('fromsearch');
+Route::get('/fromsearch/search', [\App\Http\Controllers\fromsearchController::class, 'search'])->name('fromsearch.search');
+Route::get('/0terbitanberkala', [\App\Http\Controllers\TerbitanBerkala::class, 'show'])->name('0terbitanberkala');
+Route::get('/0daftarkoleksi', [\App\Http\Controllers\DaftarKoleksi::class, 'show'])->name('0daftarkoleksi');
+
+Route::get('/katalog/{id}', [\App\Http\Controllers\ItemController::class, 'show'])->name('viewdetail');
+
+Route::get('/pencariankoleksi', [\App\Http\Controllers\PencarianKoleksiController::class, 'show'])->name('pencariankoleksi');
+Route::get('/pencariankoleksi/search', [\App\Http\Controllers\PencarianKoleksiController::class, 'search'])->name('pencariankoleksi.search');
+
+
 Route::get('barcode-blade', function () {
-
-
     return view('dashboardmahasiswa', compact('barcode'));
 });
 

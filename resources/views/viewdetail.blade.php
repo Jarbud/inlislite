@@ -10,23 +10,17 @@
     <section id="detail" class="detail">
         <div class="container">
             <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-sm-9">
+
                     <table class="main-table table-striped" width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <div class="table-content">
                                         <div class="row">
-                                            <div class="col-sm-1">
-                                                <div class="bookmark">
-                                                    <input type="checkbox" id="bookmark1" />
-                                                    <label for="bookmark1"></label>
-                                                </div>
-                                            </div>
                                             <div class="col-sm-3">
                                                 <a><img src="{{ asset('assets/img/sampul.png') }}" alt="fotosampul"/></a>
                                             </div>
-                                            <div class="col-sm-8">
+                                            <div class="col-sm-9">
                                                 <table class="table1" width="100%">
                                                     <tbody>
                                                         <tr>
@@ -177,7 +171,7 @@
                                                                 <td></td>
                                                                 <td>pdf</td>
                                                                 <td>
-                                                                    <a href="">
+                                                                    <a class ="konten-links" href="">
                                                                         <i class="bi bi-journal-arrow-down" style="margin-right:3px"></i>Download
                                                                     </a>
                                                                 </td>
@@ -188,7 +182,7 @@
                                                                 <td></td>
                                                                 <td>rar</td>
                                                                 <td>
-                                                                    <a href="">
+                                                                    <a class="konten-links" href="">
                                                                         <i class="bi bi-journal-arrow-down" style="margin-right:3px"></i>Download
                                                                     </a>
                                                                 </td>
@@ -240,9 +234,9 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
 
-                <div class="col-sm-3">
+
+                <!--<div class="col-sm-3">
                     <div class="accordion-title">
                         <h1><i class="bi bi-book"></i>Baca Juga :</h1>
                     </div>
@@ -263,9 +257,8 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>   
+                </div>   -->
 
             </div>
         </div>

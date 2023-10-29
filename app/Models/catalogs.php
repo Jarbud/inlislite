@@ -13,4 +13,9 @@ class catalogs extends Model
     public function worksheets(){
         return $this->belongsTo('App\Models\worksheets', 'Worksheet_id', 'ID');
     }
+
+    public static function search($query)
+    {
+        return self::where('name', 'like', '%' . $query . '%')->get();
+    }
 }

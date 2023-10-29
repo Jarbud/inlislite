@@ -1,7 +1,6 @@
 @extends('master')
 @section('content')
 
-
     <section id="title" class="title">
       <div class="container" class="fade-up">
         <h1>Survey Terhadap Pemustaka</h1>
