@@ -18,6 +18,6 @@ class DashboardmhsController extends Controller
         $barcode = $generatorHTML->getBarcode($nim[0]->no_pengenal, $generatorHTML::TYPE_CODE_128);
 
 
-        return view("admin/dashboardmahasiswa", compact("barcode", "nim"));
+        return view("admin/dashboardmahasiswa", compact("barcode"));
     }
 }

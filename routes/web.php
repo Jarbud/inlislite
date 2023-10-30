@@ -122,11 +122,11 @@ Route::post('/entri-katalog-store', [App\Http\Controllers\EntriCatalogController
 Route::get('pilihkatalog/{id}', [App\Http\Controllers\EntriCatalogController::class, 'pilihkatalog'])->name('pilihkatalog');
 Route::get('/histori-sederhana', [App\Http\Controllers\OpacLogsController::class, 'index']);
 Route::get('/histori-sederhana/fetch_data', [App\Http\Controllers\OpacLogsController::class, 'fetch_data']);
-Route::get('/buku', [App\Http\Controllers\KunjunganController::class, 'show1']);
-Route::post('/bukuTamu/store', [App\Http\Controllers\KunjunganController::class, 'store1'])->name('Bukutamu.store');
 Route::get('/input', [App\Http\Controllers\KunjunganController::class, 'show'])->name('input');
+Route::get('/buku', [App\Http\Controllers\KunjunganController::class, 'show1']);
 Route::get('/check', [App\Http\Controllers\KunjunganController::class, 'check'])->name('bukutamu');
 Route::post('/simpan', [App\Http\Controllers\KunjunganController::class, 'store'])->name('bukutamu.store');
+Route::post('/bukuTamu/store', [App\Http\Controllers\KunjunganController::class, 'store1'])->name('Bukutamu.store');
 Route::get('/bacaditempat', [App\Http\Controllers\BacaDiTempatController::class, 'index']);
 
 Route::get('barcode-blade', function () {

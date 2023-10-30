@@ -51,4 +51,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function jenis_anggota()
+    {
+        return $this->belongsTo(JenisAnggota::class, 'jenis_anggota_id');
+    }
 }
