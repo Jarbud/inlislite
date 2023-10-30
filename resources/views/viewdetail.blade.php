@@ -134,25 +134,22 @@
                                                     <div class="tab-pane fade show active" id="eksemplar" role="tabpanel" aria-labelledby="eksemplar-tab">
                                                         <table class="table" width="100%">
                                                             <tr class="tabel-header">
-                                                                <th width="18%">No Barcode</th>
-                                                                <th width="17%">No Panggil</th>
-                                                                <th width="15%">Akses</th>
-                                                                <th width="35%">Lokasi</th>
-                                                                <th width="15%">Ketersediaan</th>
+                                                                <th width="20%">No Barcode</th>
+                                                                <th width="20%">No Panggil</th>
+                                                                <th width="20%">Akses</th>
+                                                                <th width="20%">Lokasi</th>
+                                                                <th width="20%">Ketersediaan</th>
                                                             </tr>
                                                             <tr>
-                                                                <td>B181346</td>
-                                                                <td>R. 50 PIM I 2018</td>
-                                                                <td>Dapat dipinjam</td>
-                                                                <td>Self Access Centre</td>
-                                                                <td>Tersedia</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>/</td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
+                                                            @if ($koleksi->count() > 0)
+                                                                <td>{{ $koleksi[0]->NomorBarcode }}</td>
+                                                                <td>{{ $koleksi[0]->CallNumber }}</td>
+                                                                <td>{{ optional($koleksi[0]->CollectionRules)->Name }}</td>
+                                                                <td>{{ optional($koleksi[0]->Locations)->Name }}</td>
+                                                                <td>{{ optional($koleksi[0]->CollectionStatus)->Name}}</td>
+                                                                @else
+                                                                <p>Data koleksi tidak ditemukan.</p>
+                                                            @endif
                                                             </tr>
                                                         </table> 
                                                     </div>
@@ -167,7 +164,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>1</td>
-                                                                <td>Desain dan Implementasi Sistem Keamanan Rumah Cerdas dengan Integrasi Internet of Things PDF</td>
+                                                                <td>{{ $katalog->Title }} PDF</td>
                                                                 <td></td>
                                                                 <td>pdf</td>
                                                                 <td>
@@ -178,7 +175,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>2</td>
-                                                                <td>Desain dan Implementasi Sistem Keamanan Rumah Cerdas dengan Integrasi Internet of Things RAR</td>
+                                                                <td>{{ $katalog->Title }} RAR</td>
                                                                 <td></td>
                                                                 <td>rar</td>
                                                                 <td>

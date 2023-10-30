@@ -11,6 +11,8 @@ class ItemController extends Controller
 {
     public function show($id) {
         $katalog = catalogs::find($id);
-        return view('viewdetail', compact('katalog'));
+        $koleksi = collections::where('id', $katalog->collection_id)->get();
+        return view('viewdetail', compact('katalog', 'koleksi'));
     }
+
 }

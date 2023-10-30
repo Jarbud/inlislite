@@ -12,6 +12,7 @@
 
             <div class="pencarian">
                 <form action="{{ route('pencariankoleksi.search') }}" method="GET">
+                    @csrf
                     <div class="row">
                         <div class="col-sm-6 d-flex align-items-stretch">
                             <div class="input-group rounded">
@@ -87,13 +88,3 @@
     </section>
 
 @endsection
-
-@section ('js')
-<script>
-    $(function () {
-    $("#konten-tabel").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false
-        });
-    });
-  </script>
-@stop

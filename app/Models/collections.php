@@ -26,11 +26,11 @@ class collections extends Model
 
     public function CollectionRules()
     {
-        return $this->belongsTo('\App\Models\CollectionRules', 'Location_id', 'ID');
+        return $this->belongsTo('\App\Models\CollectionRules', 'Rule_id', 'ID');
     }
 
     public function CollectionStatus()
     {
-        return $thus->belongsTo('\App\Models\CollectionRules', 'Rule_id', 'ID');
+        return $this->belongsTo('\App\Models\CollectionStatus', 'Status_id', 'ID');
     }
 }
