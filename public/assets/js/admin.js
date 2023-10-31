@@ -238,6 +238,7 @@ function duplicateEksemplar() {
             var labelNoInduk = document.createElement("label");
             labelNoInduk.innerHTML =
                 "No Induk/Barcode/RFID <input type='text' name='noInduk"+i+"' id='noInduk'>";
+           
             eksemplarDiv.appendChild(labelNoInduk);
 
             // var labelNoBarcode = document.createElement("label");

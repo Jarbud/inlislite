@@ -434,11 +434,12 @@
                         </div>
                         <div class="col" id="si4">
                             <label for="nameSumber">Nama Sumber</label>
-                            <select name="nameSumber" id="nameSumber">
+                            <!-- <select name="nameSumber" id="nameSumber">
                                 <option></option>
-                            </select>
-                            <button id="tambah-sumber">Tambah</button>
-                            <button id="koreksi-sumber">Koreksi</button>
+                            </select> -->
+                            <input type="text" name="nameSumber" id="nameSumber">
+                            <!-- <button id="tambah-sumber">Tambah</button>
+                            <button id="koreksi-sumber">Koreksi</button> -->
                         </div>
                         <div class="col" id="si5">
                             <label for="btkFisik">Bentuk fisik</label>

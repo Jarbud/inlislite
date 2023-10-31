@@ -23,7 +23,7 @@
             <select name="library" id="lokasiBaca">
                 <option selected disabled>-- Pilih Lokasi --</option>
                 @foreach ($libraryPerpus as $item)
-                <option>{{$item->Name}}</option>
+                <option>{{$item->Description}}</option>
                 @endforeach
             </select>
             <br>
