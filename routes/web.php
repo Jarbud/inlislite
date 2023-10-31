@@ -15,7 +15,56 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
+    return view('index');
+});*/
+
+Route::get('/viewcollection', function() {
+    return view('viewcollection');
+});
+
+Route::get('/statistic', function() {
+    return view('statistic');
+});
+
+Route::get('/borrowed', function() {
+    return view('borrowed');
+});
+
+Route::get('/return', function() {
+    return view('return');
+});
+
+Route::get('/survei', function() {
+    return view('survei');
+});
+
+Route::get('/artikel', function() {
+    return view('artikel');
+});
+
+Route::get('/masterlogin', function() {
+    return view('masterlogin');
+});
+
+Route::get('/carousel', function() {
+    return view('carousel');
+});
+
+Route::get('/entrikoleksi', function() {
+    return view('entrikoleksi');
+});
+
+Route::get('/optionvalues', function() {
+    return view('optionvalues');
+});
+
+Route::get('/all', function() {
+    return view('all');
+});
+
+Route::get('importexcel', function() {
+    return view('importexcel');
     return view('dashboard');
 });
 
@@ -81,6 +130,44 @@ Route::get('/berhasil-mendaftar', function () {
 //     return view('admin/dashboardmahasiswa');
 // });
 
+Route::get('/0importexcel', function() {
+    return view('admin/akuisisi/0importexcel');
+});
+
+/*Route::get('/0daftarkoleksi', function() {
+    return view('admin/0daftarkoleksi');
+});*/
+
+Route::get('/0jilidkoleksi', function() {
+    return view('admin/akuisisi/0jilidkoleksi');
+});
+
+Route::get('/0daftarusulan', function() {
+    return view('admin/akuisisi/0daftarusulan');
+});
+
+Route::get('/0emptymodal', function() {
+    return view('admin/akuisisi/0emptymodal');
+});
+
+
+Route::get('/0karantina', function() {
+    return view('admin/akuisisi/0karantinakoleksi');
+});
+
+Route::get('/0keranjang', function() {
+    return view('admin/akuisisi/0keranjangkoleksi');
+});
+
+Route::get('/0tambahfilter', function() {
+    return view('admin/akuisisi/0tambahfilter');
+});
+
+Route::get('/0tambah', function() {
+    return view('admin/akuisisi/0tambah');
+});
+
+
 Auth::routes();
 
 // URL
@@ -129,9 +216,25 @@ Route::post('/simpan', [App\Http\Controllers\KunjunganController::class, 'store'
 Route::post('/bukuTamu/store', [App\Http\Controllers\KunjunganController::class, 'store1'])->name('Bukutamu.store');
 Route::get('/bacaditempat', [App\Http\Controllers\BacaDiTempatController::class, 'index']);
 
+Route::get('/', [\App\Http\Controllers\BagianDepanController::class, 'show'])->name('index');
+
+Route::get('/0entrikoleksi', [\App\Http\Controllers\AkuisisiController::class, 'show'])->name('0entrikoleksi');
+Route::post('/0entrikoleksi-store', [\App\Http\Controllers\AkuisisiController::class, 'store'])->name('0entrikoleksi-store');
+Route::get('/viewcollection', [\App\Http\Controllers\ViewCollectionController::class, 'show'])->name('viewcollection');
+Route::get('/viewopac', [\App\Http\Controllers\ViewOpac::class, 'show'])->name('viewopac');
+Route::post('/bukutamu-store', [\App\Http\Controllers\bukutamuController::class, 'store'])->name('bukutamu-store');
+Route::get('/fromsearch', [\App\Http\Controllers\fromsearchController::class, 'show'])->name('fromsearch');
+Route::get('/fromsearch/search', [\App\Http\Controllers\fromsearchController::class, 'search'])->name('fromsearch.search');
+Route::get('/0terbitanberkala', [\App\Http\Controllers\TerbitanBerkala::class, 'show'])->name('0terbitanberkala');
+Route::get('/0daftarkoleksi', [\App\Http\Controllers\DaftarKoleksi::class, 'show'])->name('0daftarkoleksi');
+
+Route::get('/katalog/{id}', [\App\Http\Controllers\ItemController::class, 'show'])->name('viewdetail');
+
+Route::get('/pencariankoleksi', [\App\Http\Controllers\PencarianKoleksiController::class, 'show'])->name('pencariankoleksi');
+Route::get('/pencariankoleksi/search', [\App\Http\Controllers\PencarianKoleksiController::class, 'search'])->name('pencariankoleksi.search');
+
+
 Route::get('barcode-blade', function () {
-
-
     return view('dashboardmahasiswa', compact('barcode'));
 });
 
