@@ -72,9 +72,9 @@ Route::get('/baca', function () {
     return view('baca_ditempat');
 });
 
-Route::get('/op_ac', function () {
+/*Route::get('/op_ac', function () {
     return view('opac');
-});
+});*/
 
 Route::get('/pendaftaran', function () {
     return view('pendaftaran');
@@ -170,6 +170,7 @@ Route::get('/0tambah', function() {
 
 Auth::routes();
 
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 // URL
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/katalog', [App\Http\Controllers\KatalogController::class, 'show'])->name('katalog');
