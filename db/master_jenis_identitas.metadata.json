@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"e43d7c37c8704e5492c95716bc35cb62","collectionName":"master_jenis_identitas","type":"collection"}
