@@ -48,7 +48,7 @@ class KunjunganController extends Controller
         $bacatmp->no_pengenal = $request->input('no_pengenal');
         $bacatmp->name = $request->input('name');
         $bacatmp->ip = $request->ip();
-        $bacatmp->tanggal_kunjungan = Carbon::now()->format('Y-m-d H:i:s');
+        $bacatmp->tanggal_kunjungan = Carbon::now()->setTimezone('Asia/Jakarta')->format('d/m/Y H:i:s');
         $bacatmp->LokasiPerpustakaan = $request->session()->get('dataperpus');
         $bacatmp->LokasiBaca = $request->session()->get('datalibrary');
         $user = User::where('no_pengenal', $bacatmp->no_pengenal)->first();

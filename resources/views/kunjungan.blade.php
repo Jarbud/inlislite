@@ -14,6 +14,9 @@
             <label for="no_pengenal" style="margin-right: 10px">No Pengenal </label>
             <input type="text" name="no_pengenal" id="codeunik">
             <button type="submit"><i class="bi bi-check2"></i></button>
+            <br>
+            <small style="color: red"><i class="bi bi-exclamation-circle"></i>Klik Tombol
+                Simpan</small>
         </form>
 
         @if (isset($user))
