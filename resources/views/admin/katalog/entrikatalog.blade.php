@@ -301,7 +301,7 @@
                             <td>{{$item->Title}}</td>
                             <td>{{$item->Author}}</td>
                             <td>{{$item->ISBN}}</td>
-                            <td><button class="btn btn-info">Pilih</button></td>
+                            <td><a class="btn btn-info" href="{{ route('pilihkatalog',$item->ID) }}">Pilih</a></td>
                         </tr>
                         @endforeach
                     </tbody>
