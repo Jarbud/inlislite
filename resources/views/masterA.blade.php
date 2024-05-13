@@ -23,6 +23,9 @@
         <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
 
         <!-- Template Main CSS File -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+  
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
         <link href="/assets/css/style.css" rel="stylesheet"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" charset="utf-8"></script>
 
@@ -203,6 +206,7 @@
         <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
         <script src="/assets/vendor/php-email-form/validate.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 
         <!-- Template Main JS File -->
         <script src="/assets/js/main.js"></script>

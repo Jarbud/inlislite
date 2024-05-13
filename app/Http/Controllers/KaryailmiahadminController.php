@@ -42,4 +42,14 @@ class KaryailmiahadminController extends Controller
         return redirect()->route('karya-ilmiah-admin')
                         ->with('success','User Telah Berhasil Diupdate');
     }
+
+    
+    public function destroy(string $id)
+    {
+        //
+        $ki = Karyailmiah::find($id);
+        $ki->delete();
+        return redirect()->route('karya-ilmiah-admin')
+                        ->with('success','User Telah Berhasil Diupdate');
+    }
 }

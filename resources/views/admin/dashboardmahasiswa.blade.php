@@ -100,6 +100,20 @@
               </div>
             </div>
           </div>
+          @if(Auth::user()->verifikasi == "decline")
+          <div class="card bg-light d-flex flex-fill" >
+            <div class="card-header text-muted border-bottom-0" style="background-color:#bd2130 !important;color: white !important;">
+              Alasan Ditolak :
+            </div>
+            <div class="card-body pt-0">
+              <div class="row">
+                <div class="col-lg-12" style="text-align: center;padding-top: 15px;">
+                  <p>{{ $members[0]->MsgDitolak }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endif
         </div>
       </div>
     </div>

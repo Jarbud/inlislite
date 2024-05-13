@@ -75,14 +75,14 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Karya Ilmiah Ditolak</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Anggota Ditolak</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <p>Nama : <span id="kiadmin-nama"></span></p>
-        <form id="formDitolak" action="{{ route('updateStatusVerifyKiDitolak') }}" method="GET" enctype="multipart/form-data">
+        <form id="formDitolak" action="{{ route('updateStatusVerifyAnggotaDitolak') }}" method="GET" enctype="multipart/form-data">
                         @csrf    
         <div class="form-group">
             <label for="MsgDitolak" class="form-label mt-4">Catatan Ditolak Karena :</label>

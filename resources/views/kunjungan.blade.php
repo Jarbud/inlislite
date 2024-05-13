@@ -14,11 +14,15 @@
             <label for="no_pengenal" style="margin-right: 10px">No Pengenal </label>
             <input type="text" name="no_pengenal" id="codeunik">
             <button type="submit"><i class="bi bi-check2"></i></button>
+            
         </form>
 
         @if (isset($user))
+        <br>
+            <small style="color:red;"><i class="bi bi-excalamtion-circle"></i>Klik Tombol Simpan</small>
         <p>Name: {{ $user['name'] }}</p>
-        <p>Photo: {{ $user['photo'] }}</p>
+        <p>Photo: </p>
+        <div style="width: 150px;margin: 0 auto;"><img style="width:100%;height:100%;" src="{{ asset('storage/images/'.$user['photo'] ) }}" alt="" srcset=""></div>
         <form method="POST" action="{{route('bukutamu.store')}}">
             @csrf
             <input type="hidden" name="no_pengenal" value="{{ $user->no_pengenal }}">

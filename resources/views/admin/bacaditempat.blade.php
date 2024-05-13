@@ -29,7 +29,7 @@
                 @foreach ($baca as $item)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{ Carbon\Carbon::parse($item['tanggal_kunjungan'])->format('d/m/Y H:i:s') }}</td>
+                    <td>{{ $item->tanggal_kunjungan }}</td>
                     <td>{{$item->ip}}</td>
                     <td>{{$item->no_pengenal}}</td>
                     <td>{{$item->name}}</td>

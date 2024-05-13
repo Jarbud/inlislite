@@ -195,6 +195,7 @@ Route::post('updatePhotoVerify/{id}', [App\Http\Controllers\VerifikasiController
 Route::get('notifications/get', [App\Http\Controllers\NotificationsController::class, 'getNotificationsData'])->name('notifications.get');
 Route::get('updateStatusVerify/{id}/{status}', [App\Http\Controllers\VeraccountController::class, 'updateStatusVerify'])->name('updateStatusVerify');
 Route::get('updateStatusVerifyAnggota/{id}/{email}/{status}', [App\Http\Controllers\VeranggotaController::class, 'updateStatusVerify'])->name('updateStatusVerifyAnggota');
+Route::get('updateStatusVerifyAnggotaDitolak', [App\Http\Controllers\VeranggotaController::class, 'updateStatusVerifyAnggotaDitolak'])->name('updateStatusVerifyAnggotaDitolak');
 Route::get('updateStatusVerifyKiAcc/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiAcc'])->name('updateStatusVerifyKiAcc');
 Route::get('updateStatusVerifyKiDitolak', [App\Http\Controllers\KaryailmiahadminController::class, 'updateStatusVerifyKiDitolak'])->name('updateStatusVerifyKiDitolak');
 Route::get('karyailmiahadminshow/{id}', [App\Http\Controllers\KaryailmiahadminController::class, 'show'])->name('karyailmiahadminshow');
@@ -210,13 +211,14 @@ Route::get('pilihkatalog/{id}', [App\Http\Controllers\EntriCatalogController::cl
 Route::get('/histori-sederhana', [App\Http\Controllers\OpacLogsController::class, 'index']);
 Route::get('/histori-sederhana/fetch_data', [App\Http\Controllers\OpacLogsController::class, 'fetch_data']);
 Route::get('/input', [App\Http\Controllers\KunjunganController::class, 'show'])->name('input');
-Route::get('/buku', [App\Http\Controllers\KunjunganController::class, 'show1']);
+Route::get('/bukutamu', [App\Http\Controllers\KunjunganController::class, 'show1']);
 Route::get('/check', [App\Http\Controllers\KunjunganController::class, 'check'])->name('bukutamu');
 Route::post('/simpan', [App\Http\Controllers\KunjunganController::class, 'store'])->name('bukutamu.store');
 Route::post('/bukuTamu/store', [App\Http\Controllers\KunjunganController::class, 'store1'])->name('Bukutamu.store');
 Route::get('/bacaditempat', [App\Http\Controllers\BacaDiTempatController::class, 'index']);
 
 Route::get('/', [\App\Http\Controllers\BagianDepanController::class, 'show'])->name('index');
+// Route::get('/bukutamu', [\App\Http\Controllers\bukutamuController::class, 'show'])->name('bukutamu');
 
 Route::get('/0entrikoleksi', [\App\Http\Controllers\AkuisisiController::class, 'show'])->name('0entrikoleksi');
 Route::post('/0entrikoleksi-store', [\App\Http\Controllers\AkuisisiController::class, 'store'])->name('0entrikoleksi-store');
@@ -242,3 +244,4 @@ Route::get('barcode-blade', function () {
 Route::resource('usermanagement', App\Http\Controllers\UsermanagementController::class);
 Route::resource('registerusers', App\Http\Controllers\Auth\RegisterController::class);
 Route::resource('Karyailmiahmhs', App\Http\Controllers\KaryailmiahmhsController::class);
+Route::resource('Karyailmiahadm', App\Http\Controllers\KaryailmiahadminController::class);

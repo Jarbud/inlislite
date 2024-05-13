@@ -31,5 +31,6 @@ class Members extends Model
         'InstitutionAddress',
         'InstitutionPhone',
         'HasVerified',
+        'MsgDitolak'
     ];
 }

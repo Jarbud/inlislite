@@ -91,10 +91,24 @@ class VeranggotaController extends Controller
             $startDate = Carbon::now();
             $newDate = $startDate->addYear();
             $member->HasVerified = "true";
+            $user->verifikasi = "true";
             $user->tgl_habis_anggota = $newDate->format('d/m/Y');
         }else if($status == "decline"){
             $member->HasVerified = "decline";
         }
+        $member->save();
+        $user->save();
+        return redirect()->route('verifikasi-anggota')
+                        ->with('success','User Telah Berhasil Diupdate');
+    }
+    public function updateStatusVerifyAnggotaDitolak(Request $request){
+
+        $id = $request->input('kiID');
+        $member = Members::find($id);
+        $user = User::where('email', '=', $member->email)->first();
+        $user->verifikasi = "decline";
+        $member->HasVerified = "decline";
+        $member->MsgDitolak = $request->input('MsgDitolak');
         $member->save();
         $user->save();
         return redirect()->route('verifikasi-anggota')

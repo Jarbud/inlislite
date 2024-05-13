@@ -56,7 +56,11 @@
                         </td>
                         <td>
                         @if($data->Status == "acc")
-                            <a class="btn btn-danger" href="">Hapus</a>
+                        <form action="{{route('Karyailmiahadm.destroy', $data->_id)}}" method="post">
+                            @csrf
+                            <input name="_method" type="hidden" value="DELETE">
+                            <button class="btn btn-danger" type="submit">Hapus</button>
+                          </form>
                         @elseif($data->Status == "dec")
                             <span class="badge bg-danger">Ditolak</span>
                         @elseif($data->Status == "pending")

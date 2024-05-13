@@ -440,14 +440,15 @@ return [
             'icon' => 'fas fa-solid fa-newspaper',
             'can' => 'admin',
         ],
-        [
-            'text' => 'Baca Ditempat',
-            'url'  => '#',
-            'icon' => 'fab fa-readme',
-        ],
+        // [
+        //     'text' => 'Baca Ditempat',
+        //     'url'  => '#',
+        //     'icon' => 'fab fa-readme',
+        // ],
         [
             'text' => 'Buku Tamu',
             'url'  => '/bacaditempat',
+            'can' => 'admin',
             'icon' => 'fas fa-book-reader',
         ],
         // [
@@ -455,11 +456,11 @@ return [
         //     'url'  => '#',
         //     'icon' => 'fas fa-people-arrows',
         // ],
-        [
-            'text' => 'Layanan Koleksi',
-            'url'  => '#',
-            'icon' => 'fas fa-digital-tachograph',
-        ],
+        // [
+        //     'text' => 'Layanan Koleksi',
+        //     'url'  => '#',
+        //     'icon' => 'fas fa-digital-tachograph',
+        // ],
         [
             'text' => 'OPAC',
             'icon' => 'fas fa-solid fa-bars',
